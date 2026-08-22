@@ -6,6 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Achraf Daou. MSc Project Management student and aspiring Construction Project Manager. Experience, projects, education and skills in project coordination and construction operations.">
 <meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://achrafpadrone.github.io/Portfolio/">
+
+<!-- Social share previews (LinkedIn, X, WhatsApp, Slack, etc.) -->
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://achrafpadrone.github.io/Portfolio/">
+<meta property="og:title" content="Achraf Daou · Project Management Portfolio">
+<meta property="og:description" content="MSc Project Management student and aspiring Construction Project Manager. Experience, projects, education and skills in project coordination and construction operations.">
+<meta property="og:image" content="https://achrafpadrone.github.io/Portfolio/assets/achraf-photo.jpg">
+<meta property="profile:first_name" content="Achraf">
+<meta property="profile:last_name" content="Daou">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Achraf Daou · Project Management Portfolio">
+<meta name="twitter:description" content="MSc Project Management student and aspiring Construction Project Manager, based in Liverpool.">
+<meta name="twitter:image" content="https://achrafpadrone.github.io/Portfolio/assets/achraf-photo.jpg">
+
+<!-- Structured data, helps this show up properly in search results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Achraf Daou",
+  "url": "https://achrafpadrone.github.io/Portfolio/",
+  "image": "https://achrafpadrone.github.io/Portfolio/assets/achraf-photo.jpg",
+  "email": "mailto:achrafdaou69@gmail.com",
+  "telephone": "+44-7771-071562",
+  "jobTitle": "Aspiring Construction Project Manager",
+  "address": {"@type": "PostalAddress", "addressLocality": "Liverpool", "addressCountry": "UK"},
+  "knowsLanguage": ["English", "French", "Arabic"],
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Liverpool John Moores University"},
+    {"@type": "CollegeOrUniversity", "name": "University of Huddersfield"}
+  ],
+  "sameAs": ["https://www.linkedin.com/in/achraf-daou/"]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314161B'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D97706' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +99,13 @@
   ul{list-style:none;}
   button{font:inherit; color:inherit; background:none; border:0; cursor:pointer;}
   ::selection{background:var(--accent); color:var(--accent-ink);}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+  a:focus-visible, button:focus-visible{outline-offset:2px;}
+  .skip-link{
+    position:fixed; top:-100px; left:12px; z-index:999; background:var(--ink); color:var(--bg);
+    padding:10px 18px; border-radius:8px; font-size:14px; font-weight:600; transition:top .2s ease;
+  }
+  .skip-link:focus{top:12px;}
   .icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
 
   /* ============================== SCROLL PROGRESS ============================== */
@@ -187,7 +229,9 @@
   .portrait-wrap{position:relative; max-width:400px; justify-self:end; width:100%;}
   .portrait-card{
     position:relative; aspect-ratio:4/5; border-radius:28px; overflow:hidden;
-    background:linear-gradient(155deg, var(--navy) 0%, var(--ink) 60%, var(--accent) 130%);
+    /* Fixed colors on purpose, not theme tokens: this card should stay a moody
+       dark photo backdrop in both light and dark site themes, never wash out. */
+    background:linear-gradient(155deg, #1E3A5F 0%, #14161B 60%, #C4690A 130%);
     box-shadow:var(--shadow-lg); will-change:transform;
   }
   .portrait-card img{
@@ -410,6 +454,7 @@
 </head>
 <body>
 
+<a href="#top" class="skip-link">Skip to content</a>
 <div id="progress"></div>
 
 <!-- ============================== ICON SPRITE ============================== -->
@@ -454,7 +499,7 @@
       <a href="assets/Achraf-Daou-CV.pdf" download class="btn btn-primary btn-sm nav-btn-desktop">
         <svg class="icon" style="width:15px;height:15px"><use href="#i-download"/></svg> Resume
       </a>
-      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <svg class="icon" id="menuIcon"><use href="#i-menu"/></svg>
       </button>
     </div>
@@ -865,11 +910,15 @@
   menuBtn.addEventListener('click', function(){
     var open = navLinks.classList.toggle('open');
     menuIconUse.setAttribute('href', open ? '#i-close' : '#i-menu');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
   navLinks.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
       navLinks.classList.remove('open');
       menuIconUse.setAttribute('href', '#i-menu');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
     });
   });
 

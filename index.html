@@ -334,16 +334,6 @@
   .about-grid{display:grid; grid-template-columns:1.3fr .7fr; gap:60px; align-items:start;}
   .about-grid p{font-size:17.5px; color:var(--ink-soft); margin-bottom:18px;}
   .about-grid p strong{color:var(--ink); font-weight:600;}
-  .about-photo{
-    position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:5/4;
-    box-shadow:var(--shadow-lg); margin-bottom:22px;
-  }
-  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block;}
-  .about-photo-cap{
-    position:absolute; left:16px; bottom:16px; right:16px;
-    background:color-mix(in srgb, #0B0D10 65%, transparent); backdrop-filter:blur(8px);
-    color:#fff; border-radius:12px; padding:11px 14px; font-size:12px; line-height:1.4;
-  }
   .about-side{
     background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
     padding:28px; box-shadow:var(--shadow);
@@ -689,19 +679,13 @@
           social presence from nothing, which won us the Social Media Award. Different world to a
           construction site, same job really: plan it, coordinate the people, adjust when it goes wrong.</p>
       </div>
-      <div class="r-up">
-        <div class="about-photo">
-          <img src="assets/photos/construction-review.jpg" alt="Reviewing a site plan on a construction project" loading="lazy">
-          <div class="about-photo-cap">On site, checking plans against what's actually being built</div>
-        </div>
-        <div class="about-side spot">
+      <div class="about-side spot r-up">
         <h4>At a glance</h4>
         <div class="info-row"><span class="k">Location</span><span class="v">Liverpool, UK</span></div>
         <div class="info-row"><span class="k">Focus</span><span class="v">Construction &amp; Infrastructure</span></div>
         <div class="info-row"><span class="k">Studying</span><span class="v">MSc Project Management</span></div>
         <div class="info-row"><span class="k">Languages</span><span class="v">EN · FR · AR</span></div>
         <div class="info-row"><span class="k">Status</span><span class="v">Open to opportunities</span></div>
-        </div>
       </div>
     </div>
   </div>

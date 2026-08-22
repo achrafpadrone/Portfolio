@@ -319,6 +319,8 @@
   }
   .marquee:hover .marquee-track{animation-play-state:paused;}
   .marquee-track .mq-dot{color:#D97706; font-size:9px;}
+  .marquee-item{display:inline-flex; align-items:center; gap:10px;}
+  .marquee-item img{height:20px; width:auto; max-width:110px; object-fit:contain; filter:brightness(0) invert(1); opacity:.55;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   @media (max-width:920px){.impact-grid{grid-template-columns:repeat(3,1fr);} .impact-stat:nth-child(4),.impact-stat:nth-child(5){border-top:1px solid rgba(255,255,255,.08);}}
@@ -328,6 +330,16 @@
   .about-grid{display:grid; grid-template-columns:1.3fr .7fr; gap:60px; align-items:start;}
   .about-grid p{font-size:17.5px; color:var(--ink-soft); margin-bottom:18px;}
   .about-grid p strong{color:var(--ink); font-weight:600;}
+  .about-photo{
+    position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:5/4;
+    box-shadow:var(--shadow-lg); margin-bottom:22px;
+  }
+  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block;}
+  .about-photo-cap{
+    position:absolute; left:16px; bottom:16px; right:16px;
+    background:color-mix(in srgb, #0B0D10 65%, transparent); backdrop-filter:blur(8px);
+    color:#fff; border-radius:12px; padding:11px 14px; font-size:12px; line-height:1.4;
+  }
   .about-side{
     background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
     padding:28px; box-shadow:var(--shadow);
@@ -452,20 +464,25 @@
 
   /* ============================== CONTACT CTA ============================== */
   .cta-band{
-    background:var(--ink); color:var(--bg); border-radius:28px; padding:clamp(44px,7vw,80px);
+    /* Fixed dark treatment (not theme tokens) so the photo and its overlay
+       read the same regardless of site theme, same reasoning as .portrait-card. */
+    background:#0B0D10; color:#F5F3ED; border-radius:28px; padding:clamp(44px,7vw,80px);
     text-align:center; position:relative; overflow:hidden;
   }
+  .cta-band-photo{position:absolute; inset:0; z-index:0;}
+  .cta-band-photo img{width:100%; height:100%; object-fit:cover; object-position:center 35%; opacity:.55;}
   .cta-band::before{
-    content:""; position:absolute; inset:0;
-    background:radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 55%),
-               radial-gradient(circle at 80% 80%, color-mix(in srgb, var(--navy) 30%, transparent), transparent 55%);
+    content:""; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(11,13,16,.55), rgba(11,13,16,.88)),
+               radial-gradient(circle at 30% 15%, color-mix(in srgb, #D97706 32%, transparent), transparent 55%),
+               radial-gradient(circle at 82% 85%, color-mix(in srgb, #1E3A5F 45%, transparent), transparent 55%);
     pointer-events:none;
   }
-  .cta-band h2{color:var(--bg); position:relative;}
-  .cta-band p{color:color-mix(in srgb, var(--bg) 65%, transparent); font-size:17.5px; max-width:50ch; margin-inline:auto; margin-bottom:36px; position:relative;}
-  .cta-buttons{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; position:relative;}
-  .cta-band .btn-ghost{border-color:color-mix(in srgb, var(--bg) 30%, transparent); color:var(--bg);}
-  .cta-band .btn-ghost:hover{border-color:var(--bg); background:color-mix(in srgb, var(--bg) 8%, transparent);}
+  .cta-band h2{color:#fff; position:relative; z-index:2;}
+  .cta-band p{color:rgba(245,243,237,.75); font-size:17.5px; max-width:50ch; margin-inline:auto; margin-bottom:36px; position:relative; z-index:2;}
+  .cta-buttons{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; position:relative; z-index:2;}
+  .cta-band .btn-ghost{border-color:rgba(245,243,237,.3); color:#fff;}
+  .cta-band .btn-ghost:hover{border-color:#fff; background:rgba(245,243,237,.1);}
 
   /* ============================== FOOTER ============================== */
   footer{padding-block:40px; border-top:1px solid var(--border);}
@@ -628,18 +645,18 @@
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>M2C Maroc</span><span class="mq-dot">&#10022;</span>
-      <span>University of Huddersfield</span><span class="mq-dot">&#10022;</span>
-      <span>Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
-      <span>Google</span><span class="mq-dot">&#10022;</span>
-      <span>HubSpot Academy</span><span class="mq-dot">&#10022;</span>
-      <span>Coursera</span><span class="mq-dot">&#10022;</span>
-      <span>M2C Maroc</span><span class="mq-dot">&#10022;</span>
-      <span>University of Huddersfield</span><span class="mq-dot">&#10022;</span>
-      <span>Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
-      <span>Google</span><span class="mq-dot">&#10022;</span>
-      <span>HubSpot Academy</span><span class="mq-dot">&#10022;</span>
-      <span>Coursera</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item">M2C Maroc</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/huddersfield.svg" alt="">University of Huddersfield</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/ljmu.svg" alt="">Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/google.svg" alt="">Google</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/hubspot.svg" alt="">HubSpot Academy</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/coursera.svg" alt="">Coursera</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item">M2C Maroc</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/huddersfield.svg" alt="">University of Huddersfield</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/ljmu.svg" alt="">Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/google.svg" alt="">Google</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/hubspot.svg" alt="">HubSpot Academy</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img src="assets/logos/coursera.svg" alt="">Coursera</span><span class="mq-dot">&#10022;</span>
     </div>
   </div>
 </section>
@@ -666,13 +683,19 @@
           social presence from nothing, which won us the Social Media Award. Different world to a
           construction site, same job really: plan it, coordinate the people, adjust when it goes wrong.</p>
       </div>
-      <div class="about-side spot r-up">
+      <div class="r-up">
+        <div class="about-photo">
+          <img src="assets/photos/construction-review.jpg" alt="Reviewing a site plan on a construction project" loading="lazy">
+          <div class="about-photo-cap">On site, checking plans against what's actually being built</div>
+        </div>
+        <div class="about-side spot">
         <h4>At a glance</h4>
         <div class="info-row"><span class="k">Location</span><span class="v">Liverpool, UK</span></div>
         <div class="info-row"><span class="k">Focus</span><span class="v">Construction &amp; Infrastructure</span></div>
         <div class="info-row"><span class="k">Studying</span><span class="v">MSc Project Management</span></div>
         <div class="info-row"><span class="k">Languages</span><span class="v">EN · FR · AR</span></div>
         <div class="info-row"><span class="k">Status</span><span class="v">Open to opportunities</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -923,6 +946,9 @@
 <section id="contact" class="section-pad">
   <div class="wrap">
     <div class="cta-band r-scale">
+      <div class="cta-band-photo" aria-hidden="true">
+        <img src="assets/photos/hardhats-blueprints.jpg" alt="" loading="lazy">
+      </div>
       <h2 class="h-reveal">Let us talk about your next project</h2>
       <p>Open to placements, graduate roles and opportunities in construction and infrastructure
         project management. If any of this looks like a fit, I would love to hear from you.</p>

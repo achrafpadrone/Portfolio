@@ -99,13 +99,17 @@
   }
   /* Subtle film-grain overlay across the whole page, breaks up flat gradients
      so surfaces read as designed material rather than a flat CSS wash. */
+  /* Static grain, no mix-blend-mode: that forced a full-page recomposite
+     against everything scrolling/animating beneath it on every frame, which
+     was the main cause of the site feeling laggy. Plain low opacity gives a
+     near-identical look for a fraction of the compositing cost. */
   body::before{
-    content:""; position:fixed; inset:0; z-index:5; pointer-events:none; opacity:.035;
-    mix-blend-mode:overlay;
+    content:""; position:fixed; inset:0; z-index:5; pointer-events:none; opacity:.02;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    will-change:auto;
   }
-  [data-theme="dark"] body::before{opacity:.05;}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body::before{opacity:.05;}}
+  [data-theme="dark"] body::before{opacity:.03;}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body::before{opacity:.03;}}
   img,svg{display:block; max-width:100%;}
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
@@ -166,8 +170,12 @@
   /* ============================== HEADER / NAV ============================== */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:color-mix(in srgb, var(--bg) 78%, transparent);
-    backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4);
+    /* Higher opacity background + lighter blur: backdrop-filter has to keep
+       resampling the pixels scrolling underneath it every frame, so cutting
+       the blur radius (and dropping the saturate boost) meaningfully reduces
+       that per-frame cost while still reading as a frosted header. */
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
     border-bottom:1px solid transparent; transition:border-color .3s ease;
   }
   header.scrolled{border-bottom-color:var(--border);}
@@ -313,7 +321,7 @@
   }
   .marquee-track{
     display:flex; align-items:center; gap:30px; width:max-content;
-    animation:marquee 30s linear infinite;
+    animation:marquee 30s linear infinite; will-change:transform;
     font-family:var(--font-mono); font-size:12.5px; letter-spacing:.09em; text-transform:uppercase;
     color:rgba(245,243,237,.45); white-space:nowrap;
   }
@@ -994,14 +1002,11 @@
   });
 
   // ---------- Header scroll state + progress bar ----------
+  // (listener attached further down, folded into one consolidated rAF-throttled
+  // scroll handler along with portrait parallax and the timeline fill, so a
+  // single scroll event does one batched read/write pass instead of three.)
   var header = document.getElementById('site-header');
   var progress = document.getElementById('progress');
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 8);
-    var h = document.documentElement;
-    var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    progress.style.width = pct + '%';
-  }, {passive:true});
 
   // ---------- Mobile menu ----------
   var menuBtn = document.getElementById('menuToggle');
@@ -1091,45 +1096,76 @@
   if(statsRow){ statsObserver.observe(statsRow); }
 
   // ---------- Magnetic buttons ----------
+  // Rect is measured once on mouseenter (not on every mousemove) since the
+  // button doesn't move during a hover session; only resize invalidates it.
   [document.getElementById('magBtn1'), document.getElementById('magBtn2')].forEach(function(btn){
     if(!btn) return;
+    var rect = null;
+    btn.addEventListener('mouseenter', function(){ rect = btn.getBoundingClientRect(); });
     btn.addEventListener('mousemove', function(e){
-      var r = btn.getBoundingClientRect();
-      var x = e.clientX - r.left - r.width/2;
-      var y = e.clientY - r.top - r.height/2;
+      if(!rect) rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width/2;
+      var y = e.clientY - rect.top - rect.height/2;
       btn.style.transform = 'translate(' + (x*0.18) + 'px,' + (y*0.35) + 'px)';
     });
-    btn.addEventListener('mouseleave', function(){ btn.style.transform = 'translate(0,0)'; });
+    btn.addEventListener('mouseleave', function(){ btn.style.transform = 'translate(0,0)'; rect = null; });
   });
 
-  // ---------- Portrait parallax ----------
+  // ---------- Portrait tilt (hover) + parallax (scroll) ----------
+  // The hero spans the full viewport, so its mousemove fires constantly while
+  // the cursor is anywhere near the top of the page. Caching the rect on
+  // mouseenter (instead of measuring it on every move) and rAF-throttling the
+  // style write removes the single biggest source of the lag.
   var portraitCard = document.getElementById('portraitCard');
+  var portraitWrap = document.getElementById('portraitWrap');
   var hero = document.querySelector('.hero');
   if(portraitCard && hero){
+    portraitCard.style.transformStyle = 'preserve-3d';
+    var heroRect = null;
+    var tiltPending = false;
+    var tiltX = 0, tiltY = 0;
+    hero.addEventListener('mouseenter', function(){ heroRect = hero.getBoundingClientRect(); });
     hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5;
-      var y = (e.clientY - r.top) / r.height - 0.5;
-      portraitCard.style.transform = 'rotateY(' + (x*6) + 'deg) rotateX(' + (y*-6) + 'deg)';
+      if(!heroRect) heroRect = hero.getBoundingClientRect();
+      tiltX = (e.clientX - heroRect.left) / heroRect.width - 0.5;
+      tiltY = (e.clientY - heroRect.top) / heroRect.height - 0.5;
+      if(!tiltPending){
+        tiltPending = true;
+        requestAnimationFrame(function(){
+          tiltPending = false;
+          portraitCard.style.transform = 'rotateY(' + (tiltX*6) + 'deg) rotateX(' + (tiltY*-6) + 'deg)';
+        });
+      }
     });
     hero.addEventListener('mouseleave', function(){
+      heroRect = null;
       portraitCard.style.transform = 'rotateY(0) rotateX(0)';
     });
-    window.addEventListener('scroll', function(){
-      var y = Math.min(window.scrollY, 600);
-      portraitCard.style.transform = (portraitCard.style.transform || '') ;
-      document.getElementById('portraitWrap').style.transform = 'translateY(' + (y*0.08) + 'px)';
-    }, {passive:true});
   }
-  portraitCard.style.transformStyle = 'preserve-3d';
 
   // ---------- Cursor spotlight on cards ----------
+  // Same fix as the portrait tilt: cache the rect per hover session instead of
+  // measuring it on every move, and coalesce writes to one per frame. With 19
+  // of these on the page, the unthrottled version was a major cost too.
   document.querySelectorAll('.spot').forEach(function(card){
+    var rect = null;
+    var pending = false;
+    var mx = 50, my = 50;
+    card.addEventListener('mouseenter', function(){ rect = card.getBoundingClientRect(); });
     card.addEventListener('mousemove', function(e){
-      var r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-      card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+      if(!rect) rect = card.getBoundingClientRect();
+      mx = (e.clientX - rect.left) / rect.width * 100;
+      my = (e.clientY - rect.top) / rect.height * 100;
+      if(!pending){
+        pending = true;
+        requestAnimationFrame(function(){
+          pending = false;
+          card.style.setProperty('--mx', mx + '%');
+          card.style.setProperty('--my', my + '%');
+        });
+      }
     });
+    card.addEventListener('mouseleave', function(){ rect = null; });
   });
 
   // ---------- Timeline scroll-progress fill ----------
@@ -1140,13 +1176,35 @@
     var rect = timelineEl.getBoundingClientRect();
     var vh = window.innerHeight;
     var startLine = vh * 0.8;
-    var progress = (startLine - rect.top) / rect.height;
-    progress = Math.max(0, Math.min(1, progress));
-    timelineFill.style.height = (progress * 100) + '%';
+    var fillPct = (startLine - rect.top) / rect.height;
+    fillPct = Math.max(0, Math.min(1, fillPct));
+    timelineFill.style.height = (fillPct * 100) + '%';
   }
-  window.addEventListener('scroll', updateTimelineFill, {passive:true});
   window.addEventListener('resize', updateTimelineFill);
-  updateTimelineFill();
+
+  // ---------- Consolidated scroll handler ----------
+  // Everything that used to be three separate scroll listeners (header state
+  // and progress bar, portrait parallax, timeline fill) now lives in one
+  // rAF-throttled pass, so a burst of scroll events does at most one batched
+  // read/write per frame instead of three independent ones.
+  var scrollPending = false;
+  function onScrollFrame(){
+    scrollPending = false;
+    var y = window.scrollY;
+    header.classList.toggle('scrolled', y > 8);
+    var docEl = document.documentElement;
+    var pct = docEl.scrollTop / (docEl.scrollHeight - docEl.clientHeight) * 100;
+    progress.style.width = pct + '%';
+    if(portraitWrap){ portraitWrap.style.transform = 'translateY(' + (Math.min(y, 600) * 0.08) + 'px)'; }
+    updateTimelineFill();
+  }
+  window.addEventListener('scroll', function(){
+    if(!scrollPending){
+      scrollPending = true;
+      requestAnimationFrame(onScrollFrame);
+    }
+  }, {passive:true});
+  onScrollFrame();
 
   // ---------- Copy email ----------
   var copyBtn = document.getElementById('copyEmailBtn');

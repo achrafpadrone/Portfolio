@@ -321,6 +321,10 @@
   .marquee-track .mq-dot{color:#D97706; font-size:9px;}
   .marquee-item{display:inline-flex; align-items:center; gap:10px;}
   .marquee-item img{height:20px; width:auto; max-width:110px; object-fit:contain; filter:brightness(0) invert(1); opacity:.55;}
+  /* Logos with an opaque flat-color fill (not transparent linework) lose their
+     text entirely under brightness(0)+invert, since there's no alpha edge to
+     preserve. Grayscale keeps them legible while still reading as muted. */
+  .marquee-item img.mq-flat{height:22px; filter:grayscale(1) brightness(1.5); opacity:.6;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   @media (max-width:920px){.impact-grid{grid-template-columns:repeat(3,1fr);} .impact-stat:nth-child(4),.impact-stat:nth-child(5){border-top:1px solid rgba(255,255,255,.08);}}
@@ -647,12 +651,14 @@
     <div class="marquee-track">
       <span class="marquee-item">M2C Maroc</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/huddersfield.svg" alt="">University of Huddersfield</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img class="mq-flat" src="assets/logos/hsu.png" alt="">Huddersfield Students' Union</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/ljmu.svg" alt="">Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/google.svg" alt="">Google</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/hubspot.svg" alt="">HubSpot Academy</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/coursera.svg" alt="">Coursera</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item">M2C Maroc</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/huddersfield.svg" alt="">University of Huddersfield</span><span class="mq-dot">&#10022;</span>
+      <span class="marquee-item"><img class="mq-flat" src="assets/logos/hsu.png" alt="">Huddersfield Students' Union</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/ljmu.svg" alt="">Liverpool John Moores University</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/google.svg" alt="">Google</span><span class="mq-dot">&#10022;</span>
       <span class="marquee-item"><img src="assets/logos/hubspot.svg" alt="">HubSpot Academy</span><span class="mq-dot">&#10022;</span>

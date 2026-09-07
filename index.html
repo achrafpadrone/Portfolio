@@ -531,6 +531,86 @@
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
   }
+
+  /* ============================== VISUAL POLISH ============================== */
+  /* Additive refinements layered over the base styles above. */
+
+  body{counter-reset:sec;}
+
+  /* Slightly bigger, tighter section headings */
+  h2{font-size:clamp(32px,4.6vw,50px); letter-spacing:-.022em;}
+  .section-head{position:relative; padding-top:6px;}
+  .section-head p{font-size:18px;}
+
+  /* Large ghosted section numbers sitting in the right-hand gutter */
+  section.section-pad{counter-increment:sec;}
+  .section-head::before{
+    content:counter(sec,decimal-leading-zero);
+    position:absolute; left:calc(100% + 44px); top:50%;
+    transform:translateY(-50%); z-index:0;
+    font-family:var(--font-head); font-weight:700; line-height:1;
+    font-size:clamp(70px,8vw,124px); color:transparent;
+    -webkit-text-stroke:1.5px var(--border-strong);
+    opacity:.75; pointer-events:none; user-select:none; white-space:nowrap;
+  }
+  @media (max-width:1180px){ .section-head::before{display:none;} }
+
+  /* Accent wipe along the top edge of content cards on hover */
+  .t-card, .proj-card, .edu-card, .cert-card{overflow:hidden;}
+  .t-card::before, .proj-card::before, .edu-card::before, .cert-card::before{
+    content:""; position:absolute; left:0; right:0; top:0; height:3px; z-index:2;
+    background:linear-gradient(90deg, var(--accent), var(--navy));
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .5s var(--ease);
+  }
+  .t-card:hover::before, .proj-card:hover::before,
+  .edu-card:hover::before, .cert-card:hover::before{transform:scaleX(1);}
+
+  /* Impact band: larger numbers, crisper labels */
+  .impact-stat{padding:36px 18px;}
+  .impact-stat .num{font-size:clamp(30px,3.7vw,46px); letter-spacing:-.02em;}
+  .impact-stat .label{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.11em;
+    text-transform:uppercase; color:rgba(245,243,237,.6); margin-top:9px;
+  }
+
+  /* Accent button: soft top-lit gradient */
+  .btn-accent{
+    background:linear-gradient(160deg,
+      color-mix(in srgb, var(--accent) 82%, #fff 18%), var(--accent) 62%);
+  }
+
+  /* Portrait: warm glow behind, hairline ring on the card */
+  .portrait-wrap::after{
+    content:""; position:absolute; z-index:-2;
+    inset:0 -6% -4% -6%;
+    background:radial-gradient(58% 56% at 52% 42%,
+      color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+    filter:blur(30px);
+  }
+  .portrait-card{
+    box-shadow:var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+
+  /* Floating credential chips over the hero portrait */
+  .hero-chip{
+    position:absolute; z-index:3; display:flex; align-items:center; gap:8px;
+    background:color-mix(in srgb, var(--surface) 90%, transparent);
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-lg); border-radius:14px; padding:10px 14px;
+    font-size:12.5px; color:var(--ink-soft); white-space:nowrap;
+  }
+  .hero-chip strong{
+    color:var(--ink); font-family:var(--font-head); font-weight:700; font-size:15px;
+  }
+  .hero-chip.chip-a{top:8%; left:-14px;}
+  .hero-chip.chip-b{bottom:22%; right:-14px;}
+
+  @media (max-width:920px){
+    .hero-chip{display:none;}
+    .section-head::before{font-size:clamp(50px,14vw,72px); top:-30px; opacity:.55;}
+  }
 </style>
 </head>
 <body>
@@ -626,6 +706,8 @@
              onerror="this.style.display='none'" loading="eager">
         <div class="portrait-tag"><span class="badge-dot"></span>Open to opportunities</div>
       </div>
+      <div class="hero-chip chip-a"><strong>15+</strong> live projects</div>
+      <div class="hero-chip chip-b"><strong>MSc</strong> Project Management</div>
     </div>
   </div>
 

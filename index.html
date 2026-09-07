@@ -42,50 +42,50 @@
   "sameAs": ["https://www.linkedin.com/in/achraf-daou/"]
 }
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314161B'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D97706' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23191B20'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='27' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..720&display=swap" rel="stylesheet">
 <style>
   /* ============================== TOKENS ============================== */
   :root{
-    --bg:#FBFAF8; --bg-alt:#F2EFE8; --surface:#FFFFFF;
-    --ink:#121417; --ink-soft:#5B6069; --ink-faint:#8D9199;
-    --border:#E7E3D9; --border-strong:#D6D1C2;
-    --accent:#C4690A; --accent-ink:#FFFFFF; --accent-soft:#FBEBD6;
-    --navy:#1E3A5F; --navy-soft:#E7EEF5;
-    --teal:#0E7C6B; --teal-soft:#DCF3EE;
-    --shadow: 0 1px 2px rgba(18,20,23,.04), 0 10px 30px -14px rgba(18,20,23,.14);
-    --shadow-lg: 0 30px 60px -24px rgba(18,20,23,.28);
-    --radius: 20px;
-    --ease: cubic-bezier(.16,1,.3,1);
-    --font-head:'Space Grotesk',-apple-system,'Segoe UI',sans-serif;
+    --bg:#F7F6F2; --bg-alt:#EFEDE7; --surface:#FFFFFF;
+    --ink:#191B20; --ink-soft:#55585F; --ink-faint:#8B8E96;
+    --border:#E5E2D9; --border-strong:#D4D0C4;
+    --accent:#2E4B86; --accent-ink:#FFFFFF; --accent-soft:#E8ECF5;
+    --navy:#22345C; --navy-soft:#E7EAF2;
+    --teal:#3F6152; --teal-soft:#E7EEEA;
+    --shadow: 0 1px 2px rgba(20,22,28,.03), 0 8px 24px -14px rgba(20,22,28,.10);
+    --shadow-lg: 0 22px 48px -24px rgba(20,22,28,.20);
+    --radius: 14px;
+    --ease: cubic-bezier(.22,1,.36,1);
+    --font-head:'Inter',-apple-system,'Segoe UI',sans-serif;
     --font-body:'Inter',-apple-system,'Segoe UI',sans-serif;
-    --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+    --font-mono:'Inter',-apple-system,'Segoe UI',sans-serif;
     color-scheme: light;
   }
   :root:not([data-theme="light"]){
     @media (prefers-color-scheme: dark){
-      --bg:#0D0F13; --bg-alt:#14171D; --surface:#181B22;
-      --ink:#F3F1EA; --ink-soft:#ABB1BC; --ink-faint:#6E7480;
-      --border:#242932; --border-strong:#323947;
-      --accent:#E8944B; --accent-ink:#181008; --accent-soft:#2C2213;
-      --navy:#9CBEE3; --navy-soft:#192431;
-      --teal:#4FD1B5; --teal-soft:#0F2A26;
-      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.55);
-      --shadow-lg: 0 30px 60px -24px rgba(0,0,0,.65);
+      --bg:#101216; --bg-alt:#16181D; --surface:#1A1D23;
+      --ink:#ECEDEF; --ink-soft:#A6AAB2; --ink-faint:#6B6F78;
+      --border:#262A31; --border-strong:#343943;
+      --accent:#8AA9E2; --accent-ink:#0E1526; --accent-soft:#1D2942;
+      --navy:#9DB4E0; --navy-soft:#1B2436;
+      --teal:#7FB79F; --teal-soft:#16241D;
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -14px rgba(0,0,0,.5);
+      --shadow-lg: 0 22px 48px -24px rgba(0,0,0,.6);
       color-scheme: dark;
     }
   }
   [data-theme="dark"]{
-    --bg:#0D0F13; --bg-alt:#14171D; --surface:#181B22;
-    --ink:#F3F1EA; --ink-soft:#ABB1BC; --ink-faint:#6E7480;
-    --border:#242932; --border-strong:#323947;
-    --accent:#E8944B; --accent-ink:#181008; --accent-soft:#2C2213;
-    --navy:#9CBEE3; --navy-soft:#192431;
-    --teal:#4FD1B5; --teal-soft:#0F2A26;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.55);
-    --shadow-lg: 0 30px 60px -24px rgba(0,0,0,.65);
+    --bg:#101216; --bg-alt:#16181D; --surface:#1A1D23;
+    --ink:#ECEDEF; --ink-soft:#A6AAB2; --ink-faint:#6B6F78;
+    --border:#262A31; --border-strong:#343943;
+    --accent:#8AA9E2; --accent-ink:#0E1526; --accent-soft:#1D2942;
+    --navy:#9DB4E0; --navy-soft:#1B2436;
+    --teal:#7FB79F; --teal-soft:#16241D;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -14px rgba(0,0,0,.5);
+    --shadow-lg: 0 22px 48px -24px rgba(0,0,0,.6);
     color-scheme: dark;
   }
 
@@ -628,7 +628,146 @@
   @media (max-width:1000px){ .nav-links{gap:22px;} .nav-links a{font-size:13.5px;} }
   @media (max-width:920px){
     .hero-chip{display:none;}
-    .section-head::before{font-size:clamp(50px,14vw,72px); top:-30px; opacity:.55;}
+  }
+
+  /* ==========================================================================
+     THEME REFRESH — calmer, editorial, one considered accent.
+     Layered last so it wins; structure and content are untouched.
+     ========================================================================== */
+
+  /* Kill every transition for the frame the theme flips so custom-property
+     colours repaint instantly instead of getting stuck part-way. */
+  .theme-switching *{ transition:none !important; }
+
+  /* --- typography: one typeface, set with care --- */
+  body{
+    font-size:15.5px; line-height:1.62; letter-spacing:-0.006em;
+    font-feature-settings:"cv05" 1,"cv08" 1,"ss03" 1;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{ font-weight:640; letter-spacing:-0.025em; text-wrap:balance; }
+  h1{ font-weight:680; letter-spacing:-0.033em; }
+  p{ text-wrap:pretty; }
+  .hero .role{ font-weight:520; letter-spacing:-0.01em; }
+
+  /* labels: uppercase Inter instead of a mono face */
+  .eyebrow{
+    font-family:var(--font-body); font-size:11px; font-weight:600;
+    letter-spacing:.15em; color:var(--accent); margin-bottom:14px; gap:10px;
+  }
+  .eyebrow::before{ width:18px; height:1px; background:var(--accent); opacity:.9; }
+  .t-date, .proj-meta, .edu-card .date, .cert-card .when,
+  .marquee-track, .impact-stat .label, .scroll-hint, .about-side h4, .learn-k{
+    font-family:var(--font-body);
+  }
+  .proj-meta, .edu-card .date, .cert-card .when{ letter-spacing:0; }
+  .t-date, .learn-k, .impact-stat .label, .about-side h4{ letter-spacing:.09em; }
+
+  /* consistent, quieter numerals */
+  .impact-stat .num, .t-date, .proj-meta, .edu-card .date,
+  .cert-card .when, .hero-chip strong, .lang-item .lvl{ font-variant-numeric:tabular-nums; }
+
+  /* --- surfaces & radii: less bubbly, more considered --- */
+  .about-side, .t-card, .proj-card, .edu-card, .cert-card,
+  .skill-group, .lang-row, .learn-card{ border-radius:var(--radius); }
+  .edu-icon{ border-radius:10px; }
+  .cert-icon{ border-radius:9px; }
+  .portrait-card{ border-radius:18px; }
+  .portrait-deco{ border-radius:22px; }
+
+  /* --- motion: quick and once, not floaty --- */
+  .r-up{ transform:translateY(14px); transition:opacity .5s var(--ease), transform .5s var(--ease); }
+  .r-scale{ transform:scale(.99); filter:none; transition:opacity .5s var(--ease), transform .5s var(--ease); }
+  .r-scale.in{ filter:none; }
+  .r-stagger > *{ transform:translateY(12px); transition:opacity .45s var(--ease), transform .45s var(--ease); }
+  .h-reveal{ transition:clip-path .6s var(--ease) .04s; }
+  .t-card:hover, .proj-card:hover, .edu-card:hover,
+  .cert-card:hover, .skill-group:hover, .learn-card:hover{ transform:translateY(-2px); }
+
+  /* --- drop the generative-portfolio tells --- */
+  .hero-glow{ display:none; }                 /* blurred colour blobs */
+  .spot::after{ display:none; }               /* cursor radial glow    */
+  body::before{ opacity:.018; }               /* film grain: barely there */
+  [data-theme="dark"] body::before{ opacity:.028; }
+  #progress{ height:2px; background:var(--accent); }
+
+  /* dotted hero backdrop: keep, but faint and calm */
+  .hero-bg-dot{ opacity:.45; }
+  [data-theme="dark"] .hero-bg-dot{ opacity:.3; }
+
+  /* --- one accent, used with restraint --- */
+  ::selection{ background:var(--accent-soft); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .btn-accent{ background:var(--accent); }
+  .btn-accent:hover{ box-shadow:var(--shadow-lg); }
+  .btn-ghost{ border-width:1px; }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); background:transparent; }
+
+  /* project tags: one tint, not three colours */
+  .proj-tag, .proj-tag.tag-amber, .proj-tag.tag-teal{
+    color:var(--accent); background:var(--accent-soft);
+    font-weight:600; letter-spacing:.04em;
+  }
+  .proj-featured .proj-tag{ background:rgba(138,169,226,.16); color:#A9BEE6; }
+
+  /* timeline + list markers in the accent, tidy */
+  .t-dot{ border-color:var(--accent); border-width:2px; }
+  .t-dot::after{ background:var(--accent); }
+  .timeline-fill{ background:var(--accent); }
+  .t-card li::before, .skill-group h4 .dot, .lang-row h4 .dot{ background:var(--accent); }
+  .card-rule, .section-head{ position:relative; }
+
+  /* card hover: a clean top hairline in the accent (replaces the glow) */
+  .t-card::before, .proj-card::before, .edu-card::before,
+  .cert-card::before, .learn-card::before{ height:2px; background:var(--accent); }
+
+  /* portrait frame: calm blue-ink, no orange */
+  .portrait-card{
+    background:linear-gradient(160deg, #2c3a5c 0%, #191b20 68%);
+    box-shadow:var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  .portrait-wrap::after{
+    background:radial-gradient(58% 56% at 52% 42%,
+      color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%);
+  }
+
+  /* impact band + contact band: blue glows, quieter */
+  .impact-glow.g1{ background:var(--accent); opacity:.22; }
+  .impact-glow.g2{ background:#22345C; opacity:.3; }
+  .impact-stat .num span{ color:var(--accent); }
+  .marquee-track .mq-dot{ color:var(--accent); opacity:.55; }
+  .cta-band::before{
+    background:linear-gradient(180deg, rgba(11,13,16,.5), rgba(11,13,16,.9)),
+      radial-gradient(circle at 28% 12%, color-mix(in srgb, #2E4B86 42%, transparent), transparent 55%),
+      radial-gradient(circle at 84% 88%, color-mix(in srgb, #22345C 45%, transparent), transparent 55%);
+  }
+
+  /* header: cleaner hairline, tighter */
+  header{ background:color-mix(in srgb, var(--bg) 82%, transparent); }
+  .nav-links a::after{ height:1.5px; background:var(--accent); }
+  .logo span{ color:var(--accent); }
+
+  /* small details: hairline under each section title, tabular dates,
+     tighter chips, gentle link underlines */
+  .section-head{ padding-bottom:22px; margin-bottom:44px; border-bottom:1px solid var(--border); max-width:none; }
+  .section-head > *{ max-width:640px; }
+  .hero-contact a{ position:relative; }
+  .hero-contact a:hover{ color:var(--accent); }
+  .hero-chip{ border-radius:11px; box-shadow:var(--shadow); }
+  .hero-chip strong{ font-family:var(--font-body); font-weight:700; }
+  .tag{ border-radius:8px; }
+  .lang-item .lvl{ border-radius:6px; background:var(--accent-soft); color:var(--accent); }
+  .edu-card .grade{ background:var(--accent-soft); color:var(--accent); }
+  .foot-links a:hover{ color:var(--accent); }
+  .badge-dot{ background:#3E7C57; box-shadow:0 0 0 4px color-mix(in srgb,#3E7C57 20%,transparent); }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 4px color-mix(in srgb,#3E7C57 20%,transparent); }
+    50%{ box-shadow:0 0 0 7px color-mix(in srgb,#3E7C57 8%,transparent); }
+  }
+
+  @media (max-width:720px){
+    .section-head{ margin-bottom:34px; }
   }
 </style>
 </head>
@@ -1277,8 +1416,15 @@
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var current = root.getAttribute('data-theme') || (prefersDark ? 'dark' : 'light');
     var next = current === 'dark' ? 'light' : 'dark';
+    // Suppress transitions for the single frame the palette flips, otherwise
+    // colours driven by custom properties can stick mid-transition.
+    root.classList.add('theme-switching');
+    void root.offsetWidth;
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ root.classList.remove('theme-switching'); });
+    });
   });
 
   // ---------- Header scroll state + progress bar ----------

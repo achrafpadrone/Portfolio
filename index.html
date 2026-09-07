@@ -542,6 +542,14 @@
   .section-head{position:relative; padding-top:6px;}
   .section-head p{font-size:18px;}
 
+  /* Lead line in the About column */
+  .about-lead{
+    font-size:clamp(19px,2.1vw,23px) !important; line-height:1.5;
+    color:var(--ink) !important; font-family:var(--font-head); font-weight:500;
+    margin-bottom:24px !important;
+  }
+  .about-lead strong{font-weight:700;}
+
   /* Large ghosted section numbers sitting in the right-hand gutter */
   section.section-pad{counter-increment:sec;}
   .section-head::before{
@@ -565,6 +573,28 @@
   }
   .t-card:hover::before, .proj-card:hover::before,
   .edu-card:hover::before, .cert-card:hover::before{transform:scaleX(1);}
+
+  /* Initiative / "On my own time" section */
+  .learn-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  .learn-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:30px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+  }
+  .learn-card:hover{transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:var(--accent);}
+  .learn-card::before{
+    content:""; position:absolute; left:0; right:0; top:0; height:3px; z-index:2;
+    background:linear-gradient(90deg, var(--accent), var(--navy));
+    transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease);
+  }
+  .learn-card:hover::before{transform:scaleX(1);}
+  .learn-k{
+    display:inline-block; font-family:var(--font-mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:13px;
+  }
+  .learn-card h3{font-size:18px; margin-bottom:8px; line-height:1.3;}
+  .learn-card p{font-size:15px; color:var(--ink-soft); line-height:1.65;}
+  @media (max-width:920px){ .learn-grid{grid-template-columns:1fr;} }
 
   /* Impact band: larger numbers, crisper labels */
   .impact-stat{padding:36px 18px;}
@@ -607,6 +637,7 @@
   .hero-chip.chip-a{top:8%; left:-14px;}
   .hero-chip.chip-b{bottom:22%; right:-14px;}
 
+  @media (max-width:1000px){ .nav-links{gap:22px;} .nav-links a{font-size:13.5px;} }
   @media (max-width:920px){
     .hero-chip{display:none;}
     .section-head::before{font-size:clamp(50px,14vw,72px); top:-30px; opacity:.55;}
@@ -650,6 +681,7 @@
       <li><a href="#projects" data-nav>Projects</a></li>
       <li><a href="#education" data-nav>Education</a></li>
       <li><a href="#skills" data-nav>Skills</a></li>
+      <li><a href="#learning" data-nav>Initiative</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -758,26 +790,31 @@
     </div>
     <div class="about-grid">
       <div class="r-up">
+        <p class="about-lead">I'm an <strong>international student</strong> who moved from Morocco to the UK
+          to study, works hard, and has spent the last five years learning project delivery the practical
+          way &mdash; on real jobs, with real budgets, where the details actually matter.</p>
         <p>I grew up around my family's construction supply business, M2C Maroc, and I've been part of it
           since 2020, mostly the unglamorous side: chasing suppliers, checking deliveries landed on time,
-          keeping the paperwork straight so nobody is guessing later. It taught me that most projects do not
-          fail because of one big mistake. They fail because ten small things slip at once.</p>
-        <p>That is roughly why I am doing an MSc in Project Management now, at Liverpool John Moores
-          University. My dissertation looks at how <strong>artificial intelligence is being used in
-          construction</strong>, which is a good excuse to think seriously about where this industry is
-          heading rather than just where it has been.</p>
+          keeping cost logs straight so nobody is guessing later. It taught me that most projects do not
+          fail because of one big mistake. They fail because ten small things slip at once &mdash; and
+          someone has to be the person watching for them.</p>
+        <p>That is why I am doing an MSc in Project Management at Liverpool John Moores University, with
+          PRINCE2 in my modules. My dissertation looks at how <strong>artificial intelligence is being
+          adopted in construction</strong> &mdash; and to research it properly I've been speaking with
+          people inside other organisations about how they actually use these tools day to day, not just
+          what the vendors claim.</p>
         <p>Outside of coursework I led the <strong>Moroccan Global Society</strong> at Huddersfield for two
-          years, ran events for over 100 students, and somehow ended up rebuilding the society's entire
-          social presence from nothing, which won us the Social Media Award. Different world to a
-          construction site, same job really: plan it, coordinate the people, adjust when it goes wrong.</p>
+          years, ran events for over 100 students, and rebuilt the society's entire social presence from
+          nothing, which won us the Social Media Award. Different world to a construction site, same job
+          really: plan it, coordinate the people, adjust when it goes wrong.</p>
       </div>
       <div class="about-side spot r-up">
         <h4>At a glance</h4>
-        <div class="info-row"><span class="k">Location</span><span class="v">Liverpool, UK</span></div>
+        <div class="info-row"><span class="k">Location</span><span class="v">Liverpool, UK · will relocate</span></div>
         <div class="info-row"><span class="k">Right to work</span><span class="v">UK (visa held)</span></div>
         <div class="info-row"><span class="k">Focus</span><span class="v">Project controls &amp; construction</span></div>
-        <div class="info-row"><span class="k">Studying</span><span class="v">MSc Project Management</span></div>
-        <div class="info-row"><span class="k">Languages</span><span class="v">EN · FR · AR</span></div>
+        <div class="info-row"><span class="k">Studying</span><span class="v">MSc PM · PRINCE2</span></div>
+        <div class="info-row"><span class="k">Languages</span><span class="v">EN · FR · AR (fluent)</span></div>
         <div class="info-row"><span class="k">Status</span><span class="v">Open to opportunities</span></div>
       </div>
     </div>
@@ -920,10 +957,13 @@
         <span class="proj-tag"><svg class="icon" style="width:13px;height:13px"><use href="#i-cap"/></svg>Dissertation, in progress</span>
         <h3>Research into AI in Construction</h3>
         <div class="proj-meta">MSc Project Management, LJMU · 2025 to 2026</div>
-        <p>My dissertation research looks at how artificial intelligence is being adopted across the
-          construction industry, from planning and scheduling to on-site monitoring, and what that
-          actually means for how projects get managed day to day. Still in progress, more detail to
-          follow as the research develops.</p>
+        <p>My dissertation examines how the construction and infrastructure sector is adopting AI across
+          planning, scheduling, cost control and on-site monitoring &mdash; and what it changes for the
+          people managing projects day to day.</p>
+        <p>Rather than rely on vendor material, I'm running <strong>primary research</strong>: reaching
+          out to practitioners in contractors, consultancies and client organisations to hear which tools
+          they actually use, where the value is real, and where it falls short. The goal is a grounded,
+          practitioner-led view of where project delivery is heading &mdash; not a marketing one.</p>
       </div>
     </div>
   </div>
@@ -941,13 +981,13 @@
       <div class="edu-card spot r-up">
         <div class="edu-icon"><svg class="icon" style="width:20px;height:20px"><use href="#i-cap"/></svg></div>
         <h3>MSc Project Management</h3>
-        <div class="inst">Liverpool John Moores University, UK</div>
-        <div class="meta"><span class="date">2025 to Present</span><span class="grade">Predicted 2:1</span></div>
+        <div class="inst">Liverpool John Moores University, UK · PRINCE2 methodology in modules</div>
+        <div class="meta"><span class="date">2025 to Present</span><span class="grade">Predicted First Class</span></div>
       </div>
       <div class="edu-card spot r-up">
         <div class="edu-icon"><svg class="icon" style="width:20px;height:20px"><use href="#i-cap"/></svg></div>
         <h3>BA (Hons) Business Management</h3>
-        <div class="inst">University of Huddersfield, UK</div>
+        <div class="inst">University of Huddersfield, UK · operations, finance, strategy &amp; business analysis</div>
         <div class="meta"><span class="date">2022 to 2025</span><span class="grade">2:1 Honours</span></div>
       </div>
       <div class="edu-card spot r-up">
@@ -1001,45 +1041,56 @@
 
     <div class="skills-grid">
       <div class="skill-group spot r-up">
-        <h4><span class="dot"></span>Project Controls &amp; Construction</h4>
+        <h4><span class="dot"></span>Project Controls</h4>
         <div class="tag-list">
           <span class="tag">Cost Tracking &amp; Budget Control</span>
           <span class="tag">Variance Analysis</span>
           <span class="tag">Scheduling &amp; Programme Support</span>
           <span class="tag">Milestone &amp; Progress Monitoring</span>
-          <span class="tag">Material Planning &amp; Procurement</span>
-          <span class="tag">Supplier Management</span>
-          <span class="tag">Site Documentation &amp; Reporting</span>
+          <span class="tag">Procurement &amp; Material Planning</span>
+          <span class="tag">Project Documentation &amp; Records</span>
+          <span class="tag">Project Lifecycle Awareness</span>
+          <span class="tag">PRINCE2 Methodology</span>
+        </div>
+      </div>
+      <div class="skill-group spot r-up">
+        <h4><span class="dot"></span>Business &amp; Analytical</h4>
+        <div class="tag-list">
+          <span class="tag">Business Analysis</span>
+          <span class="tag">Operations Management</span>
+          <span class="tag">Budgeting &amp; Financial Awareness</span>
+          <span class="tag">Strategy &amp; Planning</span>
+          <span class="tag">Research &amp; Benchmarking</span>
+          <span class="tag">Performance Metrics &amp; KPIs</span>
+          <span class="tag">Process Improvement</span>
+        </div>
+      </div>
+      <div class="skill-group spot r-up">
+        <h4><span class="dot"></span>Tools &amp; Software</h4>
+        <div class="tag-list">
+          <span class="tag">Excel (pivot tables, lookups, formulas)</span>
+          <span class="tag">Microsoft Project</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Microsoft Office</span>
+          <span class="tag">Data Analysis &amp; Reporting</span>
+          <span class="tag">AI Tools for Reporting &amp; Docs</span>
         </div>
       </div>
       <div class="skill-group spot r-up">
         <h4><span class="dot"></span>Professional</h4>
         <div class="tag-list">
           <span class="tag">Stakeholder &amp; Supplier Management</span>
+          <span class="tag">Written &amp; Verbal Communication</span>
+          <span class="tag">Managing Priorities to Deadline</span>
+          <span class="tag">Attention to Detail</span>
           <span class="tag">Team Leadership</span>
-          <span class="tag">Event Planning</span>
-          <span class="tag">Administrative Support</span>
           <span class="tag">Problem Solving</span>
-          <span class="tag">Health &amp; Safety Awareness</span>
-          <span class="tag">Organisation</span>
-        </div>
-      </div>
-      <div class="skill-group spot r-up">
-        <h4><span class="dot"></span>Tools &amp; Software</h4>
-        <div class="tag-list">
-          <span class="tag">Microsoft Excel</span>
-          <span class="tag">Microsoft Project</span>
-          <span class="tag">Power BI</span>
-          <span class="tag">Microsoft Office</span>
-          <span class="tag">AI &amp; Digital Reporting Tools</span>
-          <span class="tag">Data Analytics</span>
         </div>
       </div>
       <div class="skill-group spot r-up">
         <h4><span class="dot"></span>Digital &amp; Marketing</h4>
         <div class="tag-list">
-          <span class="tag">Content Creation</span>
-          <span class="tag">Social Media Management</span>
+          <span class="tag">Content &amp; Social Media</span>
           <span class="tag">Digital Marketing</span>
           <span class="tag">Inbound Marketing</span>
         </div>
@@ -1051,6 +1102,47 @@
       <div class="lang-item">English <span class="lvl">Fluent</span></div>
       <div class="lang-item">French <span class="lvl">Fluent</span></div>
       <div class="lang-item">Arabic <span class="lvl">Fluent</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INITIATIVE ============================== -->
+<section id="learning" class="section-pad">
+  <div class="wrap">
+    <div class="section-head r-up">
+      <p class="eyebrow">Initiative</p>
+      <h2 class="h-reveal">On my own time</h2>
+      <p>The gap between "student" and "ready to contribute" is closed by what you do when nobody sets it.</p>
+    </div>
+
+    <div class="learn-grid">
+      <div class="learn-card spot r-up">
+        <span class="learn-k">Applying</span>
+        <h3>AI tools on real project work</h3>
+        <p>I test AI assistants against live tasks from the family business &mdash; drafting progress
+          reports, summarising site notes, preparing documents &mdash; then keep what genuinely saves
+          time and drop what doesn't. It's also the practical half of my dissertation.</p>
+      </div>
+      <div class="learn-card spot r-up">
+        <span class="learn-k">Building</span>
+        <h3>Power BI &amp; Microsoft Project</h3>
+        <p>Self-taught. I'm rebuilding my own project cost logs as Power BI dashboards and turning past
+          jobs into Microsoft Project schedules, so I'm fluent in the tools larger programmes run on
+          before I'm asked to use them.</p>
+      </div>
+      <div class="learn-card spot r-up">
+        <span class="learn-k">Studying</span>
+        <h3>PRINCE2, properly</h3>
+        <p>Working through the full method alongside my MSc modules &mdash; stages, product-based
+          planning, tolerances and controls &mdash; not just the parts that come up in an exam.</p>
+      </div>
+      <div class="learn-card spot r-up">
+        <span class="learn-k">Following</span>
+        <h3>Where the industry is heading</h3>
+        <p>I read and speak to people about how contractors, consultancies and clients are actually
+          adopting AI in planning, scheduling and monitoring &mdash; so I can talk about it from evidence,
+          not headlines.</p>
+      </div>
     </div>
   </div>
 </section>

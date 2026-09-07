@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Achraf Daou · Project Management Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Achraf Daou. MSc Project Management student working in project controls and construction project management. Five years supporting 15+ live construction projects &mdash; cost tracking, scheduling, supplier coordination and reporting.">
+<meta name="description" content="Achraf Daou. MSc Project Management student working in project controls and construction. Five years of experience across 15+ construction projects: cost tracking, scheduling, supplier coordination and reporting.">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://achrafpadrone.github.io/Portfolio/">
 
@@ -418,7 +418,7 @@
   .proj-featured:hover{border-color:rgba(232,148,75,.4);}
 
   /* ============================== EDUCATION ============================== */
-  .edu-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .edu-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px;}
   .edu-card{
     background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
     padding:28px; box-shadow:var(--shadow); transition:transform .4s var(--ease), box-shadow .4s var(--ease);
@@ -432,7 +432,7 @@
   .edu-card .grade{font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-soft); padding:4px 9px; border-radius:6px;}
 
   /* ============================== CERTIFICATIONS ============================== */
-  .cert-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:18px;}
   .cert-card{
     background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
     padding:22px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow);
@@ -535,8 +535,6 @@
   /* ============================== VISUAL POLISH ============================== */
   /* Additive refinements layered over the base styles above. */
 
-  body{counter-reset:sec;}
-
   /* Slightly bigger, tighter section headings */
   h2{font-size:clamp(32px,4.6vw,50px); letter-spacing:-.022em;}
   .section-head{position:relative; padding-top:6px;}
@@ -544,24 +542,11 @@
 
   /* Lead line in the About column */
   .about-lead{
-    font-size:clamp(19px,2.1vw,23px) !important; line-height:1.5;
-    color:var(--ink) !important; font-family:var(--font-head); font-weight:500;
-    margin-bottom:24px !important;
+    font-size:clamp(18px,2vw,21px) !important; line-height:1.55;
+    color:var(--ink) !important; font-weight:500;
+    margin-bottom:22px !important;
   }
   .about-lead strong{font-weight:700;}
-
-  /* Large ghosted section numbers sitting in the right-hand gutter */
-  section.section-pad{counter-increment:sec;}
-  .section-head::before{
-    content:counter(sec,decimal-leading-zero);
-    position:absolute; left:calc(100% + 44px); top:50%;
-    transform:translateY(-50%); z-index:0;
-    font-family:var(--font-head); font-weight:700; line-height:1;
-    font-size:clamp(70px,8vw,124px); color:transparent;
-    -webkit-text-stroke:1.5px var(--border-strong);
-    opacity:.75; pointer-events:none; user-select:none; white-space:nowrap;
-  }
-  @media (max-width:1180px){ .section-head::before{display:none;} }
 
   /* Accent wipe along the top edge of content cards on hover */
   .t-card, .proj-card, .edu-card, .cert-card{overflow:hidden;}
@@ -681,7 +666,7 @@
       <li><a href="#projects" data-nav>Projects</a></li>
       <li><a href="#education" data-nav>Education</a></li>
       <li><a href="#skills" data-nav>Skills</a></li>
-      <li><a href="#learning" data-nav>Initiative</a></li>
+      <li><a href="#learning" data-nav>Currently</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -712,11 +697,10 @@
         <span class="eyebrow" style="margin:0;">Project management portfolio</span>
       </div>
       <h1><span class="word"><span>Achraf</span></span> <span class="word"><span>Daou</span></span></h1>
-      <p class="role"><strong>Project controls &amp; construction project management</strong> — MSc Project Management</p>
-      <p class="lede">I coordinate the parts of a project most people never see: the supplier calls, the
-        schedule changes, the cost logs and variance checks that keep everything honest. Five years
-        supporting 15+ live construction projects. Based in Liverpool, studying full time, fluent in
-        English, French and Arabic.</p>
+      <p class="role"><strong>Project controls and construction project management</strong></p>
+      <p class="lede">I support the day-to-day side of construction projects: scheduling, cost tracking,
+        suppliers and site records. Five years of experience across 15 or more projects, alongside an
+        MSc in Project Management. Based in Liverpool. Fluent in English, French and Arabic.</p>
       <div class="hero-ctas">
         <a href="assets/Achraf-Daou-CV.pdf" download class="btn btn-accent" id="magBtn1">
           <svg class="icon" style="width:16px;height:16px"><use href="#i-download"/></svg> Download CV
@@ -790,23 +774,21 @@
     </div>
     <div class="about-grid">
       <div class="r-up">
-        <p class="about-lead">I'm an <strong>international student</strong> who moved from Morocco to the UK
-          to study, works hard, and has spent the last five years learning project delivery the practical
-          way &mdash; on real jobs, with real budgets, where the details actually matter.</p>
-        <p>I grew up around my family's construction supply business, M2C Maroc, and I've been part of it
-          since 2020, mostly the unglamorous side: chasing suppliers, checking deliveries landed on time,
-          keeping cost logs straight so nobody is guessing later. It taught me that most projects do not
-          fail because of one big mistake. They fail because ten small things slip at once &mdash; and
-          someone has to be the person watching for them.</p>
-        <p>That is why I am doing an MSc in Project Management at Liverpool John Moores University, with
-          PRINCE2 in my modules. My dissertation looks at how <strong>artificial intelligence is being
-          adopted in construction</strong> &mdash; and to research it properly I've been speaking with
-          people inside other organisations about how they actually use these tools day to day, not just
-          what the vendors claim.</p>
-        <p>Outside of coursework I led the <strong>Moroccan Global Society</strong> at Huddersfield for two
-          years, ran events for over 100 students, and rebuilt the society's entire social presence from
-          nothing, which won us the Social Media Award. Different world to a construction site, same job
-          really: plan it, coordinate the people, adjust when it goes wrong.</p>
+        <p class="about-lead">I'm an <strong>international student</strong> from Morocco, now based in
+          Liverpool. Alongside my studies I have spent five years working on real construction projects.
+          I work hard and I am careful with detail.</p>
+        <p>I grew up around my family's construction supply business, M2C Maroc, and I have been part of
+          it since 2020. Most of my work there is the practical side: chasing suppliers, checking
+          deliveries arrive on time, and keeping cost logs accurate. It taught me that projects usually
+          do not fail from one big mistake. They fail because several small things slip at once.</p>
+        <p>That is why I am doing an MSc in Project Management at Liverpool John Moores University, which
+          includes PRINCE2. My dissertation is about how AI is being used in construction. For the
+          research I have been speaking to people at other companies about which tools they use and
+          whether they help.</p>
+        <p>Outside of my course I was president of the <strong>Moroccan Global Society</strong> at
+          Huddersfield for two years. I ran events for over 100 students and rebuilt the society's social
+          media, which won the Social Media Award. The work was similar to a project: plan it, organise
+          the people, and adjust when things change.</p>
       </div>
       <div class="about-side spot r-up">
         <h4>At a glance</h4>
@@ -827,7 +809,7 @@
     <div class="section-head r-up">
       <p class="eyebrow">Experience</p>
       <h2 class="h-reveal">Where I have worked</h2>
-      <p>Four roles, four very different environments, the same habits carried through each one.</p>
+      <p>Four roles across construction operations, student leadership and office admin.</p>
     </div>
 
     <div class="timeline" id="timeline">
@@ -842,11 +824,11 @@
           </div>
           <div class="t-org">M2C Maroc <span class="sep">/</span> Morocco</div>
           <ul>
-            <li>Coordinate <strong>planning and scheduling across 15+ construction and maintenance projects</strong> (typically MAD 100,000&ndash;500,000, approx. &pound;8,000&ndash;&pound;40,000), tracking progress against agreed milestones from initiation to handover.</li>
-            <li>Track <strong>cost and material spend against budget</strong> on 2&ndash;5 concurrent projects, flagging variances early so decisions run on current figures rather than estimates.</li>
-            <li>Manage a <strong>supplier base of 20+</strong>, coordinating orders and resolving supply issues before they hit the programme.</li>
-            <li>Build cost logs, project records and site documentation in Excel, consolidating supplier and site data into regular <strong>progress and cost summaries</strong> for the business owner.</li>
-            <li>Introduced <strong>AI and digital tools</strong> into routine reporting and document prep, cutting admin time and freeing capacity for cost and supplier analysis.</li>
+            <li>Coordinate <strong>planning and scheduling across 15 or more construction and maintenance projects</strong> (usually MAD 100,000 to 500,000, about &pound;8,000 to &pound;40,000), tracking progress against milestones from start to handover.</li>
+            <li>Track <strong>cost and material spend against budget</strong> on 2 to 5 projects at a time, flagging differences early so decisions use current figures rather than estimates.</li>
+            <li>Manage a <strong>supplier base of over 20</strong>, coordinating orders and sorting out supply issues before they affect the schedule.</li>
+            <li>Keep cost logs, project records and site documentation in Excel, and pull supplier and site data into regular <strong>progress and cost summaries</strong> for the business owner.</li>
+            <li>Started using <strong>AI and digital tools</strong> for routine reporting and document work, which cut the time spent on admin.</li>
           </ul>
         </div>
       </div>
@@ -860,10 +842,10 @@
           </div>
           <div class="t-org">University of Huddersfield Students' Union <span class="sep">/</span> UK</div>
           <ul>
-            <li>Elected president of a <strong>100+ member cultural society</strong>, leading a committee and a full programme of events across the academic year &mdash; planning schedules, allocating tasks and tracking delivery to deadline.</li>
-            <li>Managed the <strong>society budget</strong>, monitoring spend against allocation and reporting activity to the Students' Union.</li>
-            <li>Grew engagement and attendance through a planned content and communications strategy, building consistent turnout across the year.</li>
-            <li>Won <strong>Best Global Society</strong> and the <strong>Social Media Award</strong>, competing against larger, longer-established societies with greater membership and resources.</li>
+            <li>Elected president of a <strong>society of over 100 members</strong>, leading a committee and a full programme of events across the academic year. Planned schedules, assigned tasks and tracked delivery to deadline.</li>
+            <li>Managed the <strong>society budget</strong>, tracked spend against the allocation and reported activity to the Students' Union.</li>
+            <li>Grew attendance with a planned content and communications approach, keeping turnout steady through the year.</li>
+            <li>Won <strong>Best Global Society</strong> and the <strong>Social Media Award</strong>, against larger and more established societies.</li>
           </ul>
         </div>
       </div>
@@ -879,7 +861,7 @@
           <ul>
             <li>Chosen to <strong>represent 40 students</strong> on the Business, Management and Law foundation year, acting as the link between students and staff.</li>
             <li>Collected feedback across the cohort, identified the issues that came up most often, and raised them with tutors and course leaders in staff meetings.</li>
-            <li>Followed each issue through to a resolution, then reported back to the group &mdash; keeping the trust of both students and staff.</li>
+            <li>Followed each issue through to a resolution and reported back to the group.</li>
           </ul>
         </div>
       </div>
@@ -896,7 +878,7 @@
             <li>Provided administrative and coordination support to the manager across daily office operations for a transport business.</li>
             <li>Maintained invoices, delivery documentation and client records, checking figures and details for accuracy before filing.</li>
             <li>Used <strong>Microsoft Excel and Office daily</strong> to log operational data, track deliveries and produce records for the manager.</li>
-            <li>Handled calls and email correspondence with clients, drivers and suppliers, chasing outstanding items to closure while managing competing priorities against daily and weekly deadlines.</li>
+            <li>Handled calls and emails with clients, drivers and suppliers, following up on outstanding items and managing several tasks against daily and weekly deadlines.</li>
           </ul>
         </div>
       </div>
@@ -909,8 +891,8 @@
   <div class="wrap">
     <div class="section-head r-up">
       <p class="eyebrow">Projects</p>
-      <h2 class="h-reveal">What I actually built</h2>
-      <p>Roles have titles. These are the specific things I planned, ran, and saw through to the end.</p>
+      <h2 class="h-reveal">Projects</h2>
+      <p>Specific pieces of work I planned and saw through.</p>
     </div>
 
     <div class="proj-grid">
@@ -918,52 +900,48 @@
         <span class="proj-tag tag-amber"><svg class="icon" style="width:13px;height:13px"><use href="#i-target"/></svg>Leadership</span>
         <h3>Society Annual Events Programme</h3>
         <div class="proj-meta">University of Huddersfield · 2023 to 2025</div>
-        <p>Planned and delivered a full calendar of events across the academic year for a student society
-          of 100+ members. Managed timelines, coordinated a small team, handled logistics and venue
-          bookings, and tracked budget. Every event had a defined goal, a deadline, and a debrief
-          afterward.</p>
+        <p>Planned and delivered a full calendar of events across the academic year for a society of over
+          100 members. Managed timelines, a small team, logistics and venue bookings, and tracked the
+          budget. Each event had a clear goal, a deadline and a short review afterwards.</p>
       </div>
 
       <div class="proj-card spot r-up">
         <span class="proj-tag"><svg class="icon" style="width:13px;height:13px"><use href="#i-layers"/></svg>Operations</span>
         <h3>Cost &amp; Supplier Control, M2C Projects</h3>
         <div class="proj-meta">M2C Maroc · 2020 to Present</div>
-        <p>Run cost tracking and supplier coordination across 15+ live construction projects worth
-          MAD 100,000&ndash;500,000 each. Maintain budget vs. actual cost logs on 2&ndash;5 concurrent jobs,
-          flag variances early, manage 20+ suppliers, and consolidate site data into regular progress
-          and cost summaries for the owner.</p>
+        <p>Run cost tracking and supplier coordination across 15 or more construction projects, each
+          worth about MAD 100,000 to 500,000. Keep budget and actual cost logs on 2 to 5 jobs at a time,
+          flag differences early, manage over 20 suppliers, and pull site data into regular progress and
+          cost summaries for the owner.</p>
       </div>
 
       <div class="proj-card spot r-up">
         <span class="proj-tag tag-teal"><svg class="icon" style="width:13px;height:13px"><use href="#i-award"/></svg>Marketing</span>
         <h3>Society Social Media Rebrand</h3>
         <div class="proj-meta">University of Huddersfield · 2023</div>
-        <p>Took ownership of rebuilding the society's online presence from scratch. Planned a content
-          schedule, created posts consistently, tracked engagement, and adjusted the approach based on
-          what was working. Ended the year winning the Social Media Award.</p>
+        <p>Rebuilt the society's social media from the ground up. Set a content schedule, posted
+          consistently, tracked engagement and adjusted based on what worked. The society won the Social
+          Media Award that year.</p>
       </div>
 
       <div class="proj-card spot r-up">
         <span class="proj-tag"><svg class="icon" style="width:13px;height:13px"><use href="#i-cap"/></svg>Academic</span>
         <h3>Project Risk Management Simulation</h3>
         <div class="proj-meta">MSc Project Management, LJMU · 2025</div>
-        <p>Took part in a live simulation where the team had to manage a project through unexpected risk
-          events in real time. Built a risk register, scored each risk by likelihood and impact, and made
-          decisions on how to respond as situations developed. Good practice for staying calm and
-          structured when things do not go to plan.</p>
+        <p>Team simulation where we managed a project through a series of risk events. Built a risk
+          register, scored each risk by likelihood and impact, and decided how to respond as the
+          situation changed. Good practice for working through problems in a structured way.</p>
       </div>
 
       <div class="proj-card proj-full proj-featured spot r-up">
         <span class="proj-tag"><svg class="icon" style="width:13px;height:13px"><use href="#i-cap"/></svg>Dissertation, in progress</span>
         <h3>Research into AI in Construction</h3>
         <div class="proj-meta">MSc Project Management, LJMU · 2025 to 2026</div>
-        <p>My dissertation examines how the construction and infrastructure sector is adopting AI across
-          planning, scheduling, cost control and on-site monitoring &mdash; and what it changes for the
-          people managing projects day to day.</p>
-        <p>Rather than rely on vendor material, I'm running <strong>primary research</strong>: reaching
-          out to practitioners in contractors, consultancies and client organisations to hear which tools
-          they actually use, where the value is real, and where it falls short. The goal is a grounded,
-          practitioner-led view of where project delivery is heading &mdash; not a marketing one.</p>
+        <p>My dissertation looks at how construction and infrastructure companies are starting to use AI
+          in planning, scheduling, cost control and site monitoring, and what that changes for the people
+          running projects.</p>
+        <p>For the research I am speaking to people who work at contractors, consultancies and client
+          organisations about which tools they actually use and whether they help. Finishing in 2026.</p>
       </div>
     </div>
   </div>
@@ -974,14 +952,14 @@
   <div class="wrap">
     <div class="section-head r-up">
       <p class="eyebrow">Education</p>
-      <h2 class="h-reveal">Academic foundation</h2>
+      <h2 class="h-reveal">Education</h2>
     </div>
 
     <div class="edu-grid">
       <div class="edu-card spot r-up">
         <div class="edu-icon"><svg class="icon" style="width:20px;height:20px"><use href="#i-cap"/></svg></div>
         <h3>MSc Project Management</h3>
-        <div class="inst">Liverpool John Moores University, UK · PRINCE2 methodology in modules</div>
+        <div class="inst">Liverpool John Moores University, UK. Includes PRINCE2, studied and examined as part of the course.</div>
         <div class="meta"><span class="date">2025 to Present</span><span class="grade">Predicted First Class</span></div>
       </div>
       <div class="edu-card spot r-up">
@@ -996,11 +974,23 @@
         <div class="inst">University of Huddersfield, UK · Foundation Year</div>
         <div class="meta"><span class="date">2021 to 2022</span><span class="grade">First-Class</span></div>
       </div>
+      <div class="edu-card spot r-up">
+        <div class="edu-icon"><svg class="icon" style="width:20px;height:20px"><use href="#i-cap"/></svg></div>
+        <h3>Baccalaureate, Economics</h3>
+        <div class="inst">Morocco. Economics, accounting, finance, business organisation and mathematics.</div>
+        <div class="meta"><span class="date">2018 to 2020</span></div>
+      </div>
     </div>
 
     <div style="margin-top:60px;">
       <p class="eyebrow">Certifications</p>
       <div class="cert-grid" style="margin-top:22px;">
+        <div class="cert-card spot r-up">
+          <div class="cert-icon"><svg class="icon" style="width:18px;height:18px"><use href="#i-award"/></svg></div>
+          <h4>PRINCE2 Foundation</h4>
+          <div class="issuer">Studied and examined, MSc module (LJMU)</div>
+          <div class="when">2025</div>
+        </div>
         <div class="cert-card spot r-up">
           <div class="cert-icon"><svg class="icon" style="width:18px;height:18px"><use href="#i-award"/></svg></div>
           <h4>Google Project Management</h4>
@@ -1035,8 +1025,8 @@
   <div class="wrap">
     <div class="section-head r-up">
       <p class="eyebrow">Skills</p>
-      <h2 class="h-reveal">What I bring to a project</h2>
-      <p>From the site to the spreadsheet.</p>
+      <h2 class="h-reveal">Skills</h2>
+      <p>Grouped by area.</p>
     </div>
 
     <div class="skills-grid">
@@ -1110,38 +1100,30 @@
 <section id="learning" class="section-pad">
   <div class="wrap">
     <div class="section-head r-up">
-      <p class="eyebrow">Initiative</p>
-      <h2 class="h-reveal">On my own time</h2>
-      <p>The gap between "student" and "ready to contribute" is closed by what you do when nobody sets it.</p>
+      <p class="eyebrow">Currently</p>
+      <h2 class="h-reveal">What I am working on now</h2>
+      <p>A few things I am learning or practising outside of set coursework.</p>
     </div>
 
     <div class="learn-grid">
       <div class="learn-card spot r-up">
-        <span class="learn-k">Applying</span>
-        <h3>AI tools on real project work</h3>
-        <p>I test AI assistants against live tasks from the family business &mdash; drafting progress
-          reports, summarising site notes, preparing documents &mdash; then keep what genuinely saves
-          time and drop what doesn't. It's also the practical half of my dissertation.</p>
+        <span class="learn-k">Trying</span>
+        <h3>AI tools for reporting</h3>
+        <p>I try AI tools on real tasks from the family business, such as drafting progress reports and
+          summarising site notes, and keep the ones that save time. This also feeds into my
+          dissertation.</p>
       </div>
       <div class="learn-card spot r-up">
-        <span class="learn-k">Building</span>
-        <h3>Power BI &amp; Microsoft Project</h3>
-        <p>Self-taught. I'm rebuilding my own project cost logs as Power BI dashboards and turning past
-          jobs into Microsoft Project schedules, so I'm fluent in the tools larger programmes run on
-          before I'm asked to use them.</p>
+        <span class="learn-k">Practising</span>
+        <h3>Power BI and Microsoft Project</h3>
+        <p>Teaching myself both. I rebuild my own project cost data as Power BI reports and set up past
+          jobs as Microsoft Project schedules for practice.</p>
       </div>
       <div class="learn-card spot r-up">
-        <span class="learn-k">Studying</span>
-        <h3>PRINCE2, properly</h3>
-        <p>Working through the full method alongside my MSc modules &mdash; stages, product-based
-          planning, tolerances and controls &mdash; not just the parts that come up in an exam.</p>
-      </div>
-      <div class="learn-card spot r-up">
-        <span class="learn-k">Following</span>
-        <h3>Where the industry is heading</h3>
-        <p>I read and speak to people about how contractors, consultancies and clients are actually
-          adopting AI in planning, scheduling and monitoring &mdash; so I can talk about it from evidence,
-          not headlines.</p>
+        <span class="learn-k">Reading</span>
+        <h3>How the industry is changing</h3>
+        <p>I follow how construction companies are starting to use AI in planning and scheduling. It is
+          also the topic of my dissertation.</p>
       </div>
     </div>
   </div>
@@ -1154,10 +1136,9 @@
       <div class="cta-band-photo" aria-hidden="true">
         <img src="assets/photos/hardhats-blueprints.jpg" alt="" loading="lazy">
       </div>
-      <h2 class="h-reveal">Let us talk about your next project</h2>
-      <p>Open to graduate and early-career roles in project controls, cost management and construction
-        project management. Right to work in the UK. If any of this looks like a fit, I would love to
-        hear from you.</p>
+      <h2 class="h-reveal">Get in touch</h2>
+      <p>I am looking for graduate or early-career roles in project controls and construction project
+        management. I have the right to work in the UK. If this looks like a fit, please get in touch.</p>
       <div class="cta-buttons">
         <a href="mailto:achrafdaou69@gmail.com" class="btn btn-accent">
           <svg class="icon" style="width:16px;height:16px"><use href="#i-mail"/></svg> achrafdaou69@gmail.com

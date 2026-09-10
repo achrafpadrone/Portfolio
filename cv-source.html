@@ -4,32 +4,35 @@
 <meta charset="utf-8">
 <title>Achraf Daou CV</title>
 <style>
-  @page { size: A4; margin: 12mm 13mm; }
+  @page { size: A4; margin: 12mm 14mm; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body {
-    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: Arial, "Helvetica Neue", "Segoe UI", sans-serif;
     color: #1b1b1e;
     font-size: 10.5pt;
     line-height: 1.45;
   }
+  a { color: #2E4B86; text-decoration: none; }
+
+  /* ---- Header (centered) ---- */
+  header { text-align: center; }
   .name {
-    font-size: 23pt;
+    font-size: 22pt;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
     color: #16233f;
   }
   .title-line {
-    margin-top: 2px;
+    margin-top: 3px;
     font-size: 10.5pt;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 700;
     color: #2E4B86;
   }
   .contact-line {
     margin-top: 4px;
-    font-size: 9.5pt;
-    color: #4a4c52;
+    font-size: 9.7pt;
+    color: #45474d;
   }
   .rule-top {
     height: 2px;
@@ -41,139 +44,94 @@
     font-size: 11.5pt;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.09em;
     color: #16233f;
     border-bottom: 1.4px solid #16233f;
     padding-bottom: 3px;
-    margin-top: 11px;
+    margin-top: 12px;
     margin-bottom: 7px;
+    page-break-after: avoid;
   }
 
-  p.profile { font-size: 10.6pt; line-height: 1.48; text-align: justify; }
+  p.summary { font-size: 10.6pt; line-height: 1.45; }
 
   /* ---- Skills ---- */
-  .skill-row {
-    display: grid;
-    grid-template-columns: 122px 1fr;
-    gap: 12px;
-    padding: 2px 0;
-    page-break-inside: avoid;
+  p.skill {
+    font-size: 10.3pt;
+    line-height: 1.42;
+    margin-bottom: 4px;
   }
-  .skill-row + .skill-row { border-top: 1px solid #eceae3; }
-  .skill-label { font-weight: 700; font-size: 9.8pt; color: #16233f; }
-  .skill-items { font-size: 9.8pt; line-height: 1.42; color: #303138; }
+  p.skill strong { color: #16233f; }
 
   /* ---- Experience ---- */
-  .job { margin-bottom: 6px; }
-  .job-head, .job-org { page-break-after: avoid; }
-  .job-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 14px;
-  }
+  .job { margin-bottom: 7px; }
   .job-title { font-size: 10.8pt; font-weight: 700; color: #1b1b1e; }
-  .job-dates { font-size: 9.7pt; color: #4a4c52; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .job-org { font-size: 9.7pt; color: #4a4c52; margin-top: 1px; }
-  ul.bullets { list-style: none; margin-top: 5px; }
+  .job-org { font-size: 9.8pt; color: #45474d; margin-top: 1px; page-break-after: avoid; }
+  ul.bullets { list-style: disc; margin: 4px 0 0 17px; }
   ul.bullets li {
-    position: relative;
-    padding-left: 14px;
     font-size: 10.2pt;
-    line-height: 1.38;
+    line-height: 1.36;
     margin-bottom: 2px;
-  }
-  ul.bullets li::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 6px;
-    width: 5px; height: 5px;
-    background: #2E4B86;
-    border-radius: 1px;
+    padding-left: 2px;
   }
   ul.bullets li strong { font-weight: 700; color: #1b1b1e; }
 
   /* ---- Education ---- */
   .edu { margin-bottom: 4px; page-break-inside: avoid; }
-  .edu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
   .edu-title { font-size: 10.5pt; font-weight: 700; }
-  .edu-dates { font-size: 9.7pt; color: #4a4c52; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .edu-sub { font-size: 9.7pt; color: #45474d; margin-top: 1px; }
+  .edu-sub { font-size: 9.8pt; color: #45474d; margin-top: 1px; }
 
   /* ---- Certifications ---- */
   ul.certs { list-style: none; }
   ul.certs li {
     font-size: 10.3pt;
-    line-height: 1.36;
-    padding: 4px 0;
+    line-height: 1.38;
+    padding: 3px 0;
     page-break-inside: avoid;
   }
   ul.certs li + li { border-top: 1px solid #eceae3; }
   ul.certs .c-name { font-weight: 700; color: #1b1b1e; }
-  ul.certs .c-meta { color: #4a4c52; }
-
-  h2.section { page-break-after: avoid; }
+  ul.certs .c-meta { color: #45474d; }
 </style>
 </head>
 <body>
 
-  <div class="name">Achraf Daou</div>
-  <div class="title-line">MSc Project Management &nbsp;·&nbsp; Project Support &amp; Controls &nbsp;·&nbsp; Trilingual (English, French, Arabic)</div>
-  <div class="contact-line">
-    <span>Liverpool, UK (open to relocating)</span> &nbsp;·&nbsp;
-    <span>+44 7771 071562</span> &nbsp;·&nbsp;
-    <span>achrafdaou69@gmail.com</span> &nbsp;·&nbsp;
-    <span>linkedin.com/in/achraf-daou</span> &nbsp;·&nbsp;
-    <span>Right to work in the UK</span>
-  </div>
+  <header>
+    <div class="name">Achraf Daou</div>
+    <div class="title-line">MSc Project Management &nbsp;&middot;&nbsp; Project Support &amp; Controls &nbsp;&middot;&nbsp; Trilingual (English, French, Arabic)</div>
+    <div class="contact-line">
+      Liverpool, UK (open to relocating) &nbsp;&middot;&nbsp;
+      +44 7771 071562 &nbsp;&middot;&nbsp;
+      achrafdaou69@gmail.com &nbsp;&middot;&nbsp;
+      <a href="https://www.linkedin.com/in/achraf-daou/">LinkedIn</a> &nbsp;&middot;&nbsp;
+      <a href="https://achrafpadrone.github.io/Portfolio/">Portfolio</a> &nbsp;&middot;&nbsp;
+      Right to work in the UK
+    </div>
+  </header>
   <div class="rule-top"></div>
 
-  <h2 class="section">Profile</h2>
-  <p class="profile">
-    MSc Project Management student with five years supporting live construction projects, from scheduling
-    and cost tracking to procurement and site records across more than fifteen jobs. Precise with figures
-    and documentation, comfortable in Excel, PRINCE2 and data analytics, and recently shadowed a project
-    manager on a major rail programme to see how large infrastructure is run day to day. Keen to bring
-    that mix of hands-on delivery and formal training into a graduate project or project controls role
-    and add value quickly.
+  <h2 class="section">Professional Summary</h2>
+  <p class="summary">
+    An MSc Project Management student with five years already spent supporting live construction projects,
+    covering scheduling, cost tracking, procurement and site records across more than fifteen jobs.
+    Comfortable with Excel, PRINCE2 and data analytics, and recently spent time shadowing a project
+    manager on a major rail programme to see how large infrastructure is controlled day to day. Early in
+    my career, quick to learn, and motivated to build a strong record in project delivery or project
+    controls.
   </p>
 
   <h2 class="section">Skills</h2>
-  <div class="section-block">
-    <div class="skill-row">
-      <div class="skill-label">Project Controls &amp; Delivery</div>
-      <div class="skill-items">Cost tracking and budget control · Project scheduling · Progress and milestone monitoring · Risk management · Change control · Procurement and supplier coordination · Project documentation and reporting · Project lifecycle from initiation to handover · PRINCE2 methodology</div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-label">Reporting, Data &amp; Tools</div>
-      <div class="skill-items">Microsoft Excel (formulas, pivot tables, lookups) · Microsoft Project · Power BI · Data analysis · KPIs and performance metrics · Dashboards and data visualisation · Microsoft Office · Google Workspace · AI tools for reporting and documents</div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-label">Business &amp; Commercial</div>
-      <div class="skill-items">Operations management · Business analysis · Budgeting and forecasting · Cost and variance analysis · Process improvement · Strategy and planning · Decision making · Economics</div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-label">Communication &amp; People</div>
-      <div class="skill-items">Client and stakeholder liaison · Supplier negotiation · Report and proposal writing · Presentations · Team leadership · Committee and event coordination · Conflict management and de-escalation</div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-label">Personal Effectiveness</div>
-      <div class="skill-items">Attention to detail · Organisation and prioritisation · Meeting deadlines · Problem solving · Adaptability · Working under pressure · Health and safety awareness</div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-label">Languages</div>
-      <div class="skill-items">English (fluent) · French (fluent) · Arabic (fluent)</div>
-    </div>
-  </div>
+  <p class="skill"><strong>Project controls:</strong> cost tracking and budgeting, scheduling, progress and milestone monitoring, risk and change control, procurement and supplier coordination, project documentation, PRINCE2 method.</p>
+  <p class="skill"><strong>Tools and data:</strong> Microsoft Excel (formulas, pivot tables, lookups), Microsoft Project, Power BI, data analysis, KPIs and dashboards, Microsoft Office, AI tools for reporting.</p>
+  <p class="skill"><strong>Business:</strong> operations management, business analysis, budgeting and forecasting, cost and variance analysis, process improvement.</p>
+  <p class="skill"><strong>Strengths:</strong> attention to detail, organisation, meeting deadlines, stakeholder and supplier communication, problem solving, working under pressure.</p>
+  <p class="skill"><strong>Languages:</strong> English, French and Arabic (all fluent).</p>
 
   <h2 class="section">Work Experience</h2>
 
   <div class="job">
-    <div class="job-head">
-      <span class="job-title">Operations Management &amp; Project Support</span>
-      <span class="job-dates">Apr 2020 to Present</span>
-    </div>
-    <div class="job-org">M2C Maroc &nbsp;·&nbsp; Kénitra, Morocco</div>
+    <div class="job-title">Operations Management and Project Support</div>
+    <div class="job-org">M2C Maroc, K&eacute;nitra, Morocco &nbsp;&middot;&nbsp; April 2020 to Present</div>
     <ul class="bullets">
       <li>Coordinate <strong>planning and scheduling across 15 or more construction and maintenance projects</strong>, typically MAD 100,000 to 500,000 (about &pound;8,000 to &pound;40,000), tracking progress against milestones from initiation to handover.</li>
       <li>Track <strong>cost and material spend against budget</strong> on 2 to 5 concurrent projects, flagging variances early so decisions are made on current figures rather than estimates.</li>
@@ -184,24 +142,18 @@
   </div>
 
   <div class="job">
-    <div class="job-head">
-      <span class="job-title">Job Shadowing, Construction Project Manager</span>
-      <span class="job-dates">Summer 2025</span>
-    </div>
-    <div class="job-org">ONCF, Office National des Chemins de Fer &nbsp;·&nbsp; Rabat, Morocco</div>
+    <div class="job-title">Job Shadowing, Construction Project Manager</div>
+    <div class="job-org">ONCF (Office National des Chemins de Fer), Rabat, Morocco &nbsp;&middot;&nbsp; Summer 2025</div>
     <ul class="bullets">
-      <li>Arranged a <strong>volunteer placement</strong> to shadow a project manager on ONCF's rail programme in Rabat, linked to the planned 3.3 km tunnel under the Bou Regreg river between Rabat Agdal and Salé.</li>
+      <li>Arranged a <strong>volunteer placement</strong> to shadow a project manager on ONCF's rail programme in Rabat, linked to the planned 3.3 km tunnel under the Bou Regreg river between Rabat Agdal and Sal&eacute;.</li>
       <li>Followed the project manager through full working weeks: site walks, progress meetings with contractors and the engineer, and the reporting that followed.</li>
       <li>Learned how a large public infrastructure job is controlled day to day, how the master programme is broken into activities, and how site instructions, requests for information and design queries are logged and chased between client, designer and contractor.</li>
     </ul>
   </div>
 
   <div class="job">
-    <div class="job-head">
-      <span class="job-title">President, Moroccan Global Society</span>
-      <span class="job-dates">Sep 2023 to Jun 2025</span>
-    </div>
-    <div class="job-org">University of Huddersfield Students' Union &nbsp;·&nbsp; UK</div>
+    <div class="job-title">President, Moroccan Global Society</div>
+    <div class="job-org">University of Huddersfield Students' Union, UK &nbsp;&middot;&nbsp; September 2023 to June 2025</div>
     <ul class="bullets">
       <li>Led a committee delivering a full programme of events for <strong>over 100 members</strong>, planning schedules, allocating tasks and tracking delivery to deadline.</li>
       <li>Managed the <strong>society budget</strong>, monitored spend against allocation and reported activity to the Students' Union.</li>
@@ -210,22 +162,16 @@
   </div>
 
   <div class="job">
-    <div class="job-head">
-      <span class="job-title">Student Course Representative</span>
-      <span class="job-dates">Sep 2021 to Jun 2022</span>
-    </div>
-    <div class="job-org">University of Huddersfield ISC &nbsp;·&nbsp; UK</div>
+    <div class="job-title">Student Course Representative</div>
+    <div class="job-org">University of Huddersfield ISC, UK &nbsp;&middot;&nbsp; September 2021 to June 2022</div>
     <ul class="bullets">
       <li>Chosen to <strong>represent 40 students</strong>, gathering feedback, raising issues with tutors and course leaders, and following each one through to resolution.</li>
     </ul>
   </div>
 
   <div class="job">
-    <div class="job-head">
-      <span class="job-title">Administrative Assistant</span>
-      <span class="job-dates">Feb 2019 to Aug 2019</span>
-    </div>
-    <div class="job-org">STE Wild Five Nine SARL &nbsp;·&nbsp; Morocco</div>
+    <div class="job-title">Administrative Assistant</div>
+    <div class="job-org">STE Wild Five Nine SARL, Morocco &nbsp;&middot;&nbsp; February 2019 to August 2019</div>
     <ul class="bullets">
       <li>Maintained invoices, delivery documentation and client records, checking figures and details for accuracy before filing.</li>
       <li>Used <strong>Microsoft Excel and Office daily</strong> to log operational data, track deliveries and produce records for the manager.</li>
@@ -235,46 +181,34 @@
   <h2 class="section">Education</h2>
 
   <div class="edu">
-    <div class="edu-head">
-      <span class="edu-title">MSc Project Management</span>
-      <span class="edu-dates">2025 to Present</span>
-    </div>
-    <div class="edu-sub">Liverpool John Moores University, UK &nbsp;·&nbsp; Predicted First Class. Includes PRINCE2 methodology, studied and examined as part of the course.</div>
+    <div class="edu-title">MSc Project Management</div>
+    <div class="edu-sub">Liverpool John Moores University, UK &nbsp;&middot;&nbsp; 2025 to Present &nbsp;&middot;&nbsp; Predicted First Class. Includes PRINCE2 methodology, studied and examined as part of the course.</div>
   </div>
 
   <div class="edu">
-    <div class="edu-head">
-      <span class="edu-title">BA (Hons) Business Management</span>
-      <span class="edu-dates">2022 to 2025</span>
-    </div>
-    <div class="edu-sub">University of Huddersfield, UK &nbsp;·&nbsp; 2:1 Honours. Operations, finance, strategy and business analysis.</div>
+    <div class="edu-title">BA (Hons) Business Management</div>
+    <div class="edu-sub">University of Huddersfield, UK &nbsp;&middot;&nbsp; 2022 to 2025 &nbsp;&middot;&nbsp; 2:1 Honours. Operations, finance, strategy and business analysis.</div>
   </div>
 
   <div class="edu">
-    <div class="edu-head">
-      <span class="edu-title">Business, Management and Law (Foundation Year)</span>
-      <span class="edu-dates">2021 to 2022</span>
-    </div>
-    <div class="edu-sub">University of Huddersfield, UK &nbsp;·&nbsp; First-Class.</div>
+    <div class="edu-title">Business, Management and Law (Foundation Year)</div>
+    <div class="edu-sub">University of Huddersfield, UK &nbsp;&middot;&nbsp; 2021 to 2022 &nbsp;&middot;&nbsp; First-Class.</div>
   </div>
 
   <div class="edu">
-    <div class="edu-head">
-      <span class="edu-title">Baccalaureate, Economics</span>
-      <span class="edu-dates">2018 to 2020</span>
-    </div>
-    <div class="edu-sub">Morocco &nbsp;·&nbsp; Economics, accounting, finance, business organisation and mathematics.</div>
+    <div class="edu-title">Baccalaureate, Economics</div>
+    <div class="edu-sub">Morocco &nbsp;&middot;&nbsp; 2018 to 2020 &nbsp;&middot;&nbsp; Economics, accounting, finance and mathematics.</div>
   </div>
 
   <h2 class="section">Certifications</h2>
   <ul class="certs">
-    <li><span class="c-name">SIA Door Supervisor Licence</span><br><span class="c-meta">Security Industry Authority &nbsp;·&nbsp; conflict management, physical intervention and licensing law &nbsp;·&nbsp; Current</span></li>
-    <li><span class="c-name">Emergency First Aid at Work (EFAW), Level 3 Award (RQF)</span><br><span class="c-meta">Qualsafe, with Management of Catastrophic Bleeding &nbsp;·&nbsp; 2026 to 2029</span></li>
-    <li><span class="c-name">PRINCE2 Foundation</span><br><span class="c-meta">Studied and examined within the MSc, Liverpool John Moores University &nbsp;·&nbsp; 2025</span></li>
-    <li><span class="c-name">Google Project Management Professional Certificate</span><br><span class="c-meta">Coursera &nbsp;·&nbsp; 2025</span></li>
-    <li><span class="c-name">Google Data Analytics Professional Certificate</span><br><span class="c-meta">Coursera &nbsp;·&nbsp; 2025</span></li>
-    <li><span class="c-name">Fundamentals of Digital Marketing</span><br><span class="c-meta">Google &nbsp;·&nbsp; 2025</span></li>
-    <li><span class="c-name">Inbound Marketing</span><br><span class="c-meta">HubSpot Academy &nbsp;·&nbsp; 2025 to 2027</span></li>
+    <li><span class="c-name">SIA Door Supervisor Licence</span><br><span class="c-meta">Security Industry Authority &nbsp;&middot;&nbsp; current</span></li>
+    <li><span class="c-name">Emergency First Aid at Work (EFAW), Level 3 Award (RQF)</span><br><span class="c-meta">Qualsafe, with Management of Catastrophic Bleeding &nbsp;&middot;&nbsp; 2026 to 2029</span></li>
+    <li><span class="c-name">PRINCE2 Foundation</span><br><span class="c-meta">Studied and examined within the MSc, Liverpool John Moores University &nbsp;&middot;&nbsp; 2025</span></li>
+    <li><span class="c-name">Google Project Management Professional Certificate</span><br><span class="c-meta">Coursera &nbsp;&middot;&nbsp; 2025</span></li>
+    <li><span class="c-name">Google Data Analytics Professional Certificate</span><br><span class="c-meta">Coursera &nbsp;&middot;&nbsp; 2025</span></li>
+    <li><span class="c-name">Fundamentals of Digital Marketing</span><br><span class="c-meta">Google &nbsp;&middot;&nbsp; 2025</span></li>
+    <li><span class="c-name">Inbound Marketing</span><br><span class="c-meta">HubSpot Academy &nbsp;&middot;&nbsp; 2025 to 2027</span></li>
   </ul>
 
 </body>

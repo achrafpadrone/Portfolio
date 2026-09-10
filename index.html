@@ -769,6 +769,54 @@
   @media (max-width:720px){
     .section-head{ margin-bottom:34px; }
   }
+
+  /* ==========================================================================
+     CONTACT — clearer actions and a visible, copyable address
+     ========================================================================== */
+  .cta-buttons{ gap:12px; }
+  .btn-lg{ padding:15px 26px; font-size:15px; }
+  .cta-band .btn-accent{ box-shadow:0 14px 34px -18px rgba(0,0,0,.7); }
+  .cta-band .btn-ghost{ border-color:rgba(245,243,237,.4); color:#fff; }
+  .cta-band .btn-ghost:hover{ border-color:#fff; background:rgba(245,243,237,.12); }
+
+  .contact-email{
+    position:relative; z-index:2; margin-top:28px;
+    display:flex; flex-direction:column; align-items:center; gap:11px;
+  }
+  .ce-label{
+    font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:rgba(245,243,237,.5);
+  }
+  .ce-row{
+    display:flex; align-items:stretch;
+    background:rgba(245,243,237,.07);
+    border:1px solid rgba(245,243,237,.18);
+    border-radius:12px; overflow:hidden;
+  }
+  .ce-address{
+    display:flex; align-items:center; padding:13px 18px;
+    font-size:15.5px; font-weight:500; color:#fff; letter-spacing:.01em;
+    transition:background .2s ease;
+  }
+  .ce-address:hover{ background:rgba(245,243,237,.09); }
+  .ce-copy{
+    display:flex; align-items:center; gap:7px; padding:13px 17px;
+    font-size:13px; font-weight:600; color:rgba(245,243,237,.82);
+    border-left:1px solid rgba(245,243,237,.18);
+    transition:background .2s ease, color .2s ease;
+  }
+  .ce-copy:hover{ background:rgba(245,243,237,.12); color:#fff; }
+  .ce-copy .ce-ic-check{ display:none; }
+  .contact-email.copied .ce-copy{ color:#8FE0B4 !important; }
+  .contact-email.copied .ce-ic-copy{ display:none; }
+  .contact-email.copied .ce-ic-check{ display:block; color:#8FE0B4; }
+  .ce-note{ font-size:13px; color:rgba(245,243,237,.62); }
+
+  @media (max-width:520px){
+    .ce-row{ flex-direction:column; width:100%; max-width:320px; }
+    .ce-address{ justify-content:center; word-break:break-all; }
+    .ce-copy{ border-left:0; border-top:1px solid rgba(245,243,237,.18); justify-content:center; }
+  }
 </style>
 </head>
 <body>
@@ -1390,15 +1438,28 @@
       <p>I am looking for graduate or early-career roles in project management or business management,
         in any sector. I have the right to work in the UK. If this looks like a fit, please get in touch.</p>
       <div class="cta-buttons">
-        <a href="mailto:achrafdaou69@gmail.com" class="btn btn-accent">
-          <svg class="icon" style="width:16px;height:16px"><use href="#i-mail"/></svg> achrafdaou69@gmail.com
+        <a href="mailto:achrafdaou69@gmail.com?subject=Hello%20Achraf" class="btn btn-accent btn-lg" id="emailMeBtn">
+          <svg class="icon" style="width:17px;height:17px"><use href="#i-mail"/></svg> Email me
         </a>
-        <button class="btn btn-ghost" id="copyEmailBtn">
-          <svg class="icon" style="width:15px;height:15px"><use href="#i-copy"/></svg> Copy email
-        </button>
-        <a href="https://www.linkedin.com/in/achraf-daou/" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg class="icon" style="width:15px;height:15px"><use href="#i-linkedin"/></svg> LinkedIn
+        <a href="https://www.linkedin.com/in/achraf-daou/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <svg class="icon" style="width:16px;height:16px"><use href="#i-linkedin"/></svg> Connect on LinkedIn
         </a>
+        <a href="assets/Achraf-Daou-CV.pdf" download class="btn btn-ghost btn-lg">
+          <svg class="icon" style="width:16px;height:16px"><use href="#i-download"/></svg> Download CV
+        </a>
+      </div>
+
+      <div class="contact-email" id="contactEmail">
+        <span class="ce-label">Or reach me directly</span>
+        <div class="ce-row">
+          <a href="mailto:achrafdaou69@gmail.com?subject=Hello%20Achraf" class="ce-address">achrafdaou69@gmail.com</a>
+          <button class="ce-copy" id="copyEmailBtn" type="button" aria-label="Copy email address">
+            <svg class="icon ce-ic-copy" style="width:15px;height:15px"><use href="#i-copy"/></svg>
+            <svg class="icon ce-ic-check" style="width:15px;height:15px"><use href="#i-check"/></svg>
+            <span class="ce-copy-text">Copy</span>
+          </button>
+        </div>
+        <span class="ce-note">Every message reaches me. I aim to reply within a day.</span>
       </div>
     </div>
   </div>
@@ -1654,13 +1715,46 @@
 
   // ---------- Copy email ----------
   var copyBtn = document.getElementById('copyEmailBtn');
+  var contactEmail = document.getElementById('contactEmail');
   var toast = document.getElementById('toast');
-  copyBtn.addEventListener('click', function(){
-    navigator.clipboard.writeText('achrafdaou69@gmail.com').then(function(){
+  var EMAIL = 'achrafdaou69@gmail.com';
+  var copyResetTimer;
+
+  function flashCopied(){
+    if(contactEmail){
+      contactEmail.classList.add('copied');
+      var label = copyBtn && copyBtn.querySelector('.ce-copy-text');
+      if(label){ label.textContent = 'Copied'; }
+      clearTimeout(copyResetTimer);
+      copyResetTimer = setTimeout(function(){
+        contactEmail.classList.remove('copied');
+        if(label){ label.textContent = 'Copy'; }
+      }, 2000);
+    }
+    if(toast){
       toast.classList.add('show');
       setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+    }
+  }
+
+  function fallbackCopy(){
+    var ta = document.createElement('textarea');
+    ta.value = EMAIL; ta.setAttribute('readonly', '');
+    ta.style.position = 'absolute'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); flashCopied(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(EMAIL).then(flashCopied).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
     });
-  });
+  }
 })();
 </script>
 </body>

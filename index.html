@@ -623,6 +623,7 @@
   }
   .wk-body h3{font-size:22px; line-height:1.25; margin-bottom:6px;}
   .wk-body p{font-size:15px; color:var(--ink-soft); line-height:1.68; margin-bottom:0;}
+  .wk-body p + p{margin-top:13px;}
   .wk-facts{list-style:none; display:grid; gap:8px; align-content:start; padding-top:2px;}
   .wk-facts li{
     display:flex; gap:9px; align-items:flex-start;
@@ -1536,10 +1537,10 @@
   <div class="wrap">
     <div class="section-head r-up">
       <p class="eyebrow">Workshop</p>
-      <h2 class="h-reveal">Learning tools by building something real</h2>
-      <p>Project work is moving towards 3D coordination, visualisation and better tooling. The way I get
-        comfortable with a tool is to set myself a proper brief and finish it, rather than work through
-        tutorials. This is the most recent one.</p>
+      <h2 class="h-reveal">What I build in my own time</h2>
+      <p>I learn software by giving myself a real brief and finishing it. Tutorials never stick the same
+        way. This is the most recent one, and it taught me more about light, geometry and patience than
+        a course would have.</p>
     </div>
 
     <div class="wk-feature spot r-up">
@@ -1559,17 +1560,19 @@
           <span class="proj-tag tag-teal">
             <svg class="icon" style="width:13px;height:13px"><use href="#i-layers"/></svg>Blender · Python
           </span>
-          <h3>Dar al-Rīḥ — a desert aviation terminal</h3>
-          <div class="proj-meta">Self-directed · Built with AI assistance · 2026</div>
-          <p>A small private aviation terminal set in the Moroccan pre-Sahara, modelled and rendered in
-            Blender. I set the brief — a riad turned inside out for aviation — and the whole aerodrome is
-            generated procedurally from Python rather than modelled by hand, so any dimension, material
-            or time of day can be changed and the scene rebuilds in under three seconds.</p>
+          <h3>Dar al-Rīḥ, a small desert airport</h3>
+          <div class="proj-meta">Personal project · Blender · 2026</div>
+          <p>A private terminal out in the Moroccan pre-Sahara. The plan takes a riad and turns it
+            inside out for aviation: a courtyard at the heart, a bronze lattice screen on the sunny
+            side, and the whole airside face left open to the apron.</p>
+          <p>None of it is modelled by hand. The entire aerodrome is written in Python, so a bay width,
+            a material or the hour of the afternoon is just a number I change, and the scene rebuilds in
+            about three seconds.</p>
         </div>
         <ul class="wk-facts">
-          <li>202,000 faces across 358 objects, no downloaded assets</li>
-          <li>Path-traced in Cycles on GPU</li>
-          <li>Sun angle and exposure solved by measurement, not by eye</li>
+          <li>202,000 faces, 358 objects, nothing downloaded</li>
+          <li>Path traced in Cycles on the GPU</li>
+          <li>Sun angle and exposure worked out by measuring the scene</li>
           <li>Terminal, tower, hangar, aircraft, runway and landscape all scripted</li>
         </ul>
       </div>
@@ -1577,32 +1580,32 @@
 
     <div class="wk-gallery">
       <figure class="wk-shot r-up" data-full="assets/workshop/colonnade.jpg"
-              data-cap="The west gallery. Low afternoon sun rakes through the brise-soleil and stripes the floor; the bronze lattice sits between the columns and the glass.">
+              data-cap="Late afternoon in the west gallery. The roof fins cut the low sun into stripes across the floor, and the lattice screen sits just outside the glass.">
         <img src="assets/workshop/colonnade.jpg" alt="Sunlight striping the floor of a colonnade behind a bronze lattice screen" loading="lazy" decoding="async">
-        <figcaption>Shade as the main material</figcaption>
+        <figcaption>Late sun in the west gallery</figcaption>
       </figure>
       <figure class="wk-shot r-up" data-full="assets/workshop/portal.jpg"
-              data-cap="The landside approach. A still basin holds the whole screen wall upside down; the entry portal is a 10 m gap carried on a transfer beam, so no column stands in the doorway.">
+              data-cap="Coming in from the road. The basin holds the whole screen wall upside down. The doorway is a 10 metre gap with no column in it, carried on a beam overhead.">
         <img src="assets/workshop/portal.jpg" alt="Terminal facade of bronze latticework reflected in a still dark basin" loading="lazy" decoding="async">
         <figcaption>Arrival across the water</figcaption>
       </figure>
       <figure class="wk-shot r-up" data-full="assets/workshop/court.jpg"
-              data-cap="The courtyard at the centre of the plan, open to the sky, with a black reflecting basin and four date palms. Every route through the building passes it.">
+              data-cap="The courtyard sits in the middle of the plan, open to the sky. Black water, four date palms, and every route through the building passes it.">
         <img src="assets/workshop/court.jpg" alt="Open courtyard with date palms reflected in a dark still pool" loading="lazy" decoding="async">
         <figcaption>The courtyard</figcaption>
       </figure>
       <figure class="wk-shot r-up" data-full="assets/workshop/hero.jpg"
-              data-cap="Airside. The north face is open glass onto the apron, giving the lounge both the aircraft view and the good north light.">
+              data-cap="The airside face is all glass, so the lounge gets the aircraft and the soft north light at the same time.">
         <img src="assets/workshop/hero.jpg" alt="Low terminal building beside a parked business jet in the desert" loading="lazy" decoding="async">
         <figcaption>Airside, from the apron</figcaption>
       </figure>
       <figure class="wk-shot r-up" data-full="assets/workshop/aerial.jpg"
-              data-cap="The masterplan: terminal with its central courtyard, hangar, stand and lead-in lines, taxiway link and a 1,400 m runway.">
+              data-cap="The whole site. Terminal and courtyard, the hangar, the stand with its lead-in lines, and a 1,400 metre runway.">
         <img src="assets/workshop/aerial.jpg" alt="Aerial view of the terminal, hangar, apron and runway" loading="lazy" decoding="async">
-        <figcaption>Masterplan</figcaption>
+        <figcaption>The whole site</figcaption>
       </figure>
       <figure class="wk-shot r-up" data-full="assets/workshop/sunset.jpg"
-              data-cap="The screen up close. An eight-point khatim lattice, generated from a cell size and a rule, so a different motif is a small edit rather than a remodel.">
+              data-cap="The screen close up. It is an eight point star pattern built from a cell size and a rule, so swapping the motif is a small edit and not a rebuild.">
         <img src="assets/workshop/sunset.jpg" alt="Close view of a bronze eight-point star lattice screen in low sun" loading="lazy" decoding="async">
         <figcaption>The lattice, close up</figcaption>
       </figure>

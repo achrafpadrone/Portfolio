@@ -584,6 +584,41 @@
   .learn-card p{font-size:15px; color:var(--ink-soft); line-height:1.65;}
   @media (max-width:920px){ .learn-grid{grid-template-columns:1fr;} }
 
+  /* ============================== TOOLBOX ============================== */
+  .tb-grid{display:grid; grid-template-columns:1.45fr .55fr; gap:22px; align-items:start;}
+  .tb-card{
+    display:block; text-decoration:none; color:inherit;
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:26px 28px 24px;
+    transition:transform .4s var(--ease), border-color .3s var(--ease), box-shadow .4s var(--ease);
+  }
+  .tb-card:hover{transform:translateY(-5px); border-color:var(--accent); box-shadow:var(--shadow-lg);}
+  .tb-card h3{font-size:21px; margin:10px 0 8px;}
+  .tb-card p{font-size:15px; color:var(--ink-soft); line-height:1.68; margin-bottom:12px;}
+  .tb-why{font-size:14.5px;}
+  .tb-why strong{color:var(--ink);}
+  .tb-go{
+    display:inline-flex; align-items:center; gap:7px; margin-top:4px;
+    font-size:14px; font-weight:500; color:var(--accent);
+  }
+  .tb-card:hover .tb-go{gap:11px;}
+  .tb-next{
+    background:var(--bg-alt); border:1px solid var(--border); border-radius:var(--radius);
+    padding:24px 24px 22px;
+  }
+  .lbl-sm{
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500; margin-bottom:14px;
+  }
+  .tb-next ul{list-style:none; display:grid; gap:13px;}
+  .tb-next li{font-size:14px; color:var(--ink-soft); line-height:1.55; padding-left:15px; position:relative;}
+  .tb-next li::before{
+    content:""; position:absolute; left:0; top:9px; width:5px; height:5px;
+    border-radius:50%; background:var(--border-strong);
+  }
+  .tb-next li strong{color:var(--ink); font-weight:600;}
+  @media (max-width:920px){ .tb-grid{grid-template-columns:1fr;} }
+
   /* ============================== WORKSHOP ============================== */
   .wk-feature{
     background:var(--surface); border:1px solid var(--border);
@@ -961,6 +996,7 @@
       <li><a href="#education" data-nav>Education</a></li>
       <li><a href="#skills" data-nav>Skills</a></li>
       <li><a href="#learning" data-nav>Currently</a></li>
+      <li><a href="#toolbox" data-nav>Toolbox</a></li>
       <li><a href="#workshop" data-nav>Workshop</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
@@ -1527,6 +1563,43 @@
         <h3>Where the field is heading</h3>
         <p>I keep up with how construction and project teams are adopting new tools and ways of working,
           so I can talk about it sensibly in an interview or on the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TOOLBOX ============================== -->
+<section id="toolbox" class="section-pad">
+  <div class="wrap">
+    <div class="section-head r-up">
+      <p class="eyebrow">Toolbox</p>
+      <h2 class="h-reveal">Small tools I built to do the job faster</h2>
+      <p>Most of project management is the same handful of calculations done under time pressure in a
+        spreadsheet that someone else set up. When I hit one of those often enough, I build a proper
+        tool for it. These run in the browser, work offline, and keep your numbers on your own machine.</p>
+    </div>
+
+    <div class="tb-grid">
+      <a class="tb-card spot r-up" href="toolbox/bid-leveller.html">
+        <span class="proj-tag"><svg class="icon" style="width:13px;height:13px"><use href="#i-target"/></svg>Live tool</span>
+        <h3>Bid Leveller</h3>
+        <p>Five subcontractors quote the same package and no two price it the same way. One excludes the
+          muck away, another calls it provisional, a third buries it in prelims. This levels every quote
+          onto one scope, adds an allowance for what each bidder left out, and flags prices that sit well
+          off the median.</p>
+        <p class="tb-why"><strong>Why it exists:</strong> the lowest headline number is often not the
+          lowest bid. I have watched that cost real money.</p>
+        <span class="tb-go">Open the tool
+          <svg class="icon" style="width:15px;height:15px"><use href="#i-arrow-right"/></svg></span>
+      </a>
+
+      <div class="tb-next r-up">
+        <div class="lbl-sm">Next in the toolbox</div>
+        <ul>
+          <li><strong>Take-off calculator</strong> — pour dimensions in, volumes, waste, loads and cost out.</li>
+          <li><strong>Programme and float</strong> — tasks and dependencies in, critical path and Gantt out.</li>
+          <li><strong>Risk contingency</strong> — Monte Carlo over the risk register for a P50 and P80 figure.</li>
+        </ul>
       </div>
     </div>
   </div>

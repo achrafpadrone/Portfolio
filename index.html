@@ -584,6 +584,109 @@
   .learn-card p{font-size:15px; color:var(--ink-soft); line-height:1.65;}
   @media (max-width:920px){ .learn-grid{grid-template-columns:1fr;} }
 
+  /* ============================== WORKSHOP ============================== */
+  .wk-feature{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+  }
+  /* The clip runs full width as a cinematic band. Side-by-side with the copy,
+     the column stretches to the text height and object-fit:cover would eat
+     nearly half the frame. */
+  .wk-media{position:relative; background:var(--bg-alt);}
+  .wk-media video{display:block; width:100%; aspect-ratio:21/9; object-fit:cover;}
+  .wk-play{
+    position:absolute; inset:0; display:grid; place-items:center; cursor:pointer;
+    border:0; background:linear-gradient(180deg, rgba(12,14,18,.10), rgba(12,14,18,.45));
+    transition:background .3s var(--ease);
+  }
+  .wk-play:hover{background:linear-gradient(180deg, rgba(12,14,18,.04), rgba(12,14,18,.34));}
+  .wk-play span{
+    width:62px; height:62px; border-radius:50%; display:grid; place-items:center;
+    background:rgba(255,255,255,.94); box-shadow:0 14px 34px -12px rgba(0,0,0,.6);
+    transition:transform .3s var(--ease);
+  }
+  .wk-play:hover span{transform:scale(1.08);}
+  .wk-play span::after{
+    content:""; width:0; height:0; margin-left:4px;
+    border-left:17px solid #14161B; border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+  }
+  .wk-play.hidden{display:none;}
+  .wk-runtime{
+    position:absolute; right:12px; bottom:12px; z-index:2; pointer-events:none;
+    background:rgba(12,14,18,.72); color:#fff; font-size:11.5px; font-weight:500;
+    letter-spacing:.04em; padding:4px 9px; border-radius:999px;
+  }
+  .wk-body{
+    padding:28px 32px 32px;
+    display:grid; grid-template-columns:1.32fr .68fr; gap:28px 40px; align-items:start;
+  }
+  .wk-body h3{font-size:22px; line-height:1.25; margin-bottom:6px;}
+  .wk-body p{font-size:15px; color:var(--ink-soft); line-height:1.68; margin-bottom:0;}
+  .wk-facts{list-style:none; display:grid; gap:8px; align-content:start; padding-top:2px;}
+  .wk-facts li{
+    display:flex; gap:9px; align-items:flex-start;
+    font-size:14px; color:var(--ink-soft); line-height:1.5;
+  }
+  .wk-facts li::before{
+    content:""; flex:0 0 auto; width:5px; height:5px; margin-top:8px;
+    border-radius:50%; background:var(--accent);
+  }
+  .wk-gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px;}
+  .wk-shot{
+    margin:0; background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; overflow:hidden; cursor:zoom-in;
+    transition:transform .4s var(--ease), border-color .3s var(--ease), box-shadow .4s var(--ease);
+  }
+  .wk-shot:hover{transform:translateY(-4px); border-color:var(--accent); box-shadow:var(--shadow-lg);}
+  .wk-shot img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--bg-alt);}
+  .wk-shot figcaption{
+    font-size:12.5px; color:var(--ink-soft); line-height:1.45;
+    padding:10px 13px; border-top:1px solid var(--border);
+  }
+  .wk-tools{
+    display:flex; flex-wrap:wrap; gap:9px; align-items:center;
+    margin-top:24px; padding-top:22px; border-top:1px solid var(--border);
+  }
+  .wk-tools .wk-tools-k{
+    font-size:11.5px; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500; margin-right:4px;
+  }
+  .wk-chip{
+    font-size:13px; font-weight:500; padding:6px 13px; border-radius:999px;
+    background:var(--bg-alt); border:1px solid var(--border); color:var(--ink);
+  }
+
+  /* lightbox */
+  .lb{
+    position:fixed; inset:0; z-index:400; display:none; place-items:center;
+    padding:clamp(16px,4vw,48px); background:rgba(9,10,13,.94);
+    opacity:0; transition:opacity .25s var(--ease);
+  }
+  .lb.open{display:grid; opacity:1;}
+  .lb figure{margin:0; max-width:100%; display:grid; justify-items:center; gap:12px;}
+  .lb img{
+    max-width:min(1500px, 94vw); max-height:84vh; width:auto; height:auto;
+    border-radius:8px; box-shadow:0 40px 90px -30px rgba(0,0,0,.9);
+  }
+  .lb figcaption{color:rgba(255,255,255,.76); font-size:13.5px; text-align:center;}
+  .lb-close{
+    position:absolute; top:18px; right:20px; width:42px; height:42px;
+    display:grid; place-items:center; border-radius:50%; cursor:pointer;
+    background:rgba(255,255,255,.12); border:0; color:#fff;
+  }
+  .lb-close:hover{background:rgba(255,255,255,.22);}
+  .lb-close .icon{width:20px; height:20px;}
+
+  @media (max-width:920px){
+    .wk-media video{aspect-ratio:16/9;}
+    .wk-body{grid-template-columns:1fr; padding:24px 24px 28px; gap:20px;}
+    .wk-gallery{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .wk-gallery{grid-template-columns:1fr;}
+  }
+
   /* Impact band: larger numbers, crisper labels */
   .impact-stat{padding:36px 18px;}
   .impact-stat .num{font-size:clamp(30px,3.7vw,46px); letter-spacing:-.02em;}
@@ -857,6 +960,7 @@
       <li><a href="#education" data-nav>Education</a></li>
       <li><a href="#skills" data-nav>Skills</a></li>
       <li><a href="#learning" data-nav>Currently</a></li>
+      <li><a href="#workshop" data-nav>Workshop</a></li>
       <li><a href="#contact" data-nav>Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -1427,6 +1531,106 @@
   </div>
 </section>
 
+<!-- ============================== WORKSHOP ============================== -->
+<section id="workshop" class="section-pad" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head r-up">
+      <p class="eyebrow">Workshop</p>
+      <h2 class="h-reveal">Learning tools by building something real</h2>
+      <p>Project work is moving towards 3D coordination, visualisation and better tooling. The way I get
+        comfortable with a tool is to set myself a proper brief and finish it, rather than work through
+        tutorials. This is the most recent one.</p>
+    </div>
+
+    <div class="wk-feature spot r-up">
+      <div class="wk-media">
+        <video id="wkVideo" poster="assets/workshop/flythrough-poster.jpg" preload="none"
+               playsinline muted loop
+               aria-label="Flythrough animation of the Dar al-Rih terminal">
+          <source src="assets/workshop/flythrough-720.mp4" type="video/mp4">
+        </video>
+        <button class="wk-play" id="wkPlay" type="button" aria-label="Play the flythrough animation">
+          <span></span>
+        </button>
+        <div class="wk-runtime">12s flythrough</div>
+      </div>
+      <div class="wk-body">
+        <div>
+          <span class="proj-tag tag-teal">
+            <svg class="icon" style="width:13px;height:13px"><use href="#i-layers"/></svg>Blender · Python
+          </span>
+          <h3>Dar al-Rīḥ — a desert aviation terminal</h3>
+          <div class="proj-meta">Self-directed · Built with AI assistance · 2026</div>
+          <p>A small private aviation terminal set in the Moroccan pre-Sahara, modelled and rendered in
+            Blender. I set the brief — a riad turned inside out for aviation — and the whole aerodrome is
+            generated procedurally from Python rather than modelled by hand, so any dimension, material
+            or time of day can be changed and the scene rebuilds in under three seconds.</p>
+        </div>
+        <ul class="wk-facts">
+          <li>202,000 faces across 358 objects, no downloaded assets</li>
+          <li>Path-traced in Cycles on GPU</li>
+          <li>Sun angle and exposure solved by measurement, not by eye</li>
+          <li>Terminal, tower, hangar, aircraft, runway and landscape all scripted</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wk-gallery">
+      <figure class="wk-shot r-up" data-full="assets/workshop/colonnade.jpg"
+              data-cap="The west gallery. Low afternoon sun rakes through the brise-soleil and stripes the floor; the bronze lattice sits between the columns and the glass.">
+        <img src="assets/workshop/colonnade.jpg" alt="Sunlight striping the floor of a colonnade behind a bronze lattice screen" loading="lazy" decoding="async">
+        <figcaption>Shade as the main material</figcaption>
+      </figure>
+      <figure class="wk-shot r-up" data-full="assets/workshop/portal.jpg"
+              data-cap="The landside approach. A still basin holds the whole screen wall upside down; the entry portal is a 10 m gap carried on a transfer beam, so no column stands in the doorway.">
+        <img src="assets/workshop/portal.jpg" alt="Terminal facade of bronze latticework reflected in a still dark basin" loading="lazy" decoding="async">
+        <figcaption>Arrival across the water</figcaption>
+      </figure>
+      <figure class="wk-shot r-up" data-full="assets/workshop/court.jpg"
+              data-cap="The courtyard at the centre of the plan, open to the sky, with a black reflecting basin and four date palms. Every route through the building passes it.">
+        <img src="assets/workshop/court.jpg" alt="Open courtyard with date palms reflected in a dark still pool" loading="lazy" decoding="async">
+        <figcaption>The courtyard</figcaption>
+      </figure>
+      <figure class="wk-shot r-up" data-full="assets/workshop/hero.jpg"
+              data-cap="Airside. The north face is open glass onto the apron, giving the lounge both the aircraft view and the good north light.">
+        <img src="assets/workshop/hero.jpg" alt="Low terminal building beside a parked business jet in the desert" loading="lazy" decoding="async">
+        <figcaption>Airside, from the apron</figcaption>
+      </figure>
+      <figure class="wk-shot r-up" data-full="assets/workshop/aerial.jpg"
+              data-cap="The masterplan: terminal with its central courtyard, hangar, stand and lead-in lines, taxiway link and a 1,400 m runway.">
+        <img src="assets/workshop/aerial.jpg" alt="Aerial view of the terminal, hangar, apron and runway" loading="lazy" decoding="async">
+        <figcaption>Masterplan</figcaption>
+      </figure>
+      <figure class="wk-shot r-up" data-full="assets/workshop/sunset.jpg"
+              data-cap="The screen up close. An eight-point khatim lattice, generated from a cell size and a rule, so a different motif is a small edit rather than a remodel.">
+        <img src="assets/workshop/sunset.jpg" alt="Close view of a bronze eight-point star lattice screen in low sun" loading="lazy" decoding="async">
+        <figcaption>The lattice, close up</figcaption>
+      </figure>
+    </div>
+
+    <div class="wk-tools r-up">
+      <span class="wk-tools-k">Tools used</span>
+      <span class="wk-chip">Blender</span>
+      <span class="wk-chip">Python scripting</span>
+      <span class="wk-chip">Cycles rendering</span>
+      <span class="wk-chip">Git</span>
+      <span class="wk-chip">HTML, CSS &amp; JavaScript</span>
+      <span class="wk-chip">AI-assisted workflow</span>
+    </div>
+  </div>
+</section>
+
+<!-- lightbox -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close image">
+    <svg class="icon"><use href="#i-close"/></svg>
+  </button>
+  <figure>
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
 <!-- ============================== CONTACT ============================== -->
 <section id="contact" class="section-pad">
   <div class="wrap">
@@ -1753,6 +1957,64 @@
       } else {
         fallbackCopy();
       }
+    });
+  }
+
+  // ---------- Workshop: click-to-play video ----------
+  // preload="none" so the 5 MB clip is never fetched until someone asks for it.
+  var wkVideo = document.getElementById('wkVideo');
+  var wkPlay = document.getElementById('wkPlay');
+  if(wkVideo && wkPlay){
+    wkPlay.addEventListener('click', function(){
+      wkVideo.setAttribute('controls', '');
+      var p = wkVideo.play();
+      if(p && p.catch){ p.catch(function(){}); }
+      wkPlay.classList.add('hidden');
+    });
+  }
+
+  // ---------- Workshop: image lightbox ----------
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var lbClose = document.getElementById('lbClose');
+  var lastFocus = null;
+
+  function openLb(full, cap, alt){
+    lastFocus = document.activeElement;
+    lbImg.setAttribute('src', full);
+    lbImg.setAttribute('alt', alt || '');
+    lbCap.textContent = cap || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+  function closeLb(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.setAttribute('src', '');
+    if(lastFocus && lastFocus.focus){ lastFocus.focus(); }
+  }
+
+  document.querySelectorAll('.wk-shot').forEach(function(fig){
+    var img = fig.querySelector('img');
+    fig.setAttribute('tabindex', '0');
+    fig.setAttribute('role', 'button');
+    fig.addEventListener('click', function(){
+      openLb(fig.dataset.full, fig.dataset.cap, img ? img.alt : '');
+    });
+    fig.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openLb(fig.dataset.full, fig.dataset.cap, img ? img.alt : '');
+      }
+    });
+  });
+  if(lb){
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', function(e){ if(e.target === lb){ closeLb(); } });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && lb.classList.contains('open')){ closeLb(); }
     });
   }
 })();

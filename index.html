@@ -2573,6 +2573,15 @@
           transition: none !important;
         }
       }
+      .avatar-mark{border-radius:50%;overflow:hidden;background:#eaf2fa;border:2px solid #c9dff3;width:40px;height:40px;position:relative;flex-shrink:0}
+      .avatar-mark img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transform:scale(2.3);transform-origin:50% 28%}
+      .licence-highlight{display:flex;align-items:center;gap:13px;padding:16px 20px;margin:18px 0;background:#eaf3fd;border:1px solid #a8caed;border-left:4px solid #0a66c2;border-radius:9px;color:#123655}
+      .licence-highlight .icon{width:30px;height:30px;color:#0a66c2}.licence-highlight strong{display:block;font-size:17px}.licence-highlight span{display:block;font-size:12px;margin-top:4px}
+      .leadership-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.leadership-results>div{padding:17px 15px;border:1px solid #b6d3ef;background:#edf5ff;border-radius:8px}.leadership-results strong{display:block;font-size:29px;line-height:1.2;color:#0a66c2}.leadership-results span{display:block;font-weight:700;font-size:12px;line-height:1.5;margin-top:7px;color:#163a5c}.leadership-results small{display:block;font-size:11px;line-height:1.5;margin-top:5px;color:#385c7b}
+      .role-bullets,.study-takeaways ul{padding-left:18px;font-size:13px;line-height:1.8;color:var(--muted)}.role-bullets li,.study-takeaways li{margin:7px 0}.study-takeaways{padding:16px 18px;margin:0 0 24px;background:#f3f8fd;border-radius:8px;border:1px solid #d3e3f2}.study-takeaways ul{font-size:12px;margin:8px 0 0}
+      .prince2-credential{padding:15px;background:#edf5ff;border:1px solid #b6d3ef;border-radius:8px}.credential p{font-size:11px;line-height:1.6;color:#385c7b;margin:6px 0 0}
+      .dissertation-card#learning{display:grid;grid-template-columns:1.15fr .55fr 1.15fr;gap:28px;margin-top:24px;padding:28px;border:1px solid #bad4ee;border-top:3px solid #0a66c2;border-radius:12px;background:#f3f8fe}.dissertation-card h3{font-size:23px;line-height:1.3;margin:10px 0}.dissertation-card p{font-size:12px;line-height:1.8;color:#385c7b;margin:10px 0}.research-focus{border-left:1px solid #c8dcef;padding-left:25px}.research-focus>strong{font-size:46px;line-height:1;color:#0a66c2;display:block}.research-focus>span{font-size:12px;font-weight:700}.dissertation-card .text-link{font-size:12px}
+      @media(max-width:650px){.dissertation-card#learning{grid-template-columns:1fr;gap:18px;padding:22px}.research-focus{padding-left:18px}.leadership-results{grid-template-columns:1fr 1fr}.leadership-results>div:first-child{grid-column:1/-1}.leadership-results strong{font-size:26px}}
     </style>
     <style>
       /* Personal evidence, quantified experience, and creative work. */
@@ -3693,7 +3702,7 @@
     <header class="site-header">
       <nav class="wrap nav" aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="Achraf Daou, back to top"
-          ><span class="monogram" aria-hidden="true">AD</span
+          ><span class="monogram avatar-mark" aria-hidden="true"><img src="assets/achraf-photo.jpg" alt="" width="40" height="40" /></span
           ><span>Achraf Daou<span class="brand-dot">.</span></span></a
         ><button
           class="menu-toggle"
@@ -4638,9 +4647,7 @@
                   >: checking IDs, managing entry and helping keep busy event
                   days calm and safe.
                 </p>
-                <span class="mini-tag"
-                  >SIA Door Supervision (Front Line) licensed</span
-                >
+                <div class="licence-highlight"><svg class="icon" aria-hidden="true"><use href="#award"></use></svg><div><strong>SIA licensed</strong><span>Door Supervision · Front Line</span></div></div>
                 <div class="tags">
                   <span class="tag">Event operations</span
                   ><span class="tag">Access control</span
@@ -4706,16 +4713,18 @@
                 <p class="organisation">
                   University of Huddersfield Students’ Union · UK
                 </p>
-                <p class="role-copy">
-                  Led a committee and a community of
-                  <strong>100+ members</strong>, planning events, managing
-                  budgets and creating the society’s social media posts and
-                  designs.
-                </p>
-                <p class="society-role-awards">
-                  <strong>4 society awards:</strong> Global Society of the Month
-                  twice (October and February), plus two Social Media Awards.
-                </p>
+                <p class="role-copy">Led a committee and a <strong>100+ member community</strong>, turning ideas into events, content and a stronger society identity.</p>
+                <div class="leadership-results" aria-label="Society achievements">
+                  <div><strong>100+</strong><span>Members brought together</span></div>
+                  <div><strong>2×</strong><span>Global Society of the Month</span><small>October &amp; February</small></div>
+                  <div><strong>2×</strong><span>Social Media Award</span><small>Posts, design &amp; communication</small></div>
+                </div>
+                <ul class="role-bullets">
+                  <li><strong>Coordinated the committee:</strong> shared responsibilities and kept event plans moving.</li>
+                  <li><strong>Planned events and managed budgets</strong> for a community of over 100 members.</li>
+                  <li><strong>Created social posts and event designs</strong> with a consistent identity across the society’s communications.</li>
+                  <li><strong>Helped the society earn 4 awards</strong> across community activity and social media.</li>
+                </ul>
                 <a
                   class="text-link"
                   style="margin-top: 9px; font-size: 11px"
@@ -4803,6 +4812,7 @@
                 </div>
               </div>
             </article>
+            <div class="study-takeaways"><span class="side-label">What I’ve learned</span><ul><li><strong>PRINCE2 methodology:</strong> structured stages, clear responsibilities and controlled change.</li><li><strong>Project decisions:</strong> planning, risk assessment and progress reporting.</li><li><strong>Data analytics:</strong> organising and interpreting data to support clear recommendations.</li></ul></div>
             <article class="education-row">
               <span class="org-logo"
                 ><img
@@ -4853,6 +4863,7 @@
                 >Certifications &amp; licences
               </h3>
               <div class="credential-list">
+                <div class="credential prince2-credential"><svg class="icon" aria-hidden="true"><use href="#award"></use></svg><div><strong>PRINCE2 · Project management methodology</strong><span>Studied &amp; examined within MSc · LJMU</span><p>Stage planning, governance, risk and change control.</p></div></div>
                 <div class="credential">
                   <img
                     src="assets/logos/google.svg"
@@ -4864,7 +4875,7 @@
                   <div>
                     <strong
                       >Google Project Management &amp; Data Analytics</strong
-                    ><span>Professional Certificates · Coursera · 2025</span>
+                    ><span>Professional Certificates · Coursera · 2025</span><p class="credential-learning">Project planning, data preparation, analysis and communicating insights.</p>
                   </div>
                 </div>
                 <div class="credential">
@@ -4947,25 +4958,15 @@
                   ><br />Based in Liverpool. Open to relocation.
                 </p>
               </div>
-              <div class="skills-row" id="learning">
-                <span class="side-label">Currently exploring</span>
-                <p>
-                  AI in construction planning, cost control and site monitoring
-                  through my MSc dissertation.
-                </p>
-                <a
-                  class="text-link"
-                  id="research-link"
-                  href="#more-projects"
-                  style="margin-top: 9px"
-                  >See research &amp; other projects
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#arrow"></use></svg
-                ></a>
-              </div>
+
             </div>
           </div>
         </div>
+        <section class="dissertation-card" id="learning" aria-labelledby="dissertation-title">
+          <div><span class="side-label">Currently exploring · MSc dissertation · In progress</span><h3 id="dissertation-title">Making AI useful on real construction projects.</h3><p>I’m exploring how AI can support everyday project decisions, and what teams need to put it into practice.</p></div>
+          <div class="research-focus"><strong>3</strong><span>Focus areas</span><p>Planning &amp; scheduling<br />Cost control<br />Site monitoring</p></div>
+          <div><span class="side-label">The question</span><p>What stands between AI’s potential and its practical use on site? My focus is data readiness, team skills and fit with existing workflows.</p><span class="side-label">The approach</span><p>Exploring perspectives from contractors, consultancies and client organisations to inform practical recommendations.</p><a class="text-link" id="research-link" href="#more-projects">Research &amp; other projects →</a></div>
+        </section>
       </section>
       <section
         class="contact"

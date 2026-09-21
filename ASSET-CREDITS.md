@@ -7,7 +7,7 @@
 Inside John Smith's Stadium, photographed on 9 April 2016 by Neil Theasby.
 Source: https://commons.wikimedia.org/wiki/File:Inside_John_Smith%27s_Stadium_(geograph_4900417).jpg
 License: Creative Commons Attribution–ShareAlike 2.0, https://creativecommons.org/licenses/by-sa/2.0/
-The downloaded thumbnail is unchanged; CSS crops its display in the project card. This image and any adaptation remain available under CC BY-SA 2.0. Attribution is also provided in the project's details.
+The downloaded thumbnail is unchanged; CSS crops its display in the project card. This image and any adaptation remain available under CC BY-SA 2.0. This credits page is linked from the website footer.
 
 ## Society project graphic
 

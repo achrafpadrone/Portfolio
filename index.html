@@ -9,7 +9,12 @@
       content="Achraf Daou — project support, construction operations and business management. Based in Liverpool, with experience across 15+ projects. Explore selected work and connect."
     />
     <meta name="theme-color" content="#0a66c2" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    />
     <link rel="canonical" href="https://achrafpadrone.github.io/Portfolio/" />
     <meta property="og:type" content="profile" />
     <meta
@@ -3651,7 +3656,98 @@
 .other-experience-list{grid-column:2}
 .other-experience-list>.experience-group-title{padding-top:0;margin-top:0}
 @media(max-width:850px){.other-experience-list{grid-column:1}}
-</style></head>
+</style><style>.applied-skills{display:grid;gap:0;margin-bottom:17px}.applied-skills>div{padding:13px 0;border-bottom:1px solid var(--line)}.applied-skills>div:first-child{padding-top:0}.applied-skills h4{font-size:13px;line-height:1.5;color:#123655;margin:0 0 5px}.applied-skills p{font-size:12px;line-height:1.75;color:#476079;margin:0}.applied-skills strong{color:#0a66c2}</style>
+  <style>
+    [data-theme="dark"] {
+      --ink: #e6f0fa;
+      --muted: #b5c6d7;
+      --line: #29455d;
+      --soft: #142a3e;
+      --white: #0d1e2e;
+      --green: #75c79c;
+      color-scheme: dark;
+    }
+    [data-theme="dark"] body { background: #091725; color: var(--ink); }
+    [data-theme="dark"] p,
+    [data-theme="dark"] .role-date,
+    [data-theme="dark"] .role-org,
+    [data-theme="dark"] .skills-note,
+    [data-theme="dark"] figcaption,
+    [data-theme="dark"] .site-footer,
+    [data-theme="dark"] .site-footer a { color: var(--muted); }
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] .brand,
+    [data-theme="dark"] .footer-mark strong,
+    [data-theme="dark"] .project h3,
+    [data-theme="dark"] .role h3,
+    [data-theme="dark"] .credential-panel > h3 { color: var(--ink); }
+    [data-theme="dark"] .site-header { background: #091725ef; border-color: var(--line); }
+    [data-theme="dark"] .nav-links a { color: var(--muted); }
+    [data-theme="dark"] .nav-links a[aria-current="location"],
+    [data-theme="dark"] .nav-links a:hover { color: var(--ink); }
+    [data-theme="dark"] .button:not(.primary),
+    [data-theme="dark"] .tag,
+    [data-theme="dark"] .extra-details,
+    [data-theme="dark"] .credential-panel,
+    [data-theme="dark"] .project,
+    [data-theme="dark"] .society-project,
+    [data-theme="dark"] .music,
+    [data-theme="dark"] .dissertation-card,
+    [data-theme="dark"] .role { background: var(--white); border-color: var(--line); }
+    [data-theme="dark"] .project-result,
+    [data-theme="dark"] .project-category,
+    [data-theme="dark"] .role details summary,
+    [data-theme="dark"] .extra-details summary { color: #9ecfff; }
+    [data-theme="dark"] .applied-skills h4 { color: var(--ink); }
+    [data-theme="dark"] .applied-skills p { color: var(--muted); }
+    [data-theme="dark"] .lightbox { background: #102539; color: var(--ink); }
+    [data-theme="dark"] .back-to-top { background: #102539; border-color: #3c78a6; color: #9ecfff; }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 34px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 10px;
+      white-space: nowrap;
+    }
+    .theme-toggle:hover { color: var(--ink); border-color: var(--blue); }
+    .theme-toggle span:first-child { color: var(--blue); font-size: 14px; line-height: 1; }
+    .back-to-top {
+      position: fixed;
+      z-index: 20;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid #9bc4e8;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--blue);
+      box-shadow: 0 8px 24px #12365326;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top .icon { width: 18px; height: 18px; }
+    @media (max-width: 650px) {
+      .theme-toggle { margin-left: auto; margin-right: 8px; min-height: 32px; padding: 6px 8px; }
+      .theme-toggle span:last-child { display: none; }
+      .back-to-top { right: 14px; bottom: 14px; width: 36px; height: 36px; }
+    }
+  </style></head>
   <body id="top">
     <a class="skip" href="#main">Skip to content</a
     ><svg
@@ -3730,6 +3826,9 @@
           >Let’s talk
           <svg class="icon" aria-hidden="true"><use href="#external"></use></svg
         ></a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Use dark mode">
+          <span aria-hidden="true">◐</span><span>Dark mode</span>
+        </button>
       </nav>
     </header>
     <main id="main" class="wrap">
@@ -4701,7 +4800,7 @@
                     <use href="#arrow"></use></svg
                 ></a>
               </div>
-            </article><article class="role"><span class="org-logo"><svg class="icon" aria-hidden="true"><use href="#briefcase"></use></svg></span><div><div class="role-top"><h3>Student Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield ISC</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback, raised issues with course leaders and followed them through to resolution.</p></div></article>
+            </article><article class="role"><span class="org-logo"><img src="assets/logos/huddersfield.svg" alt="University of Huddersfield" width="44" height="44" loading="lazy" /></span><div><div class="role-top"><h3>Student Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield ISC</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback, raised issues with course leaders and followed them through to resolution.</p><ul class="role-bullets"><li><strong>Turned student feedback into clear discussion points</strong> for tutors and course leaders, helping concerns from 40 students reach the right people.</li><li><strong>Followed up on outstanding issues</strong> with course leaders, maintaining communication between students and staff through to resolution.</li></ul></div></article>
           </div>
         </div>
       </section>
@@ -4879,31 +4978,15 @@
                   <use href="#briefcase"></use></svg
                 >What I bring to a team
               </h3>
-              <div class="skills-row">
-                <span class="side-label">Project delivery</span>
-                <div class="tags">
-                  <span class="tag">Planning &amp; scheduling</span
-                  ><span class="tag">Cost control</span
-                  ><span class="tag">Supplier coordination</span
-                  ><span class="tag">Risk management</span
-                  ><span class="tag">Stakeholder communication</span>
-                </div>
-              </div>
-              <div class="skills-row">
-                <span class="side-label">Tools &amp; learning</span>
-                <p>Excel · Microsoft Office · Microsoft Project · Power BI</p>
-                <p class="skills-note">
-                  Continuing to develop my Microsoft Project and Power BI
-                  skills.
-                </p>
-              </div>
-              <div class="skills-row">
-                <span class="side-label">A global perspective</span>
-                <p>
-                  Fluent in <strong>French and Arabic.</strong
-                  ><br />Based in Liverpool. Open to relocation.
-                </p>
-              </div>
+<div class="applied-skills">
+<div><h4>Planning &amp; delivery coordination</h4><p>Supported <strong>15+ construction projects</strong>, coordinating schedules, milestones and supplier deliveries.</p></div>
+<div><h4>Cost control &amp; reliable reporting</h4><p>Tracked spend across <strong>2–5 concurrent projects</strong>, maintained Excel cost logs and flagged budget differences early.</p></div>
+<div><h4>Supplier &amp; stakeholder follow-through</h4><p>Coordinated <strong>20+ suppliers</strong> and represented <strong>40 students</strong>—turning requests into clear actions and following up.</p></div>
+<div><h4>Risk awareness &amp; structured decisions</h4><p>Built a risk register in an MSc team simulation, assessed likelihood and impact, and practised responding to changing risks.</p></div>
+<div><h4>Data analysis that supports decisions</h4><p>Designed a survey and analysed <strong>27 responses in SPSS</strong>, translating findings into practical recommendations.</p></div>
+</div>
+<div class="skills-row"><span class="side-label">Tools I use</span><p>Excel · Microsoft Office · IBM SPSS Statistics</p><p class="skills-note">Developing Microsoft Project and Power BI skills. PRINCE2 studied and examined within my MSc.</p></div>
+<div class="skills-row"><span class="side-label">Languages &amp; location</span><p>Fluent in <strong>French and Arabic.</strong><br />Based in Liverpool. Open to relocation.</p></div>
 
             </div>
           </div>
@@ -4972,6 +5055,9 @@
           <svg class="icon" aria-hidden="true"><use href="#up"></use></svg
         ></a>
       </footer>
+      <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+        <svg class="icon" aria-hidden="true"><use href="#up"></use></svg>
+      </button>
     </main>
     <dialog class="lightbox" aria-labelledby="lightbox-caption">
       <div class="lightbox-head">
@@ -5014,6 +5100,29 @@
     >
     <script>
       (() => {
+        const root = document.documentElement;
+        const themeButton = document.querySelector("#theme-toggle");
+        const storedTheme = (() => {
+          try { return localStorage.getItem("portfolio-theme"); } catch { return null; }
+        })();
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        function setTheme(theme) {
+          const dark = theme === "dark";
+          root.dataset.theme = dark ? "dark" : "light";
+          themeButton.setAttribute("aria-pressed", String(dark));
+          themeButton.setAttribute("aria-label", dark ? "Use light mode" : "Use dark mode");
+          themeButton.querySelector("span:last-child").textContent = dark ? "Light mode" : "Dark mode";
+          themeButton.querySelector("span:first-child").textContent = dark ? "☼" : "◐";
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#091725" : "#0a66c2");
+          try { localStorage.setItem("portfolio-theme", dark ? "dark" : "light"); } catch {}
+        }
+        setTheme(storedTheme || (prefersDark ? "dark" : "light"));
+        themeButton.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+        const backToTop = document.querySelector("#back-to-top");
+        function updateBackToTop() { backToTop.classList.toggle("visible", window.scrollY > 500); }
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        updateBackToTop();
+        backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
         const reducedMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         );

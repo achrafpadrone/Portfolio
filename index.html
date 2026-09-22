@@ -3651,23 +3651,29 @@
       }
     </style>
   <style>
-.experience-layout{row-gap:24px}
-.experience-divider{grid-column:1/-1;width:100%;margin:0;border:0;border-top:1px solid #c8dcef}
+.experience-layout{row-gap:24px;align-items:start}
+.experience-group{grid-column:2;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;box-shadow:0 8px 24px #1236530a}
+.experience-divider{display:none}
+.experience-group-title{padding:0 0 12px;margin:0 0 20px}
 .other-experience-list{grid-column:2}
-.other-experience-list>.experience-group-title{padding-top:0;margin-top:0}
-@media(max-width:850px){.other-experience-list{grid-column:1}}
+.course-rep-role .org-logo{background:#102d5b;border-color:#102d5b;padding:5px}
+.course-rep-role .org-logo img{width:100%;height:100%;object-fit:contain}
+@media(max-width:850px){.experience-group,.other-experience-list{grid-column:1}}
+@media(max-width:650px){.experience-group{padding:18px 16px}}
 </style><style>.applied-skills{display:grid;gap:0;margin-bottom:17px}.applied-skills>div{padding:13px 0;border-bottom:1px solid var(--line)}.applied-skills>div:first-child{padding-top:0}.applied-skills h4{font-size:13px;line-height:1.5;color:#123655;margin:0 0 5px}.applied-skills p{font-size:12px;line-height:1.75;color:#476079;margin:0}.applied-skills strong{color:#0a66c2}</style>
   <style>
     [data-theme="dark"] {
-      --ink: #e6f0fa;
-      --muted: #b5c6d7;
-      --line: #29455d;
-      --soft: #142a3e;
-      --white: #0d1e2e;
-      --green: #75c79c;
+      --ink: #eef6fc;
+      --muted: #b2c4d2;
+      --line: #29475d;
+      --soft: #132a3c;
+      --white: #102332;
+      --blue: #58aef2;
+      --blue-dark: #8bcaf8;
+      --green: #7bd0a4;
       color-scheme: dark;
     }
-    [data-theme="dark"] body { background: #091725; color: var(--ink); }
+    [data-theme="dark"] body { background: #07131f; color: var(--ink); }
     [data-theme="dark"] p,
     [data-theme="dark"] .role-date,
     [data-theme="dark"] .role-org,
@@ -3684,19 +3690,59 @@
     [data-theme="dark"] .project h3,
     [data-theme="dark"] .role h3,
     [data-theme="dark"] .credential-panel > h3 { color: var(--ink); }
-    [data-theme="dark"] .site-header { background: #091725ef; border-color: var(--line); }
+    [data-theme="dark"] .site-header { background: #07131ff2; border-color: #243d50; box-shadow: 0 8px 28px #02081055; }
     [data-theme="dark"] .nav-links a { color: var(--muted); }
     [data-theme="dark"] .nav-links a[aria-current="location"],
     [data-theme="dark"] .nav-links a:hover { color: var(--ink); }
     [data-theme="dark"] .button:not(.primary),
-    [data-theme="dark"] .tag,
     [data-theme="dark"] .extra-details,
     [data-theme="dark"] .credential-panel,
     [data-theme="dark"] .project,
     [data-theme="dark"] .society-project,
     [data-theme="dark"] .music,
     [data-theme="dark"] .dissertation-card,
-    [data-theme="dark"] .role { background: var(--white); border-color: var(--line); }
+    [data-theme="dark"] .dissertation-card#learning { background: #102332; border-color: var(--line); }
+    [data-theme="dark"] .dissertation-card p,
+    [data-theme="dark"] .research-note { color: var(--muted); }
+    [data-theme="dark"] .button:not(.primary) { background: #102637; color: var(--ink); border-color: #36566e; }
+    [data-theme="dark"] .button:not(.primary):hover { background: #173247; border-color: #5b8baa; }
+    [data-theme="dark"] .tag { background: #183247; color: #d3e2ed; border-color: #36566e; }
+    [data-theme="dark"] .experience-layout { background: #0c1c2a; border-color: #203a4e; box-shadow: 0 18px 50px #02081044; }
+    [data-theme="dark"] .experience-intro h3 { color: var(--ink); }
+    [data-theme="dark"] .experience-intro p { color: var(--muted); }
+    [data-theme="dark"] .experience-group { background: #122637; border-color: #2a4a61; box-shadow: 0 12px 30px #02081040; }
+    [data-theme="dark"] .experience-group-title { color: #8bcaf8; border-color: #31536b; }
+    [data-theme="dark"] .experience-group .role { background: transparent; border-color: #29475d; }
+    [data-theme="dark"] .role-number { background: #0c1d2b; border-color: #31536b; color: #d8e7f1; }
+    [data-theme="dark"] .role-bullets,
+    [data-theme="dark"] .role-copy,
+    [data-theme="dark"] .organisation { color: var(--muted); }
+    [data-theme="dark"] .role-bullets strong,
+    [data-theme="dark"] .role-copy strong { color: #edf6fc; }
+    [data-theme="dark"] .org-logo { background: #f8fbfd; border-color: #bfd0dc; }
+    [data-theme="dark"] .course-rep-role .org-logo { background: #102d5b; border-color: #456e9c; }
+    [data-theme="dark"] .leadership-results > div,
+    [data-theme="dark"] .research-results > div,
+    [data-theme="dark"] .study-takeaways,
+    [data-theme="dark"] .licence-highlight,
+    [data-theme="dark"] .prince2-credential { background: #142b3e; border-color: #31536b; }
+    [data-theme="dark"] .licence-highlight { color: var(--ink); }
+    [data-theme="dark"] .licence-highlight .icon,
+    [data-theme="dark"] .leadership-results strong,
+    [data-theme="dark"] .research-results strong { color: #58aef2; }
+    [data-theme="dark"] .licence-highlight span,
+    [data-theme="dark"] .leadership-results span,
+    [data-theme="dark"] .leadership-results small,
+    [data-theme="dark"] .research-results span,
+    [data-theme="dark"] .study-takeaways ul,
+    [data-theme="dark"] .credential p,
+    [data-theme="dark"] .prince2-credential span { color: var(--muted); }
+    [data-theme="dark"] .study-takeaways strong,
+    [data-theme="dark"] .prince2-credential strong { color: var(--ink); }
+    [data-theme="dark"] .trust-strip,
+    [data-theme="dark"] .logo-track .trust-logo { background: #102332; border-color: var(--line); }
+    [data-theme="dark"] .nav-toggle { color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] ::selection { background: #296aa5; color: #fff; }
     [data-theme="dark"] .project-result,
     [data-theme="dark"] .project-category,
     [data-theme="dark"] .role details summary,
@@ -3704,7 +3750,10 @@
     [data-theme="dark"] .applied-skills h4 { color: var(--ink); }
     [data-theme="dark"] .applied-skills p { color: var(--muted); }
     [data-theme="dark"] .lightbox { background: #102539; color: var(--ink); }
-    [data-theme="dark"] .back-to-top { background: #102539; border-color: #3c78a6; color: #9ecfff; }
+    [data-theme="dark"] .back-to-top { background: #17364c; border-color: #6091b2; color: #d7ecfb; box-shadow: 0 9px 24px #02081066; }
+    @media (max-width: 850px) {
+      [data-theme="dark"] .nav-links { background: #0c1f2e; border-color: #29475d; box-shadow: 0 18px 36px #02081066; }
+    }
     .theme-toggle {
       display: inline-flex;
       align-items: center;
@@ -4627,7 +4676,7 @@
                 <use href="#external"></use></svg
             ></a>
           </div>
-<div class="experience-list"><h3 class="experience-group-title" id="relevant-experience">Relevant experience</h3><article class="role" id="m2c-experience">
+<div class="experience-list experience-group relevant-experience-list"><h3 class="experience-group-title" id="relevant-experience">Relevant experience</h3><article class="role" id="m2c-experience">
               <span class="org-logo"
                 ><img
                   src="assets/logos/m2c.png"
@@ -4730,7 +4779,7 @@
                   </ul>
                 </div>
               </div>
-            </article><article class="role"><span class="org-logo"><svg class="icon" aria-hidden="true"><use href="#briefcase"></use></svg></span><div><div class="role-top"><h3>Administrative Assistant</h3><span class="role-date">Feb–Aug 2019</span></div><p class="organisation">STE Wild Five Nine SARL · Morocco</p><ul class="role-bullets"><li>Maintained invoices, delivery documentation and client records, checking details for accuracy.</li><li>Handled client calls and coordinated with drivers and suppliers on transport and logistics.</li><li>Created reusable administrative templates and kept a simple delivery log to track bookings and follow-ups.</li><li>Used Excel and Microsoft Office to organise operational data and prepare records for the manager.</li></ul></div></article><article class="role"><span class="org-logo"><img src="assets/logos/driscolls.png" alt="" width="44" height="44" loading="lazy"/></span><div><div class="role-top"><h3>Export supply chain experience · Volunteer</h3><span class="role-date">June 2019</span></div><p class="organisation">Driscoll’s grower site · Morocco</p><p class="role-copy">Volunteered on the berry packing and labelling line, preparing produce for export and gaining first-hand experience of the steps behind an export supply chain.</p></div></article></div><hr class="experience-divider" aria-hidden="true" /><div class="experience-list other-experience-list"><h3 class="experience-group-title" id="other-experience">Other experience</h3><article class="role role-fgh" id="fgh-experience">
+            </article><article class="role"><span class="org-logo"><svg class="icon" aria-hidden="true"><use href="#briefcase"></use></svg></span><div><div class="role-top"><h3>Administrative Assistant</h3><span class="role-date">Feb–Aug 2019</span></div><p class="organisation">STE Wild Five Nine SARL · Morocco</p><ul class="role-bullets"><li>Maintained invoices, delivery documentation and client records, checking details for accuracy.</li><li>Handled client calls and coordinated with drivers and suppliers on transport and logistics.</li><li>Created reusable administrative templates and kept a simple delivery log to track bookings and follow-ups.</li><li>Used Excel and Microsoft Office to organise operational data and prepare records for the manager.</li></ul></div></article><article class="role"><span class="org-logo"><img src="assets/logos/driscolls.png" alt="" width="44" height="44" loading="lazy"/></span><div><div class="role-top"><h3>Export supply chain experience · Volunteer</h3><span class="role-date">June 2019</span></div><p class="organisation">Driscoll’s grower site · Morocco</p><p class="role-copy">Volunteered on the berry packing and labelling line, preparing produce for export and gaining first-hand experience of the steps behind an export supply chain.</p></div></article></div><hr class="experience-divider" aria-hidden="true" /><div class="experience-list experience-group other-experience-list"><h3 class="experience-group-title" id="other-experience">Other experience</h3><article class="role role-fgh" id="fgh-experience">
               <span class="org-logo"
                 ><img
                   src="assets/logos/fgh-security.webp"
@@ -4800,7 +4849,7 @@
                     <use href="#arrow"></use></svg
                 ></a>
               </div>
-            </article><article class="role"><span class="org-logo"><img src="assets/logos/huddersfield.svg" alt="University of Huddersfield" width="44" height="44" loading="lazy" /></span><div><div class="role-top"><h3>Student Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield ISC</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback, raised issues with course leaders and followed them through to resolution.</p><ul class="role-bullets"><li><strong>Turned student feedback into clear discussion points</strong> for tutors and course leaders, helping concerns from 40 students reach the right people.</li><li><strong>Followed up on outstanding issues</strong> with course leaders, maintaining communication between students and staff through to resolution.</li></ul></div></article>
+            </article><article class="role course-rep-role"><span class="org-logo"><img src="assets/logos/huddersfield.svg" alt="University of Huddersfield" width="44" height="44" loading="lazy" /></span><div><div class="role-top"><h3>Student Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield ISC</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback, raised issues with course leaders and followed them through to resolution.</p><ul class="role-bullets"><li><strong>Turned student feedback into clear discussion points</strong> for tutors and course leaders, helping concerns from 40 students reach the right people.</li><li><strong>Followed up on outstanding issues</strong> with course leaders, maintaining communication between students and staff through to resolution.</li></ul></div></article>
           </div>
         </div>
       </section>

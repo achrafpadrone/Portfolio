@@ -5105,7 +5105,6 @@
         const storedTheme = (() => {
           try { return localStorage.getItem("portfolio-theme"); } catch { return null; }
         })();
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         function setTheme(theme) {
           const dark = theme === "dark";
           root.dataset.theme = dark ? "dark" : "light";
@@ -5116,7 +5115,7 @@
           document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#091725" : "#0a66c2");
           try { localStorage.setItem("portfolio-theme", dark ? "dark" : "light"); } catch {}
         }
-        setTheme(storedTheme || (prefersDark ? "dark" : "light"));
+        setTheme(storedTheme || "light");
         themeButton.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
         const backToTop = document.querySelector("#back-to-top");
         function updateBackToTop() { backToTop.classList.toggle("visible", window.scrollY > 500); }

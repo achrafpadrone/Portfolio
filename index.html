@@ -3741,7 +3741,7 @@
     [data-theme="dark"] .prince2-credential strong { color: var(--ink); }
     [data-theme="dark"] .trust-strip,
     [data-theme="dark"] .logo-track .trust-logo { background: #102332; border-color: var(--line); }
-    [data-theme="dark"] .nav-toggle { color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] .menu-toggle { background: var(--white); color: var(--ink); border-color: var(--line); }
     [data-theme="dark"] ::selection { background: #296aa5; color: #fff; }
     [data-theme="dark"] .project-result,
     [data-theme="dark"] .project-category,
@@ -3795,6 +3795,92 @@
       .theme-toggle { margin-left: auto; margin-right: 8px; min-height: 32px; padding: 6px 8px; }
       .theme-toggle span:last-child { display: none; }
       .back-to-top { right: 14px; bottom: 14px; width: 36px; height: 36px; }
+    }
+  </style>
+  <style id="mobile-refinements">
+    @media (max-width: 650px) {
+      html { scroll-padding-top: 76px; }
+      body { line-height: 1.65; }
+
+      .menu-toggle {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--white);
+        color: var(--ink);
+      }
+      .menu-toggle .icon { width: 20px; height: 20px; }
+      .theme-toggle { min-width: 44px; min-height: 44px; justify-content: center; }
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        font-size: 14px;
+      }
+
+      .hero-description,
+      .hero-intent,
+      .section-heading > p,
+      .project-content > p,
+      .experience-intro > p,
+      .role-copy,
+      .role-bullets,
+      .applied-skills p,
+      .education-row p,
+      .credential p,
+      .dissertation-card p,
+      .contact p,
+      .contact-note p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .hero-meta { font-size: 11px; line-height: 1.6; }
+      .hero-actions { flex-wrap: wrap; gap: 10px; }
+      .hero-actions .button,
+      .button { min-height: 44px; }
+
+      .trust-label,
+      .metric-label { font-size: 10px; line-height: 1.5; }
+      .project-category { font-size: 10px; letter-spacing: .08em; }
+      .project-result { font-size: 12px; line-height: 1.5; }
+      .role h3 { font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+      .role-date,
+      .organisation { font-size: 11px; line-height: 1.5; }
+
+      .experience-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px 14px;
+      }
+      .experience-layout > *,
+      .experience-layout .experience-group,
+      .experience-layout .experience-list,
+      .experience-layout .role,
+      .experience-layout .role > div { min-width: 0; }
+      .experience-layout .experience-group,
+      .experience-layout .experience-list { width: 100%; }
+      .experience-intro h3,
+      .experience-intro > p { max-width: none; }
+      .role-copy,
+      .role-bullets { overflow-wrap: anywhere; }
+
+      .site-footer { flex-wrap: wrap; gap: 10px 16px; font-size: 11px; }
+      .site-footer a { font-size: 11px; white-space: normal; }
+      .back-to-top {
+        right: max(12px, env(safe-area-inset-right));
+        bottom: max(12px, env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+      }
+    }
+    @media (max-width: 360px) {
+      .hero h1 { font-size: clamp(35px, 10.3vw, 39px); letter-spacing: -1.5px; }
+      .hero-actions { gap: 8px; }
+      .experience-layout { padding-right: 12px; padding-left: 12px; }
+      .role-date { white-space: normal; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style></head>
   <body id="top">

@@ -3943,6 +3943,21 @@
         box-shadow: 0 10px 34px #112d4826;
         -webkit-backdrop-filter: blur(18px);
         backdrop-filter: blur(18px);
+        transform-origin: center bottom;
+        transition: width .32s cubic-bezier(.2,.8,.2,1), min-height .32s cubic-bezier(.2,.8,.2,1), padding .32s cubic-bezier(.2,.8,.2,1), transform .32s cubic-bezier(.2,.8,.2,1), opacity .32s ease;
+        will-change: transform, width;
+      }
+      html.mobile-nav-compact .mobile-bottom-nav {
+        width: min(420px, calc(100% - 64px));
+        min-height: 58px;
+        padding: 4px;
+        opacity: .97;
+        transform: translateY(5px);
+      }
+      html.mobile-nav-compact .mobile-bottom-nav a { min-height: 46px; }
+      html.mobile-nav-compact .mobile-bottom-nav a.home-link {
+        width: 46px;
+        min-height: 46px;
       }
       .mobile-bottom-nav a {
         display: grid;
@@ -3995,39 +4010,30 @@
       }
       .back-to-top { display: none; }
 
-      /* Keep the employer and university marks still, complete and easy to scan. */
+      /* Keep the organisation marks moving as a clean, seamless phone ticker. */
       .logo-viewport {
-        overflow: visible;
-        mask-image: none;
+        width: 100%;
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent);
       }
       .logo-track {
-        display: block;
-        width: 100%;
-        animation: none;
-        will-change: auto;
+        display: flex;
+        width: max-content;
+        animation: logos-left 32s linear infinite;
+        will-change: transform;
       }
       .logo-track .trust-logos {
-        display: grid;
-        width: 100%;
+        display: flex;
+        width: max-content;
         min-width: 0;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        padding: 0;
+        gap: 22px;
+        justify-content: flex-start;
+        padding: 0 22px 0 0;
       }
-      .logo-track .trust-logos[aria-hidden="true"] { display: none; }
       .logo-track .trust-logo {
-        min-width: 0;
-        min-height: 54px;
-        padding: 8px 10px;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: var(--white);
-        font-size: 9px;
-        line-height: 1.3;
-      }
-      .logo-track .trust-logo:last-child {
-        grid-column: 1 / -1;
-        justify-content: center;
+        min-height: 48px;
+        min-width: 96px;
+        font-size: 10px;
       }
       .logo-track .trust-logo.driscolls-logo img {
         width: 90px;
@@ -4036,6 +4042,10 @@
       .logo-track .trust-logo.hud-logo img {
         width: 112px;
         height: 36px;
+      }
+      @keyframes logos-left {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
       }
 
       /* Keep the hero motion calm on small screens while retaining the motion control. */
@@ -4121,7 +4131,21 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .mobile-bottom-nav,
       .mobile-bottom-nav a { transition: none; }
+      .logo-viewport { overflow: visible; mask-image: none; }
+      .logo-track { display: block; width: 100%; animation: none; will-change: auto; }
+      .logo-track .trust-logos {
+        display: grid;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 0;
+      }
+      .logo-track .trust-logos[aria-hidden="true"] { display: none; }
+      .logo-track .trust-logo { min-width: 0; min-height: 54px; }
+      .logo-track .trust-logo:last-child { grid-column: 1 / -1; justify-content: center; }
     }
   </style>
   <style id="header-refinements">
@@ -6027,6 +6051,42 @@
         window.addEventListener("scroll", updateBackToTop, { passive: true });
         updateBackToTop();
         backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        const mobileNavMedia = window.matchMedia("(max-width: 650px)");
+        let previousNavScrollY = window.scrollY;
+        let navScrollDirection = 0;
+        let navDirectionStartY = previousNavScrollY;
+        let navScrollFrame = 0;
+        function updateMobileNavOnScroll() {
+          navScrollFrame = 0;
+          const currentY = window.scrollY;
+          if (!mobileNavMedia.matches || currentY <= 90) {
+            root.classList.remove("mobile-nav-compact");
+            navScrollDirection = 0;
+            navDirectionStartY = currentY;
+          } else {
+            const delta = currentY - previousNavScrollY;
+            const direction = delta > 0 ? 1 : delta < 0 ? -1 : 0;
+            if (direction && direction !== navScrollDirection) {
+              navScrollDirection = direction;
+              navDirectionStartY = previousNavScrollY;
+            }
+            if (navScrollDirection === 1 && currentY - navDirectionStartY >= 10)
+              root.classList.add("mobile-nav-compact");
+            else if (navScrollDirection === -1 && navDirectionStartY - currentY >= 10)
+              root.classList.remove("mobile-nav-compact");
+          }
+          previousNavScrollY = currentY;
+        }
+        function queueMobileNavUpdate() {
+          if (navScrollFrame) return;
+          navScrollFrame = requestAnimationFrame(updateMobileNavOnScroll);
+        }
+        window.addEventListener("scroll", queueMobileNavUpdate, { passive: true });
+        mobileNavMedia.addEventListener("change", () => {
+          previousNavScrollY = window.scrollY;
+          navScrollDirection = 0;
+          root.classList.remove("mobile-nav-compact");
+        });
         const reducedMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         );

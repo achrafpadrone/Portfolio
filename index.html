@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Achraf Daou · Project &amp; Business Management</title>
+    <title>Achraf Daou · Graduate Project Coordination</title>
     <meta
       name="description"
-      content="Achraf Daou — project support, construction operations and business management. Based in Liverpool, with experience across 15+ projects. Explore selected work and connect."
+      content="Achraf Daou — project coordination professional with 6+ years across construction, maintenance and logistics. Seeking Project Coordinator, Assistant Project Manager or Project Manager roles."
     />
     <meta name="theme-color" content="#0a66c2" />
     <meta name="color-scheme" content="light dark" />
@@ -23,11 +23,11 @@
     />
     <meta
       property="og:title"
-      content="Achraf Daou · Project Management Portfolio"
+      content="Achraf Daou · Graduate Project Coordination Portfolio"
     />
     <meta
       property="og:description"
-      content="MSc Project Management student with five years of project support experience. Open to project management or business management roles."
+      content="Project coordination professional with 6+ years across construction, maintenance and logistics. Open to Project Coordinator, Assistant Project Manager or Project Manager roles."
     />
     <meta
       property="og:image"
@@ -38,11 +38,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Achraf Daou · Project Management Portfolio"
+      content="Achraf Daou · Graduate Project Coordination Portfolio"
     />
     <meta
       name="twitter:description"
-      content="MSc Project Management student, based in Liverpool. Open to project or business management roles."
+      content="Based in Liverpool. Seeking Project Coordinator, Assistant Project Manager or Project Manager roles."
     />
     <meta
       name="twitter:image"
@@ -57,17 +57,17 @@
         "image": "https://achrafpadrone.github.io/Portfolio/assets/achraf-photo.jpg",
         "email": "mailto:achrafdaou69@gmail.com",
         "telephone": "+44-7771-071562",
-        "jobTitle": "Project Management / Business Management",
+        "jobTitle": "Project Coordination Professional",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Liverpool",
           "addressCountry": "UK"
         },
-        "knowsLanguage": ["French", "Arabic"],
+        "knowsLanguage": ["French (fluent)", "Arabic (native)"],
         "knowsAbout": [
+          "Project Coordination",
+          "Construction Project Delivery",
           "Project Management",
-          "Business Management",
-          "Project Controls",
           "Cost Tracking",
           "Scheduling",
           "Procurement",
@@ -882,6 +882,99 @@
       .strategy {
         background: #173e5d;
       }
+      .research-visual {
+        isolation: isolate;
+        background: #182f43;
+      }
+      .research-visual .research-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+      .research-visual:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, #102a42a8 0%, #102a4233 54%, #102a424d 100%);
+        z-index: 1;
+      }
+      .research-visual .visual-topline {
+        color: white;
+        z-index: 2;
+        text-shadow: 0 1px 5px #071827aa;
+      }
+      .research-ljmu-badge {
+        position: absolute;
+        z-index: 2;
+        left: 14px;
+        bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        max-width: 190px;
+        padding: 8px 11px;
+        border: 1px solid #ffffffd9;
+        border-radius: 8px;
+        background: #ffffffed;
+        box-shadow: 0 6px 18px #102a4230;
+        color: #183650;
+        font-size: 8px;
+        font-weight: 650;
+        line-height: 1.35;
+      }
+      .research-ljmu-badge img {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+        object-fit: contain;
+      }
+      .research-results-heading {
+        margin: 11px 0 7px;
+        color: var(--muted);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .research-results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 7px;
+        margin: 0 0 10px;
+      }
+      .research-result-tile {
+        display: flex;
+        min-height: 76px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 7px;
+        border: 1px solid #d7e5ef;
+        border-radius: 8px;
+        background: #f5f9fc;
+        text-align: center;
+      }
+      .research-result-tile strong {
+        color: var(--blue);
+        font-size: 21px;
+        line-height: 1;
+      }
+      .research-result-tile span {
+        margin-top: 5px;
+        color: #385c7b;
+        font-size: 8px;
+        line-height: 1.35;
+      }
+      .research-note {
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 9px;
+        line-height: 1.6;
+      }
       .pitch {
         position: absolute;
         inset: 20px 24px;
@@ -1100,8 +1193,8 @@
         display: flex;
         align-items: center;
         position: relative;
-        padding: 27px 31px;
-        height: 176px;
+        padding: 30px 34px;
+        min-height: 232px;
         color: white;
         background: #143a58;
         overflow: hidden;
@@ -1136,7 +1229,8 @@
         position: relative;
         z-index: 1;
         display: block;
-        max-width: 430px;
+        max-width: 690px;
+        padding-right: 68px;
       }
       .workshop-kicker {
         font-size: 8px;
@@ -1147,17 +1241,41 @@
         margin-bottom: 8px;
       }
       .workshop-summary strong {
-        font-size: 25px;
+        font-size: 31px;
         line-height: 1.25;
         letter-spacing: -0.7px;
         font-weight: 600;
         display: block;
       }
       .workshop-summary small {
-        font-size: 10px;
+        font-size: 12px;
         color: #d8e8f5;
         display: block;
-        margin-top: 10px;
+        max-width: 610px;
+        line-height: 1.65;
+        margin-top: 9px;
+      }
+      .workshop-proof-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 13px;
+      }
+      .workshop-proof-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 9px;
+        border: 1px solid #ffffff45;
+        border-radius: 999px;
+        background: #ffffff16;
+        color: #f1f7fc;
+        font-size: 9px;
+        line-height: 1.2;
+      }
+      .workshop-proof-chip b {
+        color: #8fc7ff;
+        font-weight: 750;
       }
       .creative-view {
         grid-template-columns: 1fr 1fr;
@@ -1165,7 +1283,7 @@
         background: var(--soft);
       }
       .creative .project-visual {
-        height: 190px;
+        height: 260px;
       }
       .project-image {
         width: 100%;
@@ -2312,16 +2430,17 @@
           margin-top: 19px;
         }
         .workshop-summary {
-          height: 190px;
-          padding: 25px 21px;
+          height: auto;
+          min-height: 235px;
+          padding: 27px 23px;
         }
         .workshop-summary strong {
-          font-size: 24px;
-          max-width: 215px;
+          font-size: 26px;
+          max-width: 520px;
         }
         .workshop-summary small {
-          font-size: 9px;
-          max-width: 205px;
+          font-size: 11px;
+          max-width: 500px;
         }
         .workshop-bg {
           background-position: 63% 50%;
@@ -2348,7 +2467,7 @@
           padding: 17px;
         }
         .creative .project-visual {
-          height: 165px;
+          height: 220px;
         }
         .extra-list {
           grid-template-columns: 1fr;
@@ -2581,7 +2700,7 @@
       .avatar-mark{border-radius:50%;overflow:hidden;background:#eaf2fa;border:2px solid #c9dff3;width:40px;height:40px;position:relative;flex-shrink:0}
       .avatar-mark img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transform:scale(2.3);transform-origin:50% 28%}
       .licence-highlight{display:flex;align-items:center;gap:13px;padding:16px 20px;margin:18px 0;background:#eaf3fd;border:1px solid #a8caed;border-left:4px solid #0a66c2;border-radius:9px;color:#123655}
-      .licence-highlight .icon{width:30px;height:30px;color:#0a66c2}.licence-highlight strong{display:block;font-size:17px}.licence-highlight span{display:block;font-size:12px;margin-top:4px}
+      .licence-highlight strong{display:block;font-size:17px}.licence-highlight span{display:block;font-size:12px;margin-top:4px}
       .leadership-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.leadership-results>div{padding:17px 15px;border:1px solid #b6d3ef;background:#edf5ff;border-radius:8px}.leadership-results strong{display:block;font-size:29px;line-height:1.2;color:#0a66c2}.leadership-results span{display:block;font-weight:700;font-size:12px;line-height:1.5;margin-top:7px;color:#163a5c}.leadership-results small{display:block;font-size:11px;line-height:1.5;margin-top:5px;color:#385c7b}
       .role-bullets,.study-takeaways ul{padding-left:18px;font-size:13px;line-height:1.8;color:var(--muted)}.role-bullets li,.study-takeaways li{margin:7px 0}.study-takeaways{padding:16px 18px;margin:0 0 24px;background:#f3f8fd;border-radius:8px;border:1px solid #d3e3f2}.study-takeaways ul{font-size:12px;margin:8px 0 0}
       .prince2-credential{padding:15px;background:#edf5ff;border:1px solid #b6d3ef;border-radius:8px}.credential p{font-size:11px;line-height:1.6;color:#385c7b;margin:6px 0 0}
@@ -3659,7 +3778,7 @@
 .course-rep-role .org-logo{background:#102d5b;border-color:#102d5b;padding:5px}
 .course-rep-role .org-logo img{width:100%;height:100%;object-fit:contain}
 @media(max-width:850px){.experience-group,.other-experience-list{grid-column:1}}
-@media(max-width:650px){.experience-group{padding:18px 16px}}
+@media(max-width:650px){.experience-group{padding:18px 16px}.research-results-grid{gap:5px}.research-result-tile{min-height:82px;padding:8px 5px}.research-result-tile strong{font-size:18px}.research-result-tile span{font-size:7.5px}.workshop-summary{min-height:250px;padding:24px 17px}.workshop-summary-text{padding-right:45px}.workshop-summary strong{font-size:24px}.workshop-summary small{font-size:10px}.workshop-proof-chip{font-size:8px;padding:5px 7px}}
 </style><style>.applied-skills{display:grid;gap:0;margin-bottom:17px}.applied-skills>div{padding:13px 0;border-bottom:1px solid var(--line)}.applied-skills>div:first-child{padding-top:0}.applied-skills h4{font-size:13px;line-height:1.5;color:#123655;margin:0 0 5px}.applied-skills p{font-size:12px;line-height:1.75;color:#476079;margin:0}.applied-skills strong{color:#0a66c2}</style>
   <style>
     [data-theme="dark"] {
@@ -3727,7 +3846,6 @@
     [data-theme="dark"] .licence-highlight,
     [data-theme="dark"] .prince2-credential { background: #142b3e; border-color: #31536b; }
     [data-theme="dark"] .licence-highlight { color: var(--ink); }
-    [data-theme="dark"] .licence-highlight .icon,
     [data-theme="dark"] .leadership-results strong,
     [data-theme="dark"] .research-results strong { color: #58aef2; }
     [data-theme="dark"] .licence-highlight span,
@@ -3963,6 +4081,304 @@
       .brand-role { display: none; }
       .brand-name { font-size: 14px; }
     }
+
+    /* Keep experience and study details readable as aligned rows, without bullets. */
+    .role .contribution-list,
+    .role .role-bullets,
+    .role details ul,
+    .society-details ul,
+    .study-takeaways ul,
+    .role-extra ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .role .contribution-list,
+    .role .role-bullets {
+      border-top: 1px solid var(--line);
+      padding-top: 7px;
+    }
+    .role .contribution-list li,
+    .role .role-bullets li,
+    .role details ul li,
+    .society-details ul li,
+    .study-takeaways ul li,
+    .role-extra ul li {
+      margin: 0;
+      padding: 7px 0;
+    }
+    .role .contribution-list li + li,
+    .role .role-bullets li + li,
+    .role details ul li + li,
+    .society-details ul li + li,
+    .study-takeaways ul li + li,
+    .role-extra ul li + li {
+      border-top: 1px solid var(--line);
+    }
+    .mini-tag.prince2-coursework {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 8px;
+      border: 1px solid #c5dbef;
+      border-radius: 5px;
+      background: #eef5fb;
+      color: #245c8d;
+      line-height: 1.35;
+    }
+    .education-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .education-title-row h3 {
+      flex: 0 0 auto;
+      margin: 0;
+    }
+    .education-title-row .prince2-coursework {
+      max-width: 175px;
+      min-height: 28px;
+      padding: 4px 7px;
+      font-size: 8px;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    /* Six concise proof points, with the strongest delivery figure leading. */
+    .metrics {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 0;
+      padding: 12px 14px;
+    }
+    .metrics .metric {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 108px;
+      padding: 12px 15px;
+      border-right: 1px solid #ffffff24;
+      border-bottom: 0;
+    }
+    .metrics .metric:nth-child(6n) {
+      border-right: 0;
+    }
+    .metric-kicker,
+    .metrics .metric-line {
+      display: none;
+    }
+    .metrics .metric-featured .number-row strong {
+      font-size: 45px;
+      letter-spacing: -1.8px;
+    }
+    .metrics .number-row strong {
+      font-size: 36px;
+      letter-spacing: -1.2px;
+    }
+    .metrics .number-row .suffix {
+      font-size: 22px;
+    }
+    .metrics .metric-label {
+      max-width: 160px;
+      margin-top: 5px;
+      color: #d7e7f2;
+      font-size: 10px;
+      font-weight: 550;
+      line-height: 1.4;
+    }
+    .licence-highlight {
+      padding: 10px 18px;
+    }
+    .licence-highlight .sia-logo {
+      display: block;
+      width: 50px;
+      height: 58px;
+      flex: 0 0 50px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential img.coursera-logo {
+      width: 76px;
+      height: 32px;
+      flex: 0 0 76px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential img[src$="google.svg"] {
+      width: 68px;
+      height: 30px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential img[src$="hubspot.svg"] {
+      width: 70px;
+      height: 36px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential img.sia-credential-logo {
+      width: 44px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential img.fgh-credential-logo {
+      width: 70px;
+      height: 32px;
+      object-fit: contain;
+    }
+    .certifications-panel .credential-list {
+      gap: 0;
+      margin: 0;
+    }
+    .certifications-panel .credential {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      align-items: center;
+      column-gap: 12px;
+      min-height: 64px;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .certifications-panel .credential:first-child {
+      border-top: 0;
+    }
+    .certifications-panel .credential > img {
+      justify-self: center;
+      object-fit: contain;
+    }
+    .certifications-panel .credential > div {
+      min-width: 0;
+    }
+    .certifications-panel .credential-learning {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+    .earlier-education .extra-list {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .earlier-education .early-credential {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      align-items: start;
+      gap: 12px 14px;
+      min-width: 0;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--white);
+    }
+    .earlier-education .early-credential .org-logo {
+      width: 52px;
+      height: 52px;
+      padding: 6px;
+    }
+    .earlier-education .early-credential .org-logo:has(img[src$="huddersfield.svg"]) {
+      background: var(--ink);
+      border-color: var(--ink);
+      padding: 5px;
+    }
+    .earlier-education .early-credential > div {
+      min-width: 0;
+    }
+    .earlier-education .early-credential h3 {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .earlier-education .early-study {
+      grid-column: 1 / -1;
+    }
+    .earlier-education .early-study {
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .earlier-education .early-credential p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .earlier-education .early-credential .early-meta {
+      color: var(--muted);
+    }
+    .earlier-education .early-credential .early-learning {
+      margin-top: 8px;
+    }
+    @media (max-width: 520px) {
+      .earlier-education .extra-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    #more-projects .extra-list {
+      gap: 12px;
+    }
+    #more-projects .extra-list > div {
+      min-width: 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--white);
+    }
+    @media (max-width: 850px) {
+      .metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        padding: 10px 14px;
+      }
+      .metrics .metric {
+        min-height: 96px;
+        margin: 0;
+        padding: 12px 14px !important;
+        border-right: 1px solid #ffffff20;
+        border-bottom: 1px solid #ffffff20;
+        border-radius: 0;
+        background: transparent;
+      }
+      .metrics .metric:nth-child(3n) {
+        border-right: 0;
+      }
+      .metrics .metric:nth-child(n + 4) {
+        border-bottom: 0;
+      }
+      .metrics .metric-featured .number-row strong {
+        font-size: 40px;
+      }
+      .metrics .number-row strong {
+        font-size: 32px;
+      }
+    }
+    @media (max-width: 480px) {
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 8px 10px;
+      }
+      .metrics .metric {
+        min-height: 92px;
+        padding: 11px 10px !important;
+      }
+      .metrics .metric:nth-child(3n) {
+        border-right: 1px solid #ffffff20;
+      }
+      .metrics .metric:nth-child(2n) {
+        border-right: 0;
+      }
+      .metrics .metric:nth-child(n + 4) {
+        border-bottom: 1px solid #ffffff20;
+      }
+      .metrics .metric:nth-child(n + 5) {
+        border-bottom: 0;
+      }
+      .metrics .metric-featured .number-row strong {
+        font-size: 38px;
+      }
+      .metrics .number-row strong {
+        font-size: 29px;
+      }
+      .metrics .metric-label {
+        font-size: 9px;
+      }
+      #more-projects .extra-list {
+        grid-template-columns: 1fr;
+      }
+    }
   </style></head>
   <body id="top">
     <a class="skip" href="#main">Skip to content</a
@@ -4022,7 +4438,7 @@
       <nav class="wrap nav" aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="Achraf Daou, back to top"
           ><span class="monogram avatar-mark" aria-hidden="true"><img src="assets/achraf-photo.jpg" alt="" width="40" height="40" /></span
-          ><span class="brand-copy"><span class="brand-name">Achraf Daou<span class="brand-dot">.</span></span><span class="brand-role">Projects · Operations</span></span></a
+          ><span class="brand-copy"><span class="brand-name">Achraf Daou<span class="brand-dot">.</span></span><span class="brand-role">Project Coordination · Delivery</span></span></a
         ><button
           class="menu-toggle"
           type="button"
@@ -4055,24 +4471,24 @@
         aria-label="Achraf Daou — project support and operations"
       >
         <div class="hero-copy hero-enter">
-          <p class="eyebrow">Achraf Daou · Project &amp; business management</p>
+          <p class="eyebrow">Achraf Daou · Graduate project coordination</p>
           <h1 id="hero-title">
-            Project thinking.<br />Practical
+            Project coordination.<br />Clear
             <span class="accent">delivery.</span>
           </h1>
           <p class="hero-description">
             <strong
-              >Business Management graduate. MSc Project Management
-              student.</strong
+              >Project coordination professional with 6+ years across
+              construction, maintenance and logistics.</strong
             >
-            Hands-on experience supporting
-            <strong>15+ construction projects</strong>, from schedules and
-            suppliers to cost tracking.
+            At M2C Maroc, I support <strong>15+ projects</strong>, tracking
+            milestones across 2–5 concurrent workstreams, coordinating 20+
+            suppliers and following costs through handover.
           </p>
           <p class="hero-intent">
-            I’m looking for a
-            <strong>graduate role in project support or operations</strong
-            >—ready to contribute, learn quickly and help a team deliver.
+            Seeking <strong>Project Coordinator, Assistant Project Manager or
+            Project Manager roles</strong>. PRINCE2 methodology
+            studied and examined within my MSc.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#projects"
@@ -4143,15 +4559,33 @@
           </div>
         </div>
       </section>
-      <section class="metrics" aria-label="Experience in numbers">
-        <div class="metric">
+      <section
+        class="metrics"
+        aria-label="Project, research and leadership highlights"
+      >
+        <div class="metric metric-featured">
           <div class="number-row" aria-hidden="true">
             <strong data-count="15">15</strong><span class="suffix">+</span>
           </div>
           <span class="metric-label"
-            ><span class="sr-only">15+ </span>Projects supported</span
+            ><span class="sr-only">15+ </span>Construction &amp; maintenance projects</span
           >
-          <div class="metric-line" aria-hidden="true"></div>
+        </div>
+        <div class="metric">
+          <div class="number-row" aria-hidden="true">
+            <strong data-count="6">6</strong><span class="suffix">+</span>
+          </div>
+          <span class="metric-label"
+            ><span class="sr-only">6+ </span>Years coordinating projects</span
+          >
+        </div>
+        <div class="metric">
+          <div class="number-row" aria-hidden="true">
+            <strong data-count="2">2</strong><span class="suffix">–5</span>
+          </div>
+          <span class="metric-label"
+            ><span class="sr-only">2–5 </span>Projects at a time</span
+          >
         </div>
         <div class="metric">
           <div class="number-row" aria-hidden="true">
@@ -4160,27 +4594,22 @@
           <span class="metric-label"
             ><span class="sr-only">20+ </span>Suppliers coordinated</span
           >
-          <div class="metric-line" aria-hidden="true"></div>
         </div>
         <div class="metric">
           <div class="number-row" aria-hidden="true">
-            <strong data-count="2">2</strong><span class="suffix"></span>
+            <strong data-count="27">27</strong>
           </div>
           <span class="metric-label"
-            ><span class="sr-only">2 </span>Academic years leading the society</span
+            ><span class="sr-only">27 </span>Survey responses analysed</span
           >
-          <div class="metric-line" aria-hidden="true"></div>
         </div>
         <div class="metric">
           <div class="number-row" aria-hidden="true">
-            <strong data-count="4">4</strong><span class="suffix"></span>
+            <strong data-count="1000">1,000</strong><span class="suffix">+</span>
           </div>
           <span class="metric-label"
-            ><span class="sr-only">4 </span>Society awards</span
-          ><span class="metric-note"
-            >2× Society of the Month<br />2× Social Media</span
+            ><span class="sr-only">1,000+ </span>Society members</span
           >
-          <div class="metric-line" aria-hidden="true"></div>
         </div>
       </section>
       <div class="trust-strip" aria-label="Experience and education">
@@ -4313,13 +4742,13 @@
         <div class="section-heading" data-reveal="">
           <div>
             <p class="eyebrow">
-              <span class="section-number">01</span> Selected work
+              <span class="section-number">01</span> Project delivery
             </p>
-            <h2 id="projects-title">Less theory. More doing.</h2>
+            <h2 id="projects-title">Delivery you can point to.</h2>
           </div>
           <p>
-            Real responsibilities, practical decisions.<br />Here’s what that
-            looks like.
+            Construction coordination, cost control and project evidence from
+            my MSc.
           </p>
         </div>
         <div class="project-grid">
@@ -4350,22 +4779,28 @@
             </div>
             <div class="project-content">
               <div class="project-category">Operations · M2C Maroc</div>
-              <h3>Cost &amp; supplier control</h3>
+              <h3>Cost, supplier &amp; milestone tracking</h3>
               <p>
                 Keeping budgets, materials and suppliers aligned across
                 construction projects.
               </p>
-              <span class="project-result">15+ projects · 20+ suppliers</span>
-              <details>
+              <span class="project-result">15+ projects · 2–5 concurrent · 20+ suppliers</span>
+              <details open>
                 <summary>Project details</summary>
                 <p>
-                  Since 2020, I have tracked planned and actual costs across 2–5
-                  jobs at a time, each typically worth MAD 100,000–500,000.
+                  Support milestone tracking across 15+ construction and
+                  maintenance projects, coordinating 2–5 concurrent workstreams
+                  through handover.
                 </p>
                 <p>
-                  I maintain Excel cost logs, coordinate orders and deliveries,
-                  flag budget differences and compile progress summaries for the
-                  business owner.
+                  Coordinate orders and deliveries with 20+ suppliers; maintain
+                  Excel cost logs for projects valued at MAD 100,000–500,000 and
+                  flag emerging cost differences.
+                </p>
+                <p>
+                  Prepare progress, cost and compliance summaries for site teams
+                  and senior stakeholders. Digital tools reduced routine report
+                  preparation from around two hours to a few minutes per report.
                 </p>
               </details>
             </div>
@@ -4374,49 +4809,63 @@
             class="project"
             data-reveal=""
             style="--delay: 90ms"
-            data-category="professional"
+            data-category="academic"
           >
-            <div class="project-visual strategy">
+            <div class="project-visual research-visual">
               <img
-                class="stadium-photo"
-                src="assets/photos/huddersfield-stadium.jpg"
-                alt="The pitch and stands at Huddersfield Town’s stadium"
-                width="1280"
-                height="894"
+                class="research-photo"
+                src="assets/dissertation-construction.png"
+                alt="Illustrative UK construction site representing the MSc dissertation topic"
                 loading="lazy"
+                width="1536"
+                height="1024"
               />
-              <span class="org-logo"
-                ><img
-                  src="assets/logos/htafc.svg"
-                  alt=""
-                  loading="lazy"
-                  width="44"
-                  height="44"
-              /></span>
-
-              <span class="visual-topline"
-                >HUDDERSFIELD TOWN · MATCHDAY STRATEGY</span
-              >
+              <span class="visual-topline">AI · CONSTRUCTION · EVIDENCE</span>
+              <div class="research-ljmu-badge">
+                <img src="assets/logos/ljmu.png" alt="" width="30" height="30" loading="lazy" />
+                <span>Liverpool John Moores University</span>
+              </div>
             </div>
             <div class="project-content">
-              <div class="project-category">Strategy · Huddersfield Town</div>
-              <h3>Matchday attendance strategy</h3>
+              <div class="project-category">MSc dissertation · LJMU</div>
+              <h3>AI and project performance in UK construction</h3>
               <p>
-                Researching how to bring more supporters to midweek football
-                matches.
+                Explores how construction professionals think AI could affect
+                project performance, and the barriers and training needs shaping
+                its adoption.
               </p>
-              <span class="project-result">University–club partnership</span>
-              <details>
+              <span class="project-result">IBM SPSS Statistics · Practitioner survey · 2025–2026</span>
+              <p class="research-results-heading">Survey results</p>
+              <div class="research-results-grid" role="group" aria-label="Dissertation survey results">
+                <div class="research-result-tile">
+                  <strong class="research-stat-value" data-research-value="27" data-research-decimals="0">27</strong>
+                  <span>usable responses</span>
+                </div>
+                <div class="research-result-tile">
+                  <strong class="research-stat-value" data-research-value="88.9" data-research-decimals="1" data-research-suffix="%">88.9%</strong>
+                  <span>selected awareness, resistance or skills as barriers</span>
+                </div>
+                <div class="research-result-tile">
+                  <strong class="research-stat-value" data-research-value="51.9" data-research-decimals="1" data-research-suffix="%">51.9%</strong>
+                  <span>selected training as an enabler</span>
+                </div>
+              </div>
+              <p class="research-note">Small, self-selected sample; percentages describe respondents’ perceptions.</p>
+              <details open>
                 <summary>Project details</summary>
                 <p>
-                  Selected for a small University of Huddersfield team working
-                  with Huddersfield Town AFC in 2023–2024.
+                  Designed an online practitioner survey and analysed 27 usable
+                  responses in IBM SPSS Statistics.
                 </p>
                 <p>
-                  We explored barriers to weekday attendance, developed
-                  marketing ideas and presented our recommendations to the club.
+                  88.9% selected awareness, resistance to change or skills as
+                  adoption barriers; 51.9% selected training as an enabler.
                 </p>
-                
+                <p>
+                  The sample was small and self-selected, so findings describe
+                  respondents’ perceptions rather than measured project
+                  performance.
+                </p>
               </details>
             </div>
           </article>
@@ -4449,46 +4898,44 @@
             </div>
             <div class="project-content">
               <div class="project-category">
-                Leadership · Design · Community
+                Leadership · Events · Community
               </div>
-              <h3>A society with a stronger voice</h3>
+              <h3>Leading a 1,000+ member society</h3>
               <p>
-                Designed posts, shaped a consistent visual identity and brought
-                the society’s community together across two academic years.
+                Coordinated committee responsibilities, events and budget
+                planning; contributed to four society awards, including Best
+                Society.
               </p>
-              <div class="society-awards" aria-label="Four society awards">
+              <div class="society-awards" aria-label="Society membership and awards">
                 <div>
-                  <strong>2×</strong
-                  ><span>Global Society<br />of the Month</span
-                  ><small>October &amp; February</small>
+                  <strong>1,000+</strong><span>Society members</span>
                 </div>
                 <div>
-                  <strong>2×</strong><span>Social Media<br />Award</span
-                  ><small>Posts, design &amp; communication</small>
+                  <strong>4</strong><span>Society awards</span
+                  ><small>Including Best Society</small>
                 </div>
               </div>
-              <details class="society-details">
-                <summary>Posts, designs &amp; results</summary>
+              <details class="society-details" open>
+                <summary>Leadership &amp; results</summary>
                 <h4 class="detail-heading">My contribution</h4>
                 <ul>
                   <li>
-                    Created promotional posts and event artwork, giving the
-                    society a more consistent visual identity.
+                    Coordinated committee responsibilities and society events
+                    across two academic years.
                   </li>
                   <li>
-                    Planned content and kept communications organised so
-                    students could find events and stay involved.
+                    Planned budgets and followed up on agreed tasks to keep
+                    event plans moving.
                   </li>
                   <li>
-                    Led the committee, coordinated venues and timelines, and
-                    kept track of the society budget.
+                    Created social-media posts and event designs to promote
+                    society activities and reach members.
                   </li>
                 </ul>
                 <h4 class="detail-heading">What we achieved together</h4>
                 <p>
-                  Two academic years of community leadership and four society awards: two
-                  Global Society of the Month wins, in October and February, and
-                  two Social Media Awards.
+                  Contributed to four society awards, including Best Society,
+                  for a community of more than 1,000 members.
                 </p>
                 <p class="photo-credit society-visual-note">
                   Concept visual inspired by the society’s cultural events,
@@ -4507,14 +4954,74 @@
             </div>
           </article>
         </div>
-        <details class="workshop-feature" id="workshop" data-reveal="">
+        <details class="extra-details" id="more-projects" open>
+          <summary>More project work · MSc reports &amp; research</summary>
+          <div class="extra-list">
+<div>
+              <h3>Mersey Heat low-carbon network</h3>
+              <p>
+                Risk report · LJMU, 2026 · 72/100. Created a project risk register
+                and response and contingency plans; used @Risk for a 10,000-
+                iteration cost scenario model and documented its assumptions
+                and limits.
+              </p>
+            </div>
+<div>
+              <h3>Thames Tideway Tunnel</h3>
+              <p>
+                Project governance report · LJMU, 2026 · 70/100. Examined
+                portfolio, programme and project governance, linking management
+                choices to strategic, operational and project-level risks.
+              </p>
+            </div>
+<div>
+              <h3>Volkswagen Dieselgate</h3>
+              <p>
+                Leadership and ethics report · LJMU, 2026 · 72/100. Applied power
+                and leadership frameworks to examine organisational culture,
+                employee voice and ethical failure, then assessed post-scandal
+                change responses.
+              </p>
+            </div>
+<div>
+              <h3>OCP UK market-entry study</h3>
+              <p>
+                University of Huddersfield, 2022–2023. Reviewed market-entry,
+                trade and supply-chain considerations; received the module’s top
+                mark.
+              </p>
+            </div>
+<div>
+              <h3>Matchday attendance strategy</h3>
+              <p>
+                University of Huddersfield and Huddersfield Town AFC, 2023–2024.
+                Researched barriers to midweek attendance, developed marketing
+                recommendations and presented them to the club.
+              </p>
+            </div>
+            <div>
+              <h3>AI adoption in UK construction</h3>
+              <p>
+                MSc dissertation · 2026. Designed a practitioner survey and
+                analysed 27 usable responses in SPSS, then developed evidence-based
+                recommendations on training and staff engagement.
+              </p>
+            </div>
+          </div>
+        </details>
+        <details class="workshop-feature" id="workshop" data-reveal="" open>
           <summary class="workshop-summary">
             <span class="workshop-bg" aria-hidden="true"></span
-            ><span class="workshop-summary-text"
+              ><span class="workshop-summary-text"
               ><span class="workshop-kicker"
-                >The creative side · Blender + Python</span
-              ><strong>Beyond spreadsheets.<br />Built with curiosity.</strong
-              ><small>Explore my airport &amp; rail visualisations</small></span
+                >Independent 3D visualisations · Blender + Python</span
+              ><strong>Infrastructure, made visible in 3D.</strong
+              ><small>Two detailed independent studies: a Moroccan desert airport and a metro tunnel, modelled in Blender and explored with Python scripts.</small>
+              <span class="workshop-proof-row" aria-label="Two original visual studies">
+                <span class="workshop-proof-chip"><b data-research-value="2" data-research-decimals="0">2</b> original builds</span>
+                <span class="workshop-proof-chip">Airport + metro tunnel</span>
+                <span class="workshop-proof-chip">Blender + Python</span>
+              </span></span
             >
           </summary>
           <div class="project-grid creative-view">
@@ -4786,54 +5293,7 @@
             </div>
           </div>
         </article>
-        <details class="extra-details" id="more-projects" open>
-          <summary>Course projects &amp; research</summary>
-          <div class="extra-list">
-            <div>
-              <h3>Volkswagen Dieselgate</h3>
-              <p>
-                Leadership and ethics report · LJMU, 2026 · 72/100. Applied power
-                and leadership frameworks to examine organisational culture,
-                employee voice and ethical failure, then assessed post-scandal
-                change responses.
-              </p>
-            </div>
-            <div>
-              <h3>Mersey Heat low-carbon network</h3>
-              <p>
-                Risk report · LJMU, 2026 · 72/100. Created a project risk register
-                and response and contingency plans; used @Risk for a 10,000-
-                iteration cost scenario model and documented its assumptions
-                and limits.
-              </p>
-            </div>
-            <div>
-              <h3>Thames Tideway Tunnel</h3>
-              <p>
-                Project governance report · LJMU, 2026 · 70/100. Examined
-                portfolio, programme and project governance, linking management
-                choices to strategic, operational and project-level risks.
-              </p>
-            </div>
-            <div>
-              <h3>OCP UK market-entry study</h3>
-              <p>
-                University of Huddersfield, 2022–2023. Reviewed market-entry,
-                trade and supply-chain considerations; received the module’s top
-                mark.
-              </p>
-            </div>
-            <div>
-              <h3>AI and project performance in UK construction</h3>
-              <p>
-                MSc dissertation, September 2026. Designed a practitioner survey
-                and analysed 27 usable responses in IBM SPSS Statistics,
-                examining perceptions of AI dashboards, adoption barriers and
-                training needs.
-              </p>
-            </div>
-          </div>
-        </details>
+        
       </section>
       <section
         class="section"
@@ -4866,7 +5326,7 @@
                 <use href="#external"></use></svg
             ></a>
           </div>
-<div class="experience-list experience-group relevant-experience-list"><h3 class="experience-group-title" id="relevant-experience">Relevant experience</h3><article class="role" id="m2c-experience">
+          <div class="experience-list experience-group relevant-experience-list"><h3 class="experience-group-title" id="relevant-experience">Relevant project experience</h3><article class="role" id="m2c-experience">
               <span class="org-logo"
                 ><img
                   src="assets/logos/m2c.png"
@@ -4877,57 +5337,53 @@
               /></span>
               <div>
                 <div class="role-top">
-                  <h3>Operations Management &amp; Project Support</h3>
+                  <h3>Operations and Project Coordinator</h3>
                   <span class="role-date">Apr 2020 – Present</span>
                 </div>
-                <p class="organisation">M2C Maroc · Morocco</p>
+                <p class="organisation">M2C Maroc · Remote · Morocco</p>
                 <p class="role-copy">
-                  Coordinate planning and scheduling across
+                  Support milestone tracking across
                   <strong>15+ construction and maintenance projects</strong>,
-                  tracking progress from the first milestone through to
-                  handover.
+                  typically coordinating <strong>2–5 concurrent workstreams</strong>
+                  through handover.
                 </p>
                 <div
                   class="role-numbers"
                   aria-label="M2C responsibilities in numbers"
                 >
                   <div class="role-number">
-                    <strong>15+</strong><span>Projects supported</span>
+                    <strong data-research-value="15" data-research-decimals="0" data-research-suffix="+">15+</strong><span>Projects supported</span>
                   </div>
                   <div class="role-number">
-                    <strong>2–5</strong><span>Projects at a time</span>
+                    <strong data-research-value="2" data-research-decimals="0" data-research-suffix="–5">2–5</strong><span>Concurrent workstreams</span>
                   </div>
                   <div class="role-number">
-                    <strong>20+</strong><span>Suppliers coordinated</span>
+                    <strong data-research-value="20" data-research-decimals="0" data-research-suffix="+">20+</strong><span>Suppliers coordinated</span>
                   </div>
                 </div>
                 <p class="budget-note">
                   Typical project value: <strong>MAD 100,000–500,000</strong>
-                  <span>(approximately £8,000–£40,000).</span>
                 </p>
                 <ul class="contribution-list">
                   <li>
-                    Track
-                    <strong>costs and material spend against budget</strong>,
-                    flagging differences early.
+                    Coordinate orders and deliveries with
+                    <strong>20+ suppliers</strong> to support project needs.
                   </li>
                   <li>
-                    Coordinate <strong>20+ suppliers</strong>, orders and
-                    deliveries to protect the schedule.
+                    Maintain Excel cost logs for projects valued at
+                    <strong>MAD 100,000–500,000</strong> and flag emerging cost
+                    differences.
                   </li>
                   <li>
-                    Maintain Excel cost logs, site records and
-                    <strong>progress and cost summaries</strong> for the
-                    business owner.
+                    Prepare progress, cost and compliance summaries for site
+                    teams and senior stakeholders to support project oversight.
+                  </li>
+                  <li>
+                    Use AI and digital tools for routine reports and documents,
+                    reducing preparation time from
+                    <strong>around two hours to minutes per report</strong>.
                   </li>
                 </ul>
-                <div class="role-extra">
-                  
-                  <p class="role-copy">
-                    I introduced AI and digital tools into routine reporting and
-                    document work to reduce time spent on administration.
-                  </p>
-                </div>
               </div>
             </article><article class="role">
               <span class="org-logo"
@@ -4940,36 +5396,30 @@
               /></span>
               <div>
                 <div class="role-top">
-                  <h3>Construction Project Manager · Job Shadowing</h3>
+                  <h3>Project Manager Job Shadowing</h3>
                   <span class="role-date">Summer 2025</span>
                 </div>
                 <p class="organisation">
-                  ONCF · Rabat, Morocco · Volunteer placement
+                  ONCF Rail Infrastructure · Morocco
                 </p>
                 <p class="role-copy">
-                  Shadowed a project manager on a rail infrastructure programme,
-                  observing site walks, contractor meetings and progress
-                  reporting.
+                  Observed rail infrastructure work during <strong>two site
+                  visits</strong> and saw how teams checked progress and shared
+                  site instructions.
                 </p>
-                <div class="role-extra">
-                  
-                  <ul>
-                    <li>
-                      Observed programme planning, design queries and the
-                      tracking of site instructions.
-                    </li>
-                    <li>
-                      Learned how client, contractor and engineering teams
-                      coordinate day to day.
-                    </li>
-                    <li>
-                      Discussed digital planning tools with the team to inform
-                      my dissertation research.
-                    </li>
-                  </ul>
-                </div>
+                <ul class="role-bullets">
+                  <li>
+                    Attended <strong>four contractor meetings in one week</strong>
+                    and observed discussions about design questions and
+                    follow-up actions.
+                  </li>
+                  <li>
+                    Observed project planning and progress reporting, including
+                    how updates were shared with project managers.
+                  </li>
+                </ul>
               </div>
-            </article><article class="role"><span class="org-logo"><svg class="icon" aria-hidden="true"><use href="#briefcase"></use></svg></span><div><div class="role-top"><h3>Administrative Assistant</h3><span class="role-date">Feb–Aug 2019</span></div><p class="organisation">STE Wild Five Nine SARL · Morocco</p><ul class="role-bullets"><li>Maintained invoices, delivery documentation and client records, checking details for accuracy.</li><li>Handled client calls and coordinated with drivers and suppliers on transport and logistics.</li><li>Created reusable administrative templates and kept a simple delivery log to track bookings and follow-ups.</li><li>Used Excel and Microsoft Office to organise operational data and prepare records for the manager.</li></ul></div></article><article class="role"><span class="org-logo"><img src="assets/logos/driscolls.png" alt="" width="44" height="44" loading="lazy"/></span><div><div class="role-top"><h3>Export supply chain experience · Volunteer</h3><span class="role-date">June 2019</span></div><p class="organisation">Driscoll’s grower site · Morocco</p><p class="role-copy">Volunteered on the berry packing and labelling line, preparing produce for export and gaining first-hand experience of the steps behind an export supply chain.</p></div></article></div><hr class="experience-divider" aria-hidden="true" /><div class="experience-list experience-group other-experience-list"><h3 class="experience-group-title" id="other-experience">Other experience</h3><article class="role role-fgh" id="fgh-experience">
+            </article><article class="role"><span class="org-logo"><svg class="icon" aria-hidden="true"><use href="#briefcase"></use></svg></span><div><div class="role-top"><h3>Administrative Assistant</h3><span class="role-date">Feb–Aug 2019</span></div><p class="organisation">STE Wild Five Nine SARL · Morocco</p><ul class="role-bullets"><li>Coordinated around <strong>15 fruit and vegetable deliveries per week</strong>, contacting five suppliers and eight drivers by phone and email.</li><li>Maintained around <strong>60 delivery and invoice records per month</strong> and created an Excel log to track shipments.</li><li>Helped the manager resolve around <strong>three delivery problems per week</strong> and kept suppliers and drivers updated.</li></ul></div></article><article class="role"><span class="org-logo"><img src="assets/logos/driscolls.png" alt="" width="44" height="44" loading="lazy"/></span><div><div class="role-top"><h3>Export Supply Chain Volunteer</h3><span class="role-date">June 2019</span></div><p class="organisation">Driscoll’s grower site · Morocco</p><ul class="role-bullets"><li>Inspected around <strong>150 crates of berries per shift</strong> before export packing.</li><li>Labelled and prepared around <strong>200 berry boxes</strong> for overseas buyers.</li><li>Used English and French to help local staff coordinate <strong>one to two shipment batches</strong> with overseas buyers.</li></ul></div></article></div><hr class="experience-divider" aria-hidden="true" /><div class="experience-list experience-group other-experience-list"><h3 class="experience-group-title" id="other-experience">Other experience</h3><article class="role role-fgh" id="fgh-experience">
               <span class="org-logo"
                 ><img
                   src="assets/logos/fgh-security.webp"
@@ -4984,24 +5434,34 @@
                   <span class="role-date">Oct 2025 – Present</span>
                 </div>
                 <p class="organisation">
-                  FGH Security · Part-time · Liverpool
+                  FGH Security · Liverpool, UK · Full-time
                 </p>
                 <p class="role-copy">
-                  Work event security at
-                  <strong
-                    >Anfield Stadium, M&amp;S Bank Arena, ACC Liverpool and
-                    Chester Racecourse</strong
-                  >: checking IDs, managing entry and helping keep busy event
-                  days calm and safe.
+                  Welcomed and assisted <strong>10,000+ attendees</strong>
+                  across <strong>four venues</strong>: Anfield Stadium, M&amp;S
+                  Bank Arena, ACC Liverpool and Chester Racecourse, supporting
+                  a positive visitor experience.
                 </p>
-                <div class="licence-highlight"><svg class="icon" aria-hidden="true"><use href="#award"></use></svg><div><strong>SIA licensed</strong><span>Door Supervision · Front Line</span></div></div>
+                <ul class="role-bullets">
+                  <li>
+                    Completed ID checks and supported safe entry and queue
+                    management, using attention to detail to maintain smooth
+                    crowd flow during peak periods.
+                  </li>
+                  <li>
+                    Worked alongside security and response teams to monitor
+                    crowds, respond to attendee needs and promptly communicate
+                    safety concerns.
+                  </li>
+                </ul>
+                <div class="licence-highlight"><img class="sia-logo" src="assets/sia-licensed-mark.png" alt="" width="50" height="58"/><div><strong>SIA licensed</strong><span>Door Supervision · Front Line</span></div></div>
                 <div class="tags">
                   <span class="tag">Event operations</span
                   ><span class="tag">Access control</span
                   ><span class="tag">Communication under pressure</span>
                 </div>
               </div>
-            </article><article class="role society-role">
+            </article></div><div class="experience-list experience-group leadership-service-list"><h3 class="experience-group-title" id="leadership-service">Leadership and service</h3><article class="role society-role">
               <span class="org-logo"
                 ><img
                   src="assets/logos/moroccan-society.jpg"
@@ -5016,19 +5476,17 @@
                   <span class="role-date">Sep 2023 – Jun 2025</span>
                 </div>
                 <p class="organisation">
-                  University of Huddersfield Students’ Union
+                  Huddersfield Students’ Union
                 </p>
-                <p class="role-copy">Led the society’s committee and community across <strong>two academic years</strong>, turning ideas into events, content and a stronger society identity.</p>
+                <p class="role-copy">Coordinated committee roles and responsibilities for a <strong>1,000+ member society</strong>.</p>
                 <div class="leadership-results" aria-label="Society achievements">
-                  <div><strong>2</strong><span>Academic years of leadership</span></div>
-                  <div><strong>2×</strong><span>Global Society of the Month</span><small>October &amp; February</small></div>
-                  <div><strong>2×</strong><span>Social Media Award</span><small>Posts, design &amp; communication</small></div>
+                  <div><strong data-research-value="2" data-research-decimals="0">2</strong><span>Academic years of leadership</span></div>
+                  <div><strong data-research-value="1000" data-research-decimals="0" data-research-suffix="+">1,000+</strong><span>Society members</span></div>
+                  <div><strong data-research-value="4" data-research-decimals="0">4</strong><span>Society awards</span><small>Best Society and social media awards</small></div>
                 </div>
                 <ul class="role-bullets">
-                  <li><strong>Coordinated the committee:</strong> shared responsibilities and kept event plans moving.</li>
-                  <li><strong>Planned events and managed budgets</strong> across two academic years.</li>
-                  <li><strong>Created social posts and event designs</strong> with a consistent identity across the society’s communications.</li>
-                  <li><strong>Helped the society earn 4 awards</strong> across community activity and social media.</li>
+                  <li>Helped plan and run society events and coordinate budgets with committee members.</li>
+                  <li>Contributed to the society receiving <strong>four awards</strong>, including Best Society and social media awards.</li>
                 </ul>
                 <a
                   class="text-link"
@@ -5039,7 +5497,7 @@
                     <use href="#arrow"></use></svg
                 ></a>
               </div>
-            </article><article class="role course-rep-role"><span class="org-logo"><img src="assets/logos/huddersfield.svg" alt="University of Huddersfield" width="44" height="44" loading="lazy" /></span><div><div class="role-top"><h3>Student Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield ISC</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback, raised issues with course leaders and followed them through to resolution.</p><ul class="role-bullets"><li><strong>Turned student feedback into clear discussion points</strong> for tutors and course leaders, helping concerns from 40 students reach the right people.</li><li><strong>Followed up on outstanding issues</strong> with course leaders, maintaining communication between students and staff through to resolution.</li></ul></div></article>
+            </article><article class="role course-rep-role"><span class="org-logo"><img src="assets/logos/huddersfield.svg" alt="University of Huddersfield" width="44" height="44" loading="lazy" /></span><div><div class="role-top"><h3>Course Representative</h3><span class="role-date">Sep 2021–Jun 2022</span></div><p class="organisation">University of Huddersfield</p><p class="role-copy">Represented <strong>40 students</strong>, gathered feedback and followed issues through with course leaders.</p></div></article>
           </div>
         </div>
       </section>
@@ -5086,13 +5544,16 @@
                   height="44"
               /></span>
               <div>
-                <h3>MSc Project Management</h3>
+                <div class="education-title-row">
+                  <h3>MSc Project Management</h3>
+                  <span class="mini-tag prince2-coursework"
+                    >PRINCE2 coursework · studied &amp; examined within MSc</span
+                  >
+                </div>
                 <p>Liverpool John Moores University</p>
                 <div class="education-meta">
-                  <span>2025 – Present</span
-                  ><span class="mini-tag"
-                    >PRINCE2 studied &amp; examined within MSc</span
-                  >
+                  <span>Sep 2025 – Present</span
+                  ><span class="mini-tag">Predicted First Class</span>
                 </div>
               </div>
             </article>
@@ -5110,7 +5571,7 @@
                 <h3>BA (Hons) Business Management</h3>
                 <p>University of Huddersfield</p>
                 <div class="education-meta">
-                  <span>2022 – 2025</span
+                  <span>Sep 2022 – Jun 2025</span
                   ><span class="mini-tag">2:1 Honours</span>
                 </div>
               </div>
@@ -5118,20 +5579,39 @@
             <div class="earlier-education">
               <h4>Earlier education</h4>
               <div class="extra-list">
-                <div>
-                  <h3>Business, Management &amp; Law</h3>
-                  <p>
-                    Foundation year · University of Huddersfield · 2021–2022 ·
-                    First-Class.
-                  </p>
-                </div>
-                <div>
-                  <h3>Baccalaureate, Economics</h3>
-                  <p>
-                    Morocco · 2018–2020. Economics, accounting, finance and
-                    business organisation.
-                  </p>
-                </div>
+                <article class="early-credential">
+                  <span class="org-logo"
+                    ><img
+                      src="assets/logos/huddersfield.svg"
+                      alt=""
+                      loading="lazy"
+                      width="40"
+                      height="40"
+                  /></span>
+                  <div>
+                    <h3>Business, Management &amp; Law</h3>
+                    <p class="early-meta">Foundation year · University of Huddersfield</p>
+                    <p class="early-meta">Sep 2021–Jun 2022 · Upper Second Class (2:1)</p>
+                  </div>
+                </article>
+                <article class="early-credential">
+                  <span class="org-logo"
+                    ><img
+                      src="assets/logos/le-pont-groupe-scolaire.png"
+                      alt=""
+                      loading="lazy"
+                      width="40"
+                      height="40"
+                  /></span>
+                  <div>
+                    <h3>Moroccan Baccalaureate · Economics</h3>
+                    <p class="early-meta">Le Pont Groupe Scolaire · Kénitra, Morocco · Sep 2018–Jun 2021</p>
+                  </div>
+                  <div class="early-study">
+                    <p class="early-learning"><strong>Studied:</strong> Economics, accounting, finance and business organisation.</p>
+                    <p class="early-learning"><strong>Learned:</strong> To read financial information and understand how organisations manage money, costs and resources.</p>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
@@ -5147,7 +5627,6 @@
                 >Certifications &amp; licences
               </h3>
               <div class="credential-list">
-                <div class="credential prince2-credential"><svg class="icon" aria-hidden="true"><use href="#award"></use></svg><div><strong>PRINCE2 · Project management methodology</strong><span>Studied &amp; examined within MSc · LJMU</span><p>Stage planning, governance, risk and change control.</p></div></div>
                 <div class="credential">
                   <img
                     src="assets/logos/google.svg"
@@ -5157,9 +5636,24 @@
                     loading="lazy"
                   />
                   <div>
-                    <strong
-                      >Google Project Management &amp; Data Analytics</strong
-                    ><span>Professional Certificates · Coursera · 2025</span><p class="credential-learning">Project planning, data preparation, analysis and communicating insights.</p>
+                    <strong>Google Project Management Certificate</strong>
+                    <span>Coursera · 2025</span>
+                    <p class="credential-learning">Project planning and delivery fundamentals.</p>
+                  </div>
+                </div>
+                <div class="credential">
+                  <img
+                    class="coursera-logo"
+                    src="assets/logos/coursera.svg"
+                    alt=""
+                    width="76"
+                    height="30"
+                    loading="lazy"
+                  />
+                  <div>
+                    <strong>Data Analytics Certificate</strong
+                    ><span>Coursera · 2025</span>
+                    <p class="credential-learning">Data preparation, analysis and communicating insights.</p>
                   </div>
                 </div>
                 <div class="credential">
@@ -5189,18 +5683,28 @@
                   </div>
                 </div>
                 <div class="credential">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#award"></use>
-                  </svg>
+                  <img
+                    class="sia-credential-logo"
+                    src="assets/sia-licensed-mark.png"
+                    alt=""
+                    width="38"
+                    height="44"
+                    loading="lazy"
+                  />
                   <div>
                     <strong>SIA Door Supervisor Licence</strong
                     ><span>Security Industry Authority</span>
                   </div>
                 </div>
                 <div class="credential">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#award"></use>
-                  </svg>
+                  <img
+                    class="fgh-credential-logo"
+                    src="assets/logos/fgh-security.webp"
+                    alt="FGH Security"
+                    width="64"
+                    height="30"
+                    loading="lazy"
+                  />
                   <div>
                     <strong>Emergency First Aid at Work</strong
                     ><span
@@ -5215,7 +5719,7 @@
               <h3>
                 <svg class="icon" aria-hidden="true">
                   <use href="#briefcase"></use></svg
-                >What I bring to a team
+                >Project management skills
               </h3>
 <div class="applied-skills">
 <div><h4>Planning &amp; delivery coordination</h4><p>Supported <strong>15+ construction projects</strong>, coordinating schedules, milestones and supplier deliveries.</p></div>
@@ -5224,13 +5728,13 @@
 <div><h4>Risk awareness &amp; structured decisions</h4><p>Built a risk register in an MSc team simulation, assessed likelihood and impact, and practised responding to changing risks.</p></div>
 <div><h4>Data analysis that supports decisions</h4><p>Designed a survey and analysed <strong>27 responses in SPSS</strong>, translating findings into practical recommendations.</p></div>
 </div>
-<div class="skills-row"><span class="side-label">Tools I use</span><p>Excel · Microsoft Office · IBM SPSS Statistics</p><p class="skills-note">Developing Microsoft Project and Power BI skills. PRINCE2 studied and examined within my MSc.</p></div>
-<div class="skills-row"><span class="side-label">Languages &amp; location</span><p>Fluent in <strong>French and Arabic.</strong><br />Based in Liverpool. Open to relocation.</p></div>
+<div class="skills-row"><span class="side-label">Tools I use</span><p>Advanced Excel (cost logs and progress reporting) · Microsoft 365 · IBM SPSS Statistics (survey analysis) · AI-assisted reporting</p><p class="skills-note">Microsoft Project and Power BI in development.</p></div>
+<div class="skills-row"><span class="side-label">Languages &amp; location</span><p>French <strong>(fluent)</strong> · Arabic <strong>(native)</strong><br />Based in Liverpool. Open to relocation.</p></div>
 
             </div>
           </div>
         </div>
-<section class="dissertation-card research-complete" id="learning" aria-labelledby="dissertation-title"><div><span class="side-label">MSc dissertation · September 2026</span><h3 id="dissertation-title">AI and project performance in UK construction practices</h3><p>I designed a practitioner survey and analysed the results in IBM SPSS Statistics to understand how construction professionals view AI dashboards and what holds adoption back.</p><p><strong>The gap:</strong> adding quantitative practitioner evidence to a largely qualitative UK evidence base.</p></div><div class="research-results"><div><strong>27</strong><span>Usable survey responses</span></div><div><strong>88.9%</strong><span>Selected awareness, resistance to change or skills as their main barrier</span></div><div><strong>51.9%</strong><span>Selected training as the leading adoption enabler</span></div></div><div><span class="side-label">What I delivered</span><p>Survey design, data preparation, descriptive analysis and evidence-based recommendations.</p><span class="side-label">The practical takeaway</span><p>Prioritise training and staff engagement alongside investment in AI tools.</p><p class="research-note">Small, non-probability sample. Findings describe respondents’ perceptions, not measured project performance.</p></div></section>
+
       </section>
       <section
         class="contact"
@@ -5368,13 +5872,82 @@
         let paused = reducedMotion.matches;
         let frames = new Set();
         const counters = [...document.querySelectorAll("[data-count]")];
+        const researchCounters = [
+          ...document.querySelectorAll("[data-research-value]"),
+        ];
+        const integerFormatter = new Intl.NumberFormat("en-GB");
+        function formatCount(value) {
+          return integerFormatter.format(value);
+        }
+        function formatResearchCount(value, decimals, suffix) {
+          const formatted = new Intl.NumberFormat("en-GB", {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+          }).format(value);
+          return `${formatted}${suffix}`;
+        }
         function finishCounters() {
           frames.forEach(cancelAnimationFrame);
           frames.clear();
           counters.forEach((counter) => {
-            counter.textContent = counter.dataset.count;
+            counter.textContent = formatCount(Number(counter.dataset.count));
             counter.closest(".metric").style.setProperty("--progress", "1");
           });
+        }
+        function finishResearchCounters() {
+          researchCounters.forEach((counter) => {
+            const decimals = Number(counter.dataset.researchDecimals || 0);
+            const value = Number(counter.dataset.researchValue);
+            counter.textContent = formatResearchCount(
+              value,
+              decimals,
+              counter.dataset.researchSuffix || "",
+            );
+          });
+        }
+        function animateResearchCounter(counter) {
+          if (paused) return finishResearchCounters();
+          const value = Number(counter.dataset.researchValue);
+          const decimals = Number(counter.dataset.researchDecimals || 0);
+          const suffix = counter.dataset.researchSuffix || "";
+          const duration = 1150;
+          let startTime;
+          function tick(now) {
+            if (paused) {
+              finishResearchCounters();
+              return;
+            }
+            if (startTime === undefined) startTime = now;
+            const progress = Math.max(0, Math.min((now - startTime) / duration, 1));
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = formatResearchCount(
+              value * eased,
+              decimals,
+              suffix,
+            );
+            if (progress < 1) requestAnimationFrame(tick);
+            else counter.textContent = formatResearchCount(value, decimals, suffix);
+          }
+          counter.textContent = formatResearchCount(0, decimals, suffix);
+          requestAnimationFrame(tick);
+        }
+        function observeResearchCounters() {
+          if (!researchCounters.length) return;
+          if (paused || !("IntersectionObserver" in window)) {
+            finishResearchCounters();
+            return;
+          }
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                animateResearchCounter(entry.target);
+                observer.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.65 },
+          );
+          researchCounters.forEach((counter) => observer.observe(counter));
         }
         function setMotion(isPaused) {
           paused = isPaused;
@@ -5388,6 +5961,7 @@
             : "Ⅱ";
           if (paused) {
             finishCounters();
+            finishResearchCounters();
             document.querySelectorAll(".reveal-pending").forEach((el) => {
               el.classList.remove("reveal-pending");
               el.classList.add("reveal-in");
@@ -5396,6 +5970,7 @@
         }
         motionButton.hidden = false;
         setMotion(paused);
+        observeResearchCounters();
         motionButton.addEventListener("click", () => setMotion(!paused));
         reducedMotion.addEventListener("change", (event) =>
           setMotion(event.matches),
@@ -5413,7 +5988,7 @@
             const progress = Math.max(0, Math.min((now - start) / 1900, 1));
             const eased = 1 - Math.pow(1 - progress, 3);
             counters.forEach((el) => {
-              el.textContent = String(
+              el.textContent = formatCount(
                 Math.floor(Number(el.dataset.count) * eased),
               );
               el.closest(".metric").style.setProperty(
